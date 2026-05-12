@@ -1,0 +1,1584 @@
+[
+  {
+    "id": 161,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer wants to integrate Azure AI Video Indexer with their company intranet so employees can search the video library and jump to the exact timestamp where a specific word or phrase was spoken or appeared on screen. Which Video Indexer feature should the developer use to implement this deep-search capability within the web UI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Timeline tab in the Video Indexer website, which allows text search and editing of transcripts"
+      },
+      {
+        "id": "B",
+        "text": "The Filters option in the Video Indexer website search, which can filter by OCR text across all indexed videos"
+      },
+      {
+        "id": "C",
+        "text": "The Open in editor option to clip specific moments by line"
+      },
+      {
+        "id": "D",
+        "text": "The Download option to export insights JSON, then search offline"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure AI Video Indexer website search bar lets you enter keywords and then use Filters to narrow results by insight type, including OCR (on-screen text). Selecting a search result brings the player to that exact moment in the video. This is the deep-search capability described in the 'Search for exact moments in videos' unit.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Search for exact moments in videos with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-search"
+    }
+  },
+  {
+    "id": 162,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "A content manager needs to upload a video from a public URL to Azure AI Video Indexer and configure advanced indexing settings. Place the following steps in the correct order as described in the upload and index workflow.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Sign in to the Video Indexer website and select Upload"
+      },
+      {
+        "id": "S2",
+        "text": "Select Enter URL, paste the source URL, and select Add"
+      },
+      {
+        "id": "S3",
+        "text": "Configure Privacy, Streaming quality, and Video source language on the basic settings page"
+      },
+      {
+        "id": "S4",
+        "text": "Expand Advanced settings to choose an indexing preset and optionally select a People model or Brand category"
+      },
+      {
+        "id": "S5",
+        "text": "Select Review + upload, review the summary, then select Upload + index"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The Azure AI Video Indexer upload workflow requires: (1) signing in and selecting Upload, (2) providing the source URL, (3) configuring basic settings such as privacy and language, (4) expanding Advanced settings to choose an indexing preset and custom models, and (5) reviewing and confirming the upload. YouTube URLs are explicitly not supported; only publicly accessible direct file URLs or SAS URLs work.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+    }
+  },
+  {
+    "id": 163,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "You are uploading a video from Azure Blob Storage to Azure AI Video Indexer via a URL, but the storage account is behind a firewall. What is the correct approach to allow the upload to succeed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable the firewall temporarily during the upload, then re-enable it after indexing completes"
+      },
+      {
+        "id": "B",
+        "text": "Use the Upload Video API with the useManagedIdentityToDownloadVideo=true parameter"
+      },
+      {
+        "id": "C",
+        "text": "Generate a public access URL for the blob, bypassing the firewall entirely"
+      },
+      {
+        "id": "D",
+        "text": "Download the video locally first and upload as a file from the browser"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "When the source storage account is behind a firewall, the Azure AI Video Indexer documentation specifies that you must use the Upload Video API with the useManagedIdentityToDownloadVideo=true parameter. This allows Video Indexer to authenticate via Managed Identity to access the protected storage account.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+    }
+  },
+  {
+    "id": 164,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Azure AI Video Indexer can run on edge devices via Azure Arc. When using Video Indexer enabled by Azure Arc with uploaded video files, which indexing preset combines both key frame detection and transcription in the same indexing run?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Basic video"
+      },
+      {
+        "id": "B",
+        "text": "Basic audio"
+      },
+      {
+        "id": "C",
+        "text": "Basic video and audio"
+      },
+      {
+        "id": "D",
+        "text": "Advanced indexing"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "According to the Azure AI Video Indexer overview, the 'Basic video and audio' preset for Arc-enabled Video Indexer includes both key frame detection (a video model) and transcription/translation (audio models). The 'Basic video' preset only covers video models such as key frame detection, object detection, and scene detection, while 'Basic audio' covers transcription and translation only.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 165,
+    "topic": "computer-vision",
+    "type": "mc_multi",
+    "question": "A media company wants to use cloud-based Azure AI Video Indexer to detect potentially inappropriate content in their uploaded videos. Which TWO insight types should they enable to cover both visual and textual content moderation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Visual content moderation \u2014 detects adult and racy visuals in the video frames"
+      },
+      {
+        "id": "B",
+        "text": "Textual content moderation \u2014 detects explicit text in the audio transcript"
+      },
+      {
+        "id": "C",
+        "text": "Audio effects detection \u2014 identifies alarm sounds and crowd reactions"
+      },
+      {
+        "id": "D",
+        "text": "Sentiment analysis \u2014 identifies positive, negative, and neutral sentiments"
+      },
+      {
+        "id": "E",
+        "text": "Black frame detection \u2014 identifies black frames in the video"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Azure AI Video Indexer provides two dedicated content moderation models: Visual content moderation (a video model that detects adult and racy visuals) and Textual content moderation (an audio model that detects explicit text in the audio transcript). Together, these cover both the visual and spoken dimensions of inappropriate content.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 166,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Video Indexer audio analysis capabilities by selecting the correct option for each blank.\n\n**Blank 1**: Azure AI Video Indexer's speaker enumeration feature can detect up to _____ speakers in a single audio file.\n\n**Blank 2**: When uploading with the default preset, Audio effects detection detects _____ as the only audio event by default; the full set of events (alarm, dog barking, crowd reactions, etc.) requires choosing Advanced Audio Analysis.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Maximum number of speakers detectable in a single audio file",
+        "options": [
+          {
+            "id": "a",
+            "text": "8"
+          },
+          {
+            "id": "b",
+            "text": "16"
+          },
+          {
+            "id": "c",
+            "text": "32"
+          },
+          {
+            "id": "d",
+            "text": "50"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Audio event detected by default with the standard preset",
+        "options": [
+          {
+            "id": "a",
+            "text": "Laughter"
+          },
+          {
+            "id": "b",
+            "text": "Gunshot or explosion"
+          },
+          {
+            "id": "c",
+            "text": "Silence"
+          },
+          {
+            "id": "d",
+            "text": "Crowd reactions"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "According to the Azure AI Video Indexer overview, Speaker enumeration maps speakers to their words and can detect up to 16 speakers in a single audio file. For Audio effects detection, only silence is detected by default with the standard preset; the full event set (alarm/siren, dog barking, crowd reactions, gunshot/explosion, laughter, breaking glass, silence) requires selecting Advanced Audio Analysis on upload.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 167,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is reviewing the Azure AI Video Indexer documentation and notices that the 'Topic inference' model uses three ontologies to extract topics from video content. Which three ontologies does the Topic inference model use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IPTC, Wikipedia, and the Video Indexer hierarchical topic ontology"
+      },
+      {
+        "id": "B",
+        "text": "IPTC, DBpedia, and the Azure AI topic taxonomy"
+      },
+      {
+        "id": "C",
+        "text": "Wikipedia, Wikidata, and the OpenAI topic catalog"
+      },
+      {
+        "id": "D",
+        "text": "IPTC, Reuters taxonomy, and the Video Indexer hierarchical topic ontology"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Azure AI Video Indexer overview specifies that the Topic inference model uses three ontologies: IPTC, Wikipedia, and the Video Indexer hierarchical topic ontology. It extracts topics based on keywords from transcription (spoken words), OCR content (visual text), and celebrities recognized by facial recognition.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 168,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is using the Azure Vision Python SDK to analyze an image and wants the response to include automatically generated alt-text describing the image contents in a single sentence. Which VisualFeatures enumeration value should they include in the analyze() call?",
+    "options": [
+      {
+        "id": "A",
+        "text": "VisualFeatures.TAGS"
+      },
+      {
+        "id": "B",
+        "text": "VisualFeatures.DENSE_CAPTIONS"
+      },
+      {
+        "id": "C",
+        "text": "VisualFeatures.CAPTION"
+      },
+      {
+        "id": "D",
+        "text": "VisualFeatures.OBJECTS"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The 'Analyze an image' unit lists VisualFeatures.CAPTION as the feature that generates a caption of the image in natural language (a single description). VisualFeatures.DENSE_CAPTIONS generates more detailed captions for individual detected objects. VisualFeatures.TAGS identifies keyword tags. VisualFeatures.OBJECTS returns bounding boxes for detected objects.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  },
+  {
+    "id": 169,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A solution architect needs to choose between Azure Vision and Azure Document Intelligence for an OCR scenario. The scenario involves extracting key-value pairs from structured invoice forms and integrating that data into an accounting workflow. Which service is the better fit, and why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Vision, because it supports form processing and provides prebuilt models for invoices"
+      },
+      {
+        "id": "B",
+        "text": "Azure Document Intelligence, because it is specifically designed to extract data from forms, invoices, and structured documents with prebuilt and custom models"
+      },
+      {
+        "id": "C",
+        "text": "Azure Vision, because its Digital Asset Management capability indexes structured document data"
+      },
+      {
+        "id": "D",
+        "text": "Azure Content Understanding, because it is the only service that supports text extraction from PDF invoices"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Explore Azure AI options for reading text' unit states that Azure Document Intelligence is specifically designed to extract text, key-value pairs, tables, and structures from documents such as forms, invoices, and receipts, and provides prebuilt models for common document types. Azure Vision is better suited for unstructured scanned documents, photographs with text, and digital asset management scenarios.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Read text in images",
+      "unit": "Explore Azure AI options for reading text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text"
+    }
+  },
+  {
+    "id": 170,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "An organization needs to build an Azure AI Custom Vision image classification solution. They decide to use separate resources for training and prediction so they can train in one Azure region and serve predictions from multiple regions. Which resource types do they need to provision in their Azure subscription?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A single Azure AI Services multi-service resource, which handles both training and prediction"
+      },
+      {
+        "id": "B",
+        "text": "An Azure AI Custom Vision training resource and an Azure AI Custom Vision prediction resource"
+      },
+      {
+        "id": "C",
+        "text": "An Azure Machine Learning workspace resource and a separate Azure AI Vision resource"
+      },
+      {
+        "id": "D",
+        "text": "An Azure AI Custom Vision training resource only; the prediction endpoint is automatically created at customvision.ai"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Azure AI Custom Vision' unit explains that Custom Vision requires two separate resources: a training resource (used to train models on custom images) and a prediction resource (used to generate predictions from new images). Each has its own endpoint and authentication keys. This separation allows training in one region while deploying prediction resources in other regions.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text"
+    }
+  },
+  {
+    "id": 171,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Custom Vision resources and the Custom Vision portal by selecting the correct option for each blank.\n\n**Blank 1**: Python developers can install the _____ PyPI package to perform both Custom Vision training and prediction tasks.\n\n**Blank 2**: To sign in to the Azure AI Custom Vision portal, you navigate to _____.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "PyPI package name for Azure AI Custom Vision (Python SDK)",
+        "options": [
+          {
+            "id": "a",
+            "text": "azure-ai-vision"
+          },
+          {
+            "id": "b",
+            "text": "azure-cognitiveservices-vision-customvision"
+          },
+          {
+            "id": "c",
+            "text": "azure-cognitiveservices-vision-computervision"
+          },
+          {
+            "id": "d",
+            "text": "azure-ai-customvision-training"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "URL of the Azure AI Custom Vision portal",
+        "options": [
+          {
+            "id": "a",
+            "text": "https://portal.azure.com/#blade/customvision"
+          },
+          {
+            "id": "b",
+            "text": "https://vision.azure.com/"
+          },
+          {
+            "id": "c",
+            "text": "https://www.customvision.ai/"
+          },
+          {
+            "id": "d",
+            "text": "https://ai.azure.com/customvision"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The 'Azure AI Custom Vision' unit states that Python developers use the azure-cognitiveservices-vision-customvision package from PyPI for both training and prediction. The Custom Vision portal is accessed at https://www.customvision.ai/ using Azure credentials. Each project in the portal has a unique project ID used by client applications.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text"
+    }
+  },
+  {
+    "id": 172,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer builds an Azure AI Custom Vision object detection client application in Python. After creating a CustomVisionPredictionClient and calling detect_image(), they iterate over results.predictions. Which property of each prediction object contains the coordinates of the detected object's location in the image?",
+    "options": [
+      {
+        "id": "A",
+        "text": "prediction.region"
+      },
+      {
+        "id": "B",
+        "text": "prediction.bounding_box"
+      },
+      {
+        "id": "C",
+        "text": "prediction.location"
+      },
+      {
+        "id": "D",
+        "text": "prediction.rectangle"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "According to the 'Develop an object detection client application' unit, each prediction object returned by detect_image() has a bounding_box property (with .left, .top, .height, .width sub-properties) in addition to tag_name and probability. This is the standard structure shown in the Python SDK code example for Custom Vision object detection.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text"
+    }
+  },
+  {
+    "id": 173,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "A developer is writing a Python client application to submit a new image to a trained Azure AI Custom Vision object detection model. Place the following code steps in the correct order as shown in the SDK example.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Import ApiKeyCredentials from msrest.authentication and CustomVisionPredictionClient from azure.cognitiveservices.vision.customvision.prediction"
+      },
+      {
+        "id": "S2",
+        "text": "Create ApiKeyCredentials using the prediction resource key, then instantiate CustomVisionPredictionClient with the prediction endpoint"
+      },
+      {
+        "id": "S3",
+        "text": "Open the image file in binary mode and read its bytes"
+      },
+      {
+        "id": "S4",
+        "text": "Call prediction_client.detect_image() passing the project ID, published model name, and image data"
+      },
+      {
+        "id": "S5",
+        "text": "Iterate over results.predictions; for each where probability > 0.5, access tag_name and bounding_box properties"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The 'Develop an object detection client application' unit shows the exact Python SDK pattern: import the required classes, authenticate with ApiKeyCredentials and instantiate the client, read the image bytes, call detect_image() with project ID and model name, then process each prediction by checking probability and accessing tag_name and bounding_box.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text"
+    }
+  },
+  {
+    "id": 174,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A team wants to use Azure AI Custom Vision to build an object detection project. They want to write C# code to train the model. Which NuGet package should they install for the training SDK?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft.Azure.CognitiveServices.Vision.ComputerVision"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training"
+      },
+      {
+        "id": "C",
+        "text": "Azure.AI.Vision.ImageAnalysis"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Use Azure AI Custom Vision for object detection' unit states that C# developers use the Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training NuGet package for training and Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction for prediction. These are separate packages reflecting the separation of training and prediction resources.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Use Azure AI Custom Vision for object detection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/2-understand-object-detection?pivots=text"
+    }
+  },
+  {
+    "id": 175,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When planning a face analysis solution using the Azure Face service, a developer needs to include facial liveness detection. What is the primary purpose of the liveness detection capability?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To determine whether a person is currently awake or asleep based on eye aspect ratio analysis"
+      },
+      {
+        "id": "B",
+        "text": "To verify that the input video is a real live stream and not a fake or spoof attack against a facial recognition system"
+      },
+      {
+        "id": "C",
+        "text": "To assess whether the detected face has sufficient quality to be stored in a Person Group for recognition"
+      },
+      {
+        "id": "D",
+        "text": "To identify whether a face in an image belongs to a celebrity in the pre-trained model"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit describes facial liveness as a capability that determines if the input video is a real stream or a fake, to prevent bad-intentioned individuals from spoofing a facial recognition system. It is a security feature for anti-spoofing, not a quality assessment or celebrity identification feature.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 176,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is using the Azure Face service to detect faces and needs to analyze head orientation. Which three components make up the head pose attribute returned by the Face service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yaw, pitch, and roll"
+      },
+      {
+        "id": "B",
+        "text": "X-rotation, Y-rotation, and Z-rotation"
+      },
+      {
+        "id": "C",
+        "text": "Azimuth, elevation, and tilt"
+      },
+      {
+        "id": "D",
+        "text": "Left-right, up-down, and clockwise rotation"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit lists the head pose attribute as returning pitch, roll, and yaw orientation in 3D space. These are the standard aviation/3D orientation terms used throughout the Face service API.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 177,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about the Azure Face service's face attribute analysis capabilities by selecting the correct option for each blank.\n\n**Blank 1**: When the Face service detects glasses on a face, the possible values returned for the Glasses attribute are No glasses, Reading glasses, Sunglasses, and _____.\n\n**Blank 2**: The Face service attribute that rates whether a detected face is suitable for recognition returns values of low, medium, or high and is called _____.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Fourth possible value for the Glasses face attribute",
+        "options": [
+          {
+            "id": "a",
+            "text": "Safety glasses"
+          },
+          {
+            "id": "b",
+            "text": "Swimming Goggles"
+          },
+          {
+            "id": "c",
+            "text": "Sports eyewear"
+          },
+          {
+            "id": "d",
+            "text": "VR headset"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Face attribute name that assesses face suitability for recognition",
+        "options": [
+          {
+            "id": "a",
+            "text": "Blur"
+          },
+          {
+            "id": "b",
+            "text": "Noise"
+          },
+          {
+            "id": "c",
+            "text": "QualityForRecognition"
+          },
+          {
+            "id": "d",
+            "text": "Exposure"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit lists four Glasses values: No glasses, Reading glasses, Sunglasses, and Swimming Goggles. It also lists QualityForRecognition as the attribute that rates face quality for recognition purposes with values of low, medium, or high. Blur, Noise, and Exposure are separate quality-related attributes with their own value sets.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 178,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer wants to use a vision-capable generative AI model in Microsoft Foundry to build a chat application that can answer questions about images. Which of the following is listed as a multimodal model available in Microsoft Foundry for this purpose?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OpenAI gpt-4o-vision"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Phi-4-multimodal-instruct"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Vision GPT-V"
+      },
+      {
+        "id": "D",
+        "text": "OpenAI gpt-3.5-turbo-vision"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Use a vision-capable model in the Microsoft Foundry portal' unit explicitly lists Microsoft Phi-4-multimodal-instruct, OpenAI gpt-4.1, and OpenAI gpt-4.1-mini as multimodal models available in Microsoft Foundry. Options A, C, and D are not listed in that unit.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Use a vision-capable model in the Microsoft Foundry portal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/2-deploy-multimodal-model?pivots=text"
+    }
+  },
+  {
+    "id": 179,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer uses the OpenAI Python SDK to call an image generation model deployed in Microsoft Foundry. They call client.images.generate() and receive a response. According to the client application unit, how is the generated image data returned in the response object?",
+    "options": [
+      {
+        "id": "A",
+        "text": "As a URL string pointing to the generated image hosted on Azure CDN"
+      },
+      {
+        "id": "B",
+        "text": "As a Base64-encoded string in img_results.data[0].b64_json"
+      },
+      {
+        "id": "C",
+        "text": "As a binary stream returned directly in img_results.image_bytes"
+      },
+      {
+        "id": "D",
+        "text": "As a SAS URL in img_results.data[0].url that expires after 24 hours"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Create a client application that uses an image generation model' unit shows Python code where the generated image is returned in img_results.data[0].b64_json as a Base64-encoded string, which is then decoded using base64.b64decode() and written to a PNG file.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Generate images with AI",
+      "unit": "Create a client application that uses an image generation model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text"
+    }
+  },
+  {
+    "id": 180,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer submits a valid JPEG image for Azure Vision image analysis. The image is 2 MB in size and 100 x 100 pixels. They want the response to include the bounding box for each area of interest when cropping the image to a specific aspect ratio for a thumbnail. Which VisualFeatures value should they request?",
+    "options": [
+      {
+        "id": "A",
+        "text": "VisualFeatures.DENSE_CAPTIONS"
+      },
+      {
+        "id": "B",
+        "text": "VisualFeatures.SMART_CROPS"
+      },
+      {
+        "id": "C",
+        "text": "VisualFeatures.OBJECTS"
+      },
+      {
+        "id": "D",
+        "text": "VisualFeatures.PEOPLE"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The 'Analyze an image' unit lists VisualFeatures.SMART_CROPS as the feature that 'Returns the bounding box of the specified aspect ratio for the area of interest', which is precisely the smart thumbnail cropping capability. VisualFeatures.OBJECTS returns bounding boxes for detected objects generally, VisualFeatures.PEOPLE returns bounding boxes for detected people, and VisualFeatures.DENSE_CAPTIONS generates detailed captions for detected objects rather than crop coordinates.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  },
+  {
+    "id": 181,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A company needs to deploy Azure OpenAI models in Microsoft Foundry and must ensure that all inference traffic stays within European Union countries. Which deployment type should they select?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Global Standard"
+      },
+      {
+        "id": "B",
+        "text": "Standard"
+      },
+      {
+        "id": "C",
+        "text": "DataZone Standard"
+      },
+      {
+        "id": "D",
+        "text": "Global Provisioned"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "DataZone Standard (SKU code: DataZoneStandard) processes prompts and responses only within the Microsoft-specified data zone. For EU compliance, selecting DataZone Standard in an EU region ensures all inference traffic is routed exclusively to datacenters within EU member nations. Global Standard may route to any Azure region worldwide, Standard is a single-region deployment that does not guarantee EU data zone routing, and Global Provisioned uses global infrastructure with no data-zone restriction.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Understanding deployment types in Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
+    }
+  },
+  {
+    "id": 182,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Your team needs to process millions of document summarization requests asynchronously over a 24-hour window at minimum cost. Which Azure OpenAI deployment type in Microsoft Foundry is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Global Standard, because it provides the highest default quota"
+      },
+      {
+        "id": "B",
+        "text": "Global Batch, because it offers 50% cost savings with a 24-hour target turnaround"
+      },
+      {
+        "id": "C",
+        "text": "Provisioned Throughput (PTU), because it guarantees dedicated capacity"
+      },
+      {
+        "id": "D",
+        "text": "DataZone Standard, because it routes traffic within a single geography"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Global Batch (SKU: GlobalBatch) is designed for large-scale asynchronous workloads. It offers a 50% cost discount compared to Global Standard and targets completion within 24 hours. Batch requests use a separate enqueued token quota that does not disrupt online workloads. PTU is for predictable high-throughput real-time scenarios (and is more expensive), Global Standard is pay-per-token with no batch discount, and DataZone Standard is for EU/US data residency requirements, not batch cost optimization.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Understanding deployment types in Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
+    }
+  },
+  {
+    "id": 183,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A fine-tuned Azure OpenAI model is deployed and rarely receives requests. An architect notices unexpectedly high monthly costs. What is the most likely cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fine-tuned models are billed per API call plus a per-token premium over base models"
+      },
+      {
+        "id": "B",
+        "text": "Fine-tuned model deployments incur hourly hosting charges even when unused"
+      },
+      {
+        "id": "C",
+        "text": "Fine-tuned models require a commitment tier plan, which has a non-refundable monthly fee"
+      },
+      {
+        "id": "D",
+        "text": "Fine-tuned model training tokens continue to be billed post-deployment"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Azure OpenAI fine-tuned models are charged in three ways: training (per token or per hour), hosting (hourly cost per deployed model regardless of usage), and inference (per 1,000 tokens when called). The hosting charge applies even during low usage periods. The documentation explicitly warns: 'Remove or scale down deployments that you don't need.' This hosting cost is the most likely cause of unexpected charges for a rarely-used fine-tuned deployment.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 184,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An operations engineer wants to view Azure OpenAI usage costs scoped to a specific model series across multiple deployments in Azure Cost Management. When filtering by service, the engineer cannot find 'Azure OpenAI' in the service list. What filter should be used instead?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service: Microsoft.CognitiveServices"
+      },
+      {
+        "id": "B",
+        "text": "Service tier: Azure OpenAI"
+      },
+      {
+        "id": "C",
+        "text": "Resource type: OpenAI"
+      },
+      {
+        "id": "D",
+        "text": "Meter: azure-openai-inference"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "In Azure Cost Management, Azure OpenAI usage appears under the broader 'Cognitive Services' service classification rather than as a standalone 'Azure OpenAI' entry. To isolate Azure OpenAI costs at the subscription level, the correct approach is to use the 'Service tier: Azure OpenAI' filter. The raw service name 'Azure OpenAI' will not appear in the service dropdown.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 185,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "You need to purchase a commitment tier plan for a dedicated Azure AI Speech resource. Arrange the following steps in the correct order as described in the Azure AI services commitment tier documentation.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Sign in to the Azure portal and create a new resource using the standard pricing tier for the applicable single-service (for example, Speech)"
+      },
+      {
+        "id": "S2",
+        "text": "After the resource is created, navigate to the resource and select 'Commitment tier pricing'"
+      },
+      {
+        "id": "S3",
+        "text": "Select 'Change' to view available commitment plans and choose a plan for web or connected container usage"
+      },
+      {
+        "id": "S4",
+        "text": "Select a commitment tier and an auto-renewal option, then select 'Purchase'"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The commitment tier documentation outlines this exact sequence: first create a single-service resource using the standard pricing tier (note: commitment tier is NOT available on multi-service resources), then navigate to the resource's 'Commitment tier pricing' blade, select Change to view plans, pick a plan (web or connected container), choose a tier and auto-renewal preference, then purchase. Once purchased, the plan is non-refundable and takes effect immediately, pro-rated for the remainder of the current month.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 186,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An organization purchases a commitment tier plan for Azure AI Language on the 15th of March. How is the first month's charge calculated?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The full monthly commitment fee is charged immediately on the purchase date"
+      },
+      {
+        "id": "B",
+        "text": "No charge is incurred until the first day of April, when the next billing cycle starts"
+      },
+      {
+        "id": "C",
+        "text": "A pro-rated charge based on the number of days remaining in March is charged at purchase"
+      },
+      {
+        "id": "D",
+        "text": "A half-month charge is applied, regardless of the purchase date within the month"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "According to the commitment tier documentation: 'Commitment plans are charged monthly, except the first month upon purchase which is pro-rated (cost and quota) based on the number of days remaining in that month.' For a March 15th purchase, the charge is pro-rated for the 16 remaining days. Subsequent months are charged in full on the first day of each month.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 187,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An organization has purchased a monthly commitment tier plan for Azure AI Text Translation and now wants to switch to a higher commitment tier for the current month. What does the commitment tier documentation state about this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "You can upgrade to a higher tier at any time; the difference is billed pro-rated"
+      },
+      {
+        "id": "B",
+        "text": "You cannot change the commitment plan for the current month; you can only choose a different plan for the next calendar month"
+      },
+      {
+        "id": "C",
+        "text": "You must cancel the current plan and repurchase a new one, with a one-week gap in service"
+      },
+      {
+        "id": "D",
+        "text": "You can change tiers twice per calendar month through the Azure portal"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The commitment tier documentation states: 'During the commitment period, you can't change the commitment plan for the current month. However, you can choose a different commitment plan for the next calendar month. The billing for the next month would happen on the first day of the next month.' Organizations must plan tier changes in advance before the month ends.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 188,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Azure OpenAI quota limits for TPM (tokens per minute) are scoped at which level in Microsoft Foundry?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tenant level \u2014 shared across all subscriptions in the organization"
+      },
+      {
+        "id": "B",
+        "text": "Subscription level \u2014 each subscription has its own quota pool per region per model"
+      },
+      {
+        "id": "C",
+        "text": "Resource level \u2014 each Azure OpenAI resource has its own independent quota"
+      },
+      {
+        "id": "D",
+        "text": "Deployment level \u2014 quota is divided equally among all deployments"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure OpenAI quotas documentation states: 'Quotas and limits aren't enforced at the tenant level. Instead, the highest level of quota restrictions is scoped at the Azure subscription level.' TPM and RPM limits are defined per region, per subscription, and per model or deployment type. A subscription can use more total quota by spreading resources across multiple regions.",
+    "source": {
+      "path": "Azure OpenAI documentation",
+      "module": "Azure OpenAI documentation",
+      "unit": "Azure OpenAI quotas and limits",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits"
+    }
+  },
+  {
+    "id": 189,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A developer reports receiving HTTP 429 (Too Many Requests) errors even though their Azure portal usage metrics show token consumption well below the assigned quota. Which of the following best explains this behavior?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The quota dashboard refreshes every 24 hours, so the portal metrics lag behind actual usage"
+      },
+      {
+        "id": "B",
+        "text": "429 errors can occur due to distributed rate-limiting enforcement, requests evaluated on potential token usage (max_tokens), or requests rejected for context length limits"
+      },
+      {
+        "id": "C",
+        "text": "The model has been deprecated and all requests are being rejected automatically"
+      },
+      {
+        "id": "D",
+        "text": "Token consumption metrics only count successful responses; failed requests are not counted but still consume quota"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure OpenAI quotas documentation explicitly notes that 429 errors can occur even when usage metrics appear below quota due to: (1) distributed rate-limiting behavior where enforcement may not be precisely reflected in aggregated metrics, (2) requests evaluated based on potential token usage (max_tokens) even if no tokens are ultimately generated, and (3) requests rejected for input or context length limits (HTTP 400) that may still count toward rate limiting. The documentation recommends implementing retry logic and gradually increasing workload.",
+    "source": {
+      "path": "Azure OpenAI documentation",
+      "module": "Azure OpenAI documentation",
+      "unit": "Azure OpenAI quotas and limits",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits"
+    }
+  },
+  {
+    "id": 190,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "You need to enable diagnostic logging for an Azure AI Speech resource to capture request/response data for troubleshooting. After enabling the diagnostic setting, how long should you expect to wait before log data is queryable in Log Analytics?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Logs are available instantly in real time"
+      },
+      {
+        "id": "B",
+        "text": "Up to two hours before logging data is available to query and analyze"
+      },
+      {
+        "id": "C",
+        "text": "Up to 24 hours, as logs are batched and ingested daily"
+      },
+      {
+        "id": "D",
+        "text": "Up to 15 minutes, matching the Azure Monitor standard SLA"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure AI services diagnostic logging documentation states: 'It can take up to two hours before logging data is available to query and analyze.' This ingestion latency applies after enabling a diagnostic setting that routes logs to Log Analytics or Azure Storage. The documentation notes users should not be concerned if nothing appears immediately after configuration.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 191,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Which Kusto query correctly retrieves all diagnostic logs from Azure AI services (Foundry Tools) resources in a Log Analytics workspace?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AzureDiagnostics | where ResourceProvider == \"MICROSOFT.COGNITIVESERVICES\""
+      },
+      {
+        "id": "B",
+        "text": "AzureActivity | where ResourceProvider == \"MICROSOFT.OPENAI\""
+      },
+      {
+        "id": "C",
+        "text": "AzureDiagnostics | where ServiceName == \"CognitiveServices\""
+      },
+      {
+        "id": "D",
+        "text": "AzureMetrics | where Namespace == \"MICROSOFT.COGNITIVESERVICES\""
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Azure AI services diagnostic logging documentation provides this exact sample Kusto query: `AzureDiagnostics | where ResourceProvider == \"MICROSOFT.COGNITIVESERVICES\"`. This query filters the AzureDiagnostics table by the Cognitive Services resource provider, which is how AI services log data is categorized. AzureActivity contains control-plane events (not service diagnostics), and AzureMetrics is a different table for numeric metrics rather than diagnostic log records.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 192,
+    "topic": "plan-and-manage",
+    "type": "hotspot",
+    "question": "Complete the following statements about Microsoft Foundry built-in RBAC roles by selecting the correct value for each blank.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A developer who only needs to build and develop within an existing Foundry project (data actions) with reader access should be assigned the _____ role.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure AI User"
+          },
+          {
+            "id": "b",
+            "text": "Azure AI Project Manager"
+          },
+          {
+            "id": "c",
+            "text": "Azure AI Account Owner"
+          },
+          {
+            "id": "d",
+            "text": "Cognitive Services Contributor"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "An IT administrator who needs to create new Foundry accounts, deploy/manage models, and assign the Azure AI User role to others should be assigned the _____ role.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure AI User"
+          },
+          {
+            "id": "b",
+            "text": "Azure AI Project Manager"
+          },
+          {
+            "id": "c",
+            "text": "Azure AI Account Owner"
+          },
+          {
+            "id": "d",
+            "text": "Azure AI Owner"
+          }
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "To publish agents in Microsoft Foundry, the minimum required Foundry-specific built-in role is _____.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure AI User"
+          },
+          {
+            "id": "b",
+            "text": "Azure AI Project Manager"
+          },
+          {
+            "id": "c",
+            "text": "Reader"
+          },
+          {
+            "id": "d",
+            "text": "Contributor"
+          }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "According to the Foundry RBAC documentation: (B1) Azure AI User is the least-privilege Foundry role, granting reader access and data actions (build/develop) within a project \u2014 but no model management or account creation. (B2) Azure AI Account Owner grants create Foundry accounts, create projects, manage models, and the ability to assign the Azure AI User role \u2014 ideal for IT managers. (B3) The documentation states: 'To publish agents, you need the Azure AI Project Manager role (minimum) on the Foundry resource scope.' Note: the documentation also warns not to use roles starting with 'Cognitive Services' for Foundry scenarios.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 193,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A developer needs to fine-tune an Azure OpenAI model in Microsoft Foundry. This requires both data plane permissions (building in a project) AND control plane permissions (deploying the fine-tuned model). Which single built-in Foundry role satisfies both requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure AI Account Owner"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Project Manager"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Owner"
+      },
+      {
+        "id": "D",
+        "text": "Contributor"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The RBAC Foundry documentation states: 'To fine-tune a model in Foundry, you need both data plane and control plane permissions. Deploying a fine-tuned model is a control plane permission. Therefore, the only built-in role with both data plane and control plane permissions is the Azure AI Owner role.' The Azure AI Account Owner has control plane (manage models) but lacks data actions. The Azure AI Project Manager has data actions but cannot manage models. The standard Contributor role has control plane permissions but not data plane actions.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 194,
+    "topic": "plan-and-manage",
+    "type": "mc_multi",
+    "question": "An organization wants to grant a team lead the ability to: (1) create projects in Microsoft Foundry, (2) publish AI agents, and (3) assign the Azure AI User role to team members. Which TWO built-in roles together cover all three requirements with least privilege?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure AI Owner \u2014 assigned at Foundry resource scope"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Project Manager \u2014 assigned at Foundry resource scope"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Account Owner \u2014 assigned at Foundry resource scope"
+      },
+      {
+        "id": "D",
+        "text": "Azure AI User \u2014 assigned at Foundry project scope"
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "explanation": "The Azure AI Project Manager role enables creating projects, publishing agents, and assigning the Azure AI User role (conditional assignment). However, to also build and develop within the project (data actions), the team lead also needs the Azure AI User role at the project scope. The RBAC documentation notes: 'Azure AI Project Manager: Lets you perform management actions on Foundry projects, build and develop with projects, and conditionally assign the Azure AI User role.' The Azure AI Owner is highly privileged beyond what is needed. Azure AI Account Owner does not have the build/develop data actions. Assigning Azure AI User at project scope adds the data plane permissions.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 195,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Azure AI Content Safety's Analyze Text API returns severity scores for detected harm categories. What is the full severity scale range used for text content analysis?",
+    "options": [
+      {
+        "id": "A",
+        "text": "0 to 3 (four levels: safe, low, medium, high)"
+      },
+      {
+        "id": "B",
+        "text": "0 to 5 (six discrete levels)"
+      },
+      {
+        "id": "C",
+        "text": "0 to 7 (eight levels, covering the full scale)"
+      },
+      {
+        "id": "D",
+        "text": "1 to 10 (ten levels)"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure AI Content Safety harm categories documentation states: 'The current version of the text model supports the full 0-7 severity scale.' This gives eight severity levels (0 through 7 inclusive). For convenience, the API can also return a trimmed scale of 0, 2, 4, and 6 where adjacent levels are mapped (0-1 \u2192 0, 2-3 \u2192 2, 4-5 \u2192 4, 6-7 \u2192 6). Images use only the trimmed 0/2/4/6 scale.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "Harm categories in Azure AI Content Safety",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories"
+    }
+  },
+  {
+    "id": 196,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "You are building a generative AI application and need to detect when a user's prompt attempts to manipulate the LLM into ignoring its safety instructions (a jailbreak attack). Which Azure AI Content Safety feature should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Analyze Text API with the Violence category filter"
+      },
+      {
+        "id": "B",
+        "text": "Groundedness Detection API"
+      },
+      {
+        "id": "C",
+        "text": "Prompt Shields"
+      },
+      {
+        "id": "D",
+        "text": "Protected Material Text Detection"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure AI Content Safety overview documentation describes Prompt Shields as the feature that 'scans text for the risk of a User input attack on a Large Language Model.' Jailbreak attacks are user input attacks designed to circumvent LLM safety guardrails, making Prompt Shields the correct feature. Groundedness Detection checks whether LLM responses are grounded in source material. Protected Material Detection identifies known copyrighted text in AI output. The Analyze Text API identifies harm categories (hate, sexual, violence, self-harm) but is not designed for jailbreak detection.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "What is Azure AI Content Safety?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+    }
+  },
+  {
+    "id": 197,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An AI application requires moderation of both text and images. The development team wants to test the Azure AI Content Safety APIs interactively, explore sample code, and configure custom blocklists before integrating into their app. Which tool should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Foundry portal Playground"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Content Safety Studio (contentsafety.cognitive.azure.com)"
+      },
+      {
+        "id": "C",
+        "text": "Azure Machine Learning Designer"
+      },
+      {
+        "id": "D",
+        "text": "Azure OpenAI Studio content filter configuration page"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure AI Content Safety overview describes Content Safety Studio as 'an online tool designed to handle potentially offensive, risky, or undesirable content' that 'provides templates and customized workflows, enabling users to choose and build their own content moderation system.' It allows uploading content, testing with samples, viewing code examples, and configuring blocklists. It is accessible at contentsafety.cognitive.azure.com. The Foundry portal and Azure OpenAI Studio have content filter settings but are not the dedicated multi-modal content safety exploration tool described in the documentation.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "What is Azure AI Content Safety?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+    }
+  },
+  {
+    "id": 198,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "You need to enable diagnostic logging for an Azure AI services resource and route logs to both a Log Analytics workspace and Azure Storage. Arrange the following steps in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "In the Azure portal, navigate to the Foundry resource and select 'Diagnostic settings' under Monitoring in the left menu"
+      },
+      {
+        "id": "S2",
+        "text": "Select '+ Add diagnostic setting'"
+      },
+      {
+        "id": "S3",
+        "text": "Select the 'Audit', 'RequestResponse', and 'AllMetrics' log categories and set the retention period"
+      },
+      {
+        "id": "S4",
+        "text": "Enter a name for the setting, then select 'Archive to a storage account' and 'Send to Log Analytics', and configure the target storage account and OMS workspace"
+      },
+      {
+        "id": "S5",
+        "text": "Select Save"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S4",
+      "S3",
+      "S5"
+    ],
+    "explanation": "The Azure AI services diagnostic logging documentation describes this sequence: (1) Navigate to the Foundry resource and select Diagnostic settings under Monitoring; (2) Select '+ Add diagnostic setting' (unless editing an existing one); (3) Enter a name and configure the destinations (Archive to storage and Send to Log Analytics) with the target accounts; (4) Select the log categories (Audit, RequestResponse, AllMetrics) and set retention period; (5) Select Save. Note: entering the name and configuring destinations (step 4 in the document) precedes selecting log categories (step 6 in the document).",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 199,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "An organization needs to set up automated cost alerts for their Microsoft Foundry AI workload to prevent budget overruns. Arrange the following steps in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Search for 'Cost Management' in the Azure portal to navigate to the full Cost Management service"
+      },
+      {
+        "id": "S2",
+        "text": "Ensure the scope is set to the resource group or subscription containing the Foundry resource"
+      },
+      {
+        "id": "S3",
+        "text": "Create a budget with appropriate filters (for example, by resource or deployment tags) and set the spending threshold"
+      },
+      {
+        "id": "S4",
+        "text": "Configure alert conditions and notification recipients (action groups) to be notified when costs approach or exceed thresholds"
+      },
+      {
+        "id": "S5",
+        "text": "Validate alert thresholds after observing at least one full billing cycle trend before recalibrating"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The Foundry cost management documentation describes this best-practice sequence for setting up budget alerts: navigate to Cost Management, scope it correctly to the relevant resource group or subscription, create a budget with appropriate filters, configure the alert conditions and action groups for notifications, then validate and calibrate thresholds after observing normal usage. The documentation also notes: 'Azure OpenAI doesn't currently provide a hard limit functionality; you can start automation from action groups as part of budget notifications' for more advanced cost control.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 200,
+    "topic": "plan-and-manage",
+    "type": "hotspot",
+    "question": "Complete the following sentences about Azure AI Content Safety by selecting the correct value for each blank.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Azure AI Content Safety recognizes _____ distinct categories of objectionable content for both text and images.",
+        "options": [
+          {
+            "id": "a",
+            "text": "three (Hate, Sexual, Violence)"
+          },
+          {
+            "id": "b",
+            "text": "four (Hate and Fairness, Sexual, Violence, Self-Harm)"
+          },
+          {
+            "id": "c",
+            "text": "five (Hate, Sexual, Violence, Self-Harm, Misinformation)"
+          },
+          {
+            "id": "d",
+            "text": "six (Hate, Sexual, Violence, Self-Harm, Spam, Phishing)"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "The Azure AI Content Safety Analyze Image API returns severity scores using the _____ severity scale.",
+        "options": [
+          {
+            "id": "a",
+            "text": "full 0-7 scale"
+          },
+          {
+            "id": "b",
+            "text": "trimmed 0, 2, 4, 6 scale only"
+          },
+          {
+            "id": "c",
+            "text": "binary 0 or 1 scale"
+          },
+          {
+            "id": "d",
+            "text": "1-5 scale"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "The maximum text input length for the Azure AI Content Safety Analyze Text API is _____ characters by default.",
+        "options": [
+          {
+            "id": "a",
+            "text": "1,000"
+          },
+          {
+            "id": "b",
+            "text": "5,000"
+          },
+          {
+            "id": "c",
+            "text": "10,000"
+          },
+          {
+            "id": "d",
+            "text": "55,000"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "According to the Azure AI Content Safety documentation: (B1) The service recognizes exactly four harm categories: Hate and Fairness (API term: Hate), Sexual, Violence, and Self-Harm. (B2) The image model returns severity using the trimmed scale of 0, 2, 4, and 6 only \u2014 not the full 0-7 range used by the text model. (B3) The default maximum input length for the Analyze Text API is 10,000 characters; longer texts must be split before submission.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "Harm categories in Azure AI Content Safety",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories"
+    }
+  }
+]
