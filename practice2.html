@@ -2545,12 +2545,15 @@
         weight: "10-15%",  subtitle: "Image, video, face, OCR — exam priority: video" },
       { id: "plan-and-manage", title: "Plan and manage an Azure AI solution",
         weight: "20-25%",  subtitle: "Provisioning, RBAC, monitoring, networking, content safety" },
+      { id: "knowledge-mining", title: "Implement knowledge mining and information extraction solutions",
+        weight: "15-20%",  subtitle: "Azure AI Search, Document Intelligence, RAG/vector, custom skills" },
     ];
     const TOPIC_WEIGHTS = {
       "agentic": 7.5,
       "genai-foundry": 17.5,
       "computer-vision": 12.5,
       "plan-and-manage": 22.5,
+      "knowledge-mining": 17.5,
     };
 
     const STORAGE_KEY = "ai102-practice-v2";
@@ -2565,7 +2568,7 @@
         const errs = [];
         if (typeof q.id !== 'number') errs.push('missing id');
         else if (seenIds.has(q.id)) errs.push('duplicate id ' + q.id);
-        if (!['agentic','genai-foundry','computer-vision','plan-and-manage'].includes(q.topic)) errs.push('bad topic');
+        if (!['agentic','genai-foundry','computer-vision','plan-and-manage','knowledge-mining'].includes(q.topic)) errs.push('bad topic');
         if (!['mc_single','mc_multi','sequence','hotspot'].includes(q.type)) errs.push('bad type');
         if (typeof q.question !== 'string' || !q.question) errs.push('missing question');
         if (typeof q.explanation !== 'string') errs.push('missing explanation');
