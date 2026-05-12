@@ -1,0 +1,191 @@
+{
+  "natural-language-lang": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/1-introduction?pivots=text",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/2-provision-resource?pivots=text",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Azure Language in Microsoft Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/6-extract-entities?pivots=text",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract entities"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/7-extract-personal-information?pivots=text",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract personally identifiable information (PII)"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/01-introduction?pivots=text",
+      "module": "Develop a text analysis agent with the Azure Language MCP server",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/02-understand-language-mcp?pivots=text",
+      "module": "Develop a text analysis agent with the Azure Language MCP server",
+      "unit": "Understand the Azure Language MCP server"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/03-connect-use-language-mcp?pivots=text",
+      "module": "Develop a text analysis agent with the Azure Language MCP server",
+      "unit": "Connect and use the Language MCP server with an agent"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/1-introduction?pivots=text",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is Azure Language in Foundry Tools?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "Conversational language understanding overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom text classification?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the custom named entity recognition (CNER) feature in Azure Language?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom question answering?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the Personally Identifiable Information (PII) detection feature in Azure Language?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview",
+      "module": "Azure AI Language documentation",
+      "unit": "What is sentiment analysis and opinion mining in Azure Language service?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/overview",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Translator in Foundry Tools?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Text translation in Foundry Tools?"
+    }
+  ],
+  "natural-language-speech": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-audio-apps/1-introduction?pivots=text",
+      "module": "Develop a speech-capable generative AI application",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-audio-apps/2-deploy-multimodal-model?pivots=text",
+      "module": "Develop a speech-capable generative AI application",
+      "unit": "Choose a speech-capable model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-audio-apps/3-develop-audio-chat-app?pivots=text",
+      "module": "Develop a speech-capable generative AI application",
+      "unit": "Transcribe speech"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/1-introduction?pivots=text",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/3-speech-to-text?pivots=text",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Speech to Text API"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/4-text-to-speech?pivots=text",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Text to Speech API"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup?pivots=text",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use Speech Synthesis Markup Language"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-speech-agent-speech-mcp/01-introduction?pivots=text",
+      "module": "Develop a speech agent with the Azure Speech MCP server",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-speech-agent-speech-mcp/02-understand-speech-mcp?pivots=text",
+      "module": "Develop a speech agent with the Azure Speech MCP server",
+      "unit": "Understand the Azure Speech MCP server"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-voice-live-agent/1-introduction?pivots=text",
+      "module": "Develop an Azure Speech Voice Live Agent in Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-voice-live-agent/2-voice-live-api?pivots=text",
+      "module": "Develop an Azure Speech Voice Live Agent in Microsoft Foundry",
+      "unit": "Explore the Azure Voice Live API"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview",
+      "module": "Azure AI Speech documentation",
+      "unit": "What Is Azure Speech?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-to-text",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech to text overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/text-to-speech",
+      "module": "Azure AI Speech documentation",
+      "unit": "Text to speech overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-synthesis-markup",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech Synthesis Markup Language (SSML) overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech translation overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/custom-speech-overview",
+      "module": "Azure AI Speech documentation",
+      "unit": "Custom speech overview"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription",
+      "module": "Azure AI Speech documentation",
+      "unit": "Batch transcription overview"
+    }
+  ]
+}
