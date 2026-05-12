@@ -1,0 +1,460 @@
+[
+  {
+    "id": 181,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A company needs to deploy Azure OpenAI models in Microsoft Foundry and must ensure that all inference traffic stays within European Union countries. Which deployment type should they select?",
+    "options": [
+      {"id": "A", "text": "Global Standard"},
+      {"id": "B", "text": "Standard"},
+      {"id": "C", "text": "DataZone Standard"},
+      {"id": "D", "text": "Global Provisioned"}
+    ],
+    "correct": ["C"],
+    "explanation": "DataZone Standard (SKU code: DataZoneStandard) processes prompts and responses only within the Microsoft-specified data zone. For EU compliance, selecting DataZone Standard in an EU region ensures all inference traffic is routed exclusively to datacenters within EU member nations. Global Standard may route to any Azure region worldwide, Standard is a single-region deployment that does not guarantee EU data zone routing, and Global Provisioned uses global infrastructure with no data-zone restriction.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Understanding deployment types in Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
+    }
+  },
+  {
+    "id": 182,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Your team needs to process millions of document summarization requests asynchronously over a 24-hour window at minimum cost. Which Azure OpenAI deployment type in Microsoft Foundry is most appropriate?",
+    "options": [
+      {"id": "A", "text": "Global Standard, because it provides the highest default quota"},
+      {"id": "B", "text": "Global Batch, because it offers 50% cost savings with a 24-hour target turnaround"},
+      {"id": "C", "text": "Provisioned Throughput (PTU), because it guarantees dedicated capacity"},
+      {"id": "D", "text": "DataZone Standard, because it routes traffic within a single geography"}
+    ],
+    "correct": ["B"],
+    "explanation": "Global Batch (SKU: GlobalBatch) is designed for large-scale asynchronous workloads. It offers a 50% cost discount compared to Global Standard and targets completion within 24 hours. Batch requests use a separate enqueued token quota that does not disrupt online workloads. PTU is for predictable high-throughput real-time scenarios (and is more expensive), Global Standard is pay-per-token with no batch discount, and DataZone Standard is for EU/US data residency requirements, not batch cost optimization.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Understanding deployment types in Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
+    }
+  },
+  {
+    "id": 183,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A fine-tuned Azure OpenAI model is deployed and rarely receives requests. An architect notices unexpectedly high monthly costs. What is the most likely cause?",
+    "options": [
+      {"id": "A", "text": "Fine-tuned models are billed per API call plus a per-token premium over base models"},
+      {"id": "B", "text": "Fine-tuned model deployments incur hourly hosting charges even when unused"},
+      {"id": "C", "text": "Fine-tuned models require a commitment tier plan, which has a non-refundable monthly fee"},
+      {"id": "D", "text": "Fine-tuned model training tokens continue to be billed post-deployment"}
+    ],
+    "correct": ["B"],
+    "explanation": "Azure OpenAI fine-tuned models are charged in three ways: training (per token or per hour), hosting (hourly cost per deployed model regardless of usage), and inference (per 1,000 tokens when called). The hosting charge applies even during low usage periods. The documentation explicitly warns: 'Remove or scale down deployments that you don't need.' This hosting cost is the most likely cause of unexpected charges for a rarely-used fine-tuned deployment.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 184,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An operations engineer wants to view Azure OpenAI usage costs scoped to a specific model series across multiple deployments in Azure Cost Management. When filtering by service, the engineer cannot find 'Azure OpenAI' in the service list. What filter should be used instead?",
+    "options": [
+      {"id": "A", "text": "Service: Microsoft.CognitiveServices"},
+      {"id": "B", "text": "Service tier: Azure OpenAI"},
+      {"id": "C", "text": "Resource type: OpenAI"},
+      {"id": "D", "text": "Meter: azure-openai-inference"}
+    ],
+    "correct": ["B"],
+    "explanation": "In Azure Cost Management, Azure OpenAI usage appears under the broader 'Cognitive Services' service classification rather than as a standalone 'Azure OpenAI' entry. To isolate Azure OpenAI costs at the subscription level, the correct approach is to use the 'Service tier: Azure OpenAI' filter. The raw service name 'Azure OpenAI' will not appear in the service dropdown.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 185,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "You need to purchase a commitment tier plan for a dedicated Azure AI Speech resource. Arrange the following steps in the correct order as described in the Azure AI services commitment tier documentation.",
+    "items": [
+      {"id": "S1", "text": "Sign in to the Azure portal and create a new resource using the standard pricing tier for the applicable single-service (for example, Speech)"},
+      {"id": "S2", "text": "After the resource is created, navigate to the resource and select 'Commitment tier pricing'"},
+      {"id": "S3", "text": "Select 'Change' to view available commitment plans and choose a plan for web or connected container usage"},
+      {"id": "S4", "text": "Select a commitment tier and an auto-renewal option, then select 'Purchase'"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The commitment tier documentation outlines this exact sequence: first create a single-service resource using the standard pricing tier (note: commitment tier is NOT available on multi-service resources), then navigate to the resource's 'Commitment tier pricing' blade, select Change to view plans, pick a plan (web or connected container), choose a tier and auto-renewal preference, then purchase. Once purchased, the plan is non-refundable and takes effect immediately, pro-rated for the remainder of the current month.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 186,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An organization purchases a commitment tier plan for Azure AI Language on the 15th of March. How is the first month's charge calculated?",
+    "options": [
+      {"id": "A", "text": "The full monthly commitment fee is charged immediately on the purchase date"},
+      {"id": "B", "text": "No charge is incurred until the first day of April, when the next billing cycle starts"},
+      {"id": "C", "text": "A pro-rated charge based on the number of days remaining in March is charged at purchase"},
+      {"id": "D", "text": "A half-month charge is applied, regardless of the purchase date within the month"}
+    ],
+    "correct": ["C"],
+    "explanation": "According to the commitment tier documentation: 'Commitment plans are charged monthly, except the first month upon purchase which is pro-rated (cost and quota) based on the number of days remaining in that month.' For a March 15th purchase, the charge is pro-rated for the 16 remaining days. Subsequent months are charged in full on the first day of each month.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 187,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An organization has purchased a monthly commitment tier plan for Azure AI Text Translation and now wants to switch to a higher commitment tier for the current month. What does the commitment tier documentation state about this?",
+    "options": [
+      {"id": "A", "text": "You can upgrade to a higher tier at any time; the difference is billed pro-rated"},
+      {"id": "B", "text": "You cannot change the commitment plan for the current month; you can only choose a different plan for the next calendar month"},
+      {"id": "C", "text": "You must cancel the current plan and repurchase a new one, with a one-week gap in service"},
+      {"id": "D", "text": "You can change tiers twice per calendar month through the Azure portal"}
+    ],
+    "correct": ["B"],
+    "explanation": "The commitment tier documentation states: 'During the commitment period, you can't change the commitment plan for the current month. However, you can choose a different commitment plan for the next calendar month. The billing for the next month would happen on the first day of the next month.' Organizations must plan tier changes in advance before the month ends.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier"
+    }
+  },
+  {
+    "id": 188,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Azure OpenAI quota limits for TPM (tokens per minute) are scoped at which level in Microsoft Foundry?",
+    "options": [
+      {"id": "A", "text": "Tenant level — shared across all subscriptions in the organization"},
+      {"id": "B", "text": "Subscription level — each subscription has its own quota pool per region per model"},
+      {"id": "C", "text": "Resource level — each Azure OpenAI resource has its own independent quota"},
+      {"id": "D", "text": "Deployment level — quota is divided equally among all deployments"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure OpenAI quotas documentation states: 'Quotas and limits aren't enforced at the tenant level. Instead, the highest level of quota restrictions is scoped at the Azure subscription level.' TPM and RPM limits are defined per region, per subscription, and per model or deployment type. A subscription can use more total quota by spreading resources across multiple regions.",
+    "source": {
+      "path": "Azure OpenAI documentation",
+      "module": "Azure OpenAI documentation",
+      "unit": "Azure OpenAI quotas and limits",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits"
+    }
+  },
+  {
+    "id": 189,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A developer reports receiving HTTP 429 (Too Many Requests) errors even though their Azure portal usage metrics show token consumption well below the assigned quota. Which of the following best explains this behavior?",
+    "options": [
+      {"id": "A", "text": "The quota dashboard refreshes every 24 hours, so the portal metrics lag behind actual usage"},
+      {"id": "B", "text": "429 errors can occur due to distributed rate-limiting enforcement, requests evaluated on potential token usage (max_tokens), or requests rejected for context length limits"},
+      {"id": "C", "text": "The model has been deprecated and all requests are being rejected automatically"},
+      {"id": "D", "text": "Token consumption metrics only count successful responses; failed requests are not counted but still consume quota"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure OpenAI quotas documentation explicitly notes that 429 errors can occur even when usage metrics appear below quota due to: (1) distributed rate-limiting behavior where enforcement may not be precisely reflected in aggregated metrics, (2) requests evaluated based on potential token usage (max_tokens) even if no tokens are ultimately generated, and (3) requests rejected for input or context length limits (HTTP 400) that may still count toward rate limiting. The documentation recommends implementing retry logic and gradually increasing workload.",
+    "source": {
+      "path": "Azure OpenAI documentation",
+      "module": "Azure OpenAI documentation",
+      "unit": "Azure OpenAI quotas and limits",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits"
+    }
+  },
+  {
+    "id": 190,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "You need to enable diagnostic logging for an Azure AI Speech resource to capture request/response data for troubleshooting. After enabling the diagnostic setting, how long should you expect to wait before log data is queryable in Log Analytics?",
+    "options": [
+      {"id": "A", "text": "Logs are available instantly in real time"},
+      {"id": "B", "text": "Up to two hours before logging data is available to query and analyze"},
+      {"id": "C", "text": "Up to 24 hours, as logs are batched and ingested daily"},
+      {"id": "D", "text": "Up to 15 minutes, matching the Azure Monitor standard SLA"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure AI services diagnostic logging documentation states: 'It can take up to two hours before logging data is available to query and analyze.' This ingestion latency applies after enabling a diagnostic setting that routes logs to Log Analytics or Azure Storage. The documentation notes users should not be concerned if nothing appears immediately after configuration.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 191,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Which Kusto query correctly retrieves all diagnostic logs from Azure AI services (Foundry Tools) resources in a Log Analytics workspace?",
+    "options": [
+      {"id": "A", "text": "AzureDiagnostics | where ResourceProvider == \"MICROSOFT.COGNITIVESERVICES\""},
+      {"id": "B", "text": "AzureActivity | where ResourceProvider == \"MICROSOFT.OPENAI\""},
+      {"id": "C", "text": "AzureDiagnostics | where ServiceName == \"CognitiveServices\""},
+      {"id": "D", "text": "AzureMetrics | where Namespace == \"MICROSOFT.COGNITIVESERVICES\""}
+    ],
+    "correct": ["A"],
+    "explanation": "The Azure AI services diagnostic logging documentation provides this exact sample Kusto query: `AzureDiagnostics | where ResourceProvider == \"MICROSOFT.COGNITIVESERVICES\"`. This query filters the AzureDiagnostics table by the Cognitive Services resource provider, which is how AI services log data is categorized. AzureActivity contains control-plane events (not service diagnostics), and AzureMetrics is a different table for numeric metrics rather than diagnostic log records.",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 192,
+    "topic": "plan-and-manage",
+    "type": "hotspot",
+    "question": "Complete the following statements about Microsoft Foundry built-in RBAC roles by selecting the correct value for each blank.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A developer who only needs to build and develop within an existing Foundry project (data actions) with reader access should be assigned the _____ role.",
+        "options": [
+          {"id": "a", "text": "Azure AI User"},
+          {"id": "b", "text": "Azure AI Project Manager"},
+          {"id": "c", "text": "Azure AI Account Owner"},
+          {"id": "d", "text": "Cognitive Services Contributor"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "An IT administrator who needs to create new Foundry accounts, deploy/manage models, and assign the Azure AI User role to others should be assigned the _____ role.",
+        "options": [
+          {"id": "a", "text": "Azure AI User"},
+          {"id": "b", "text": "Azure AI Project Manager"},
+          {"id": "c", "text": "Azure AI Account Owner"},
+          {"id": "d", "text": "Azure AI Owner"}
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "To publish agents in Microsoft Foundry, the minimum required Foundry-specific built-in role is _____.",
+        "options": [
+          {"id": "a", "text": "Azure AI User"},
+          {"id": "b", "text": "Azure AI Project Manager"},
+          {"id": "c", "text": "Reader"},
+          {"id": "d", "text": "Contributor"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "According to the Foundry RBAC documentation: (B1) Azure AI User is the least-privilege Foundry role, granting reader access and data actions (build/develop) within a project — but no model management or account creation. (B2) Azure AI Account Owner grants create Foundry accounts, create projects, manage models, and the ability to assign the Azure AI User role — ideal for IT managers. (B3) The documentation states: 'To publish agents, you need the Azure AI Project Manager role (minimum) on the Foundry resource scope.' Note: the documentation also warns not to use roles starting with 'Cognitive Services' for Foundry scenarios.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 193,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "A developer needs to fine-tune an Azure OpenAI model in Microsoft Foundry. This requires both data plane permissions (building in a project) AND control plane permissions (deploying the fine-tuned model). Which single built-in Foundry role satisfies both requirements?",
+    "options": [
+      {"id": "A", "text": "Azure AI Account Owner"},
+      {"id": "B", "text": "Azure AI Project Manager"},
+      {"id": "C", "text": "Azure AI Owner"},
+      {"id": "D", "text": "Contributor"}
+    ],
+    "correct": ["C"],
+    "explanation": "The RBAC Foundry documentation states: 'To fine-tune a model in Foundry, you need both data plane and control plane permissions. Deploying a fine-tuned model is a control plane permission. Therefore, the only built-in role with both data plane and control plane permissions is the Azure AI Owner role.' The Azure AI Account Owner has control plane (manage models) but lacks data actions. The Azure AI Project Manager has data actions but cannot manage models. The standard Contributor role has control plane permissions but not data plane actions.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 194,
+    "topic": "plan-and-manage",
+    "type": "mc_multi",
+    "question": "An organization wants to grant a team lead the ability to: (1) create projects in Microsoft Foundry, (2) publish AI agents, and (3) assign the Azure AI User role to team members. Which TWO built-in roles together cover all three requirements with least privilege?",
+    "options": [
+      {"id": "A", "text": "Azure AI Owner — assigned at Foundry resource scope"},
+      {"id": "B", "text": "Azure AI Project Manager — assigned at Foundry resource scope"},
+      {"id": "C", "text": "Azure AI Account Owner — assigned at Foundry resource scope"},
+      {"id": "D", "text": "Azure AI User — assigned at Foundry project scope"}
+    ],
+    "correct": ["B", "D"],
+    "explanation": "The Azure AI Project Manager role enables creating projects, publishing agents, and assigning the Azure AI User role (conditional assignment). However, to also build and develop within the project (data actions), the team lead also needs the Azure AI User role at the project scope. The RBAC documentation notes: 'Azure AI Project Manager: Lets you perform management actions on Foundry projects, build and develop with projects, and conditionally assign the Azure AI User role.' The Azure AI Owner is highly privileged beyond what is needed. Azure AI Account Owner does not have the build/develop data actions. Assigning Azure AI User at project scope adds the data plane permissions.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry"
+    }
+  },
+  {
+    "id": 195,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "Azure AI Content Safety's Analyze Text API returns severity scores for detected harm categories. What is the full severity scale range used for text content analysis?",
+    "options": [
+      {"id": "A", "text": "0 to 3 (four levels: safe, low, medium, high)"},
+      {"id": "B", "text": "0 to 5 (six discrete levels)"},
+      {"id": "C", "text": "0 to 7 (eight levels, covering the full scale)"},
+      {"id": "D", "text": "1 to 10 (ten levels)"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Azure AI Content Safety harm categories documentation states: 'The current version of the text model supports the full 0-7 severity scale.' This gives eight severity levels (0 through 7 inclusive). For convenience, the API can also return a trimmed scale of 0, 2, 4, and 6 where adjacent levels are mapped (0-1 → 0, 2-3 → 2, 4-5 → 4, 6-7 → 6). Images use only the trimmed 0/2/4/6 scale.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "Harm categories in Azure AI Content Safety",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories"
+    }
+  },
+  {
+    "id": 196,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "You are building a generative AI application and need to detect when a user's prompt attempts to manipulate the LLM into ignoring its safety instructions (a jailbreak attack). Which Azure AI Content Safety feature should you use?",
+    "options": [
+      {"id": "A", "text": "Analyze Text API with the Violence category filter"},
+      {"id": "B", "text": "Groundedness Detection API"},
+      {"id": "C", "text": "Prompt Shields"},
+      {"id": "D", "text": "Protected Material Text Detection"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Azure AI Content Safety overview documentation describes Prompt Shields as the feature that 'scans text for the risk of a User input attack on a Large Language Model.' Jailbreak attacks are user input attacks designed to circumvent LLM safety guardrails, making Prompt Shields the correct feature. Groundedness Detection checks whether LLM responses are grounded in source material. Protected Material Detection identifies known copyrighted text in AI output. The Analyze Text API identifies harm categories (hate, sexual, violence, self-harm) but is not designed for jailbreak detection.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "What is Azure AI Content Safety?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+    }
+  },
+  {
+    "id": 197,
+    "topic": "plan-and-manage",
+    "type": "mc_single",
+    "question": "An AI application requires moderation of both text and images. The development team wants to test the Azure AI Content Safety APIs interactively, explore sample code, and configure custom blocklists before integrating into their app. Which tool should they use?",
+    "options": [
+      {"id": "A", "text": "Microsoft Foundry portal Playground"},
+      {"id": "B", "text": "Azure AI Content Safety Studio (contentsafety.cognitive.azure.com)"},
+      {"id": "C", "text": "Azure Machine Learning Designer"},
+      {"id": "D", "text": "Azure OpenAI Studio content filter configuration page"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure AI Content Safety overview describes Content Safety Studio as 'an online tool designed to handle potentially offensive, risky, or undesirable content' that 'provides templates and customized workflows, enabling users to choose and build their own content moderation system.' It allows uploading content, testing with samples, viewing code examples, and configuring blocklists. It is accessible at contentsafety.cognitive.azure.com. The Foundry portal and Azure OpenAI Studio have content filter settings but are not the dedicated multi-modal content safety exploration tool described in the documentation.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "What is Azure AI Content Safety?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+    }
+  },
+  {
+    "id": 198,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "You need to enable diagnostic logging for an Azure AI services resource and route logs to both a Log Analytics workspace and Azure Storage. Arrange the following steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "In the Azure portal, navigate to the Foundry resource and select 'Diagnostic settings' under Monitoring in the left menu"},
+      {"id": "S2", "text": "Select '+ Add diagnostic setting'"},
+      {"id": "S3", "text": "Select the 'Audit', 'RequestResponse', and 'AllMetrics' log categories and set the retention period"},
+      {"id": "S4", "text": "Enter a name for the setting, then select 'Archive to a storage account' and 'Send to Log Analytics', and configure the target storage account and OMS workspace"},
+      {"id": "S5", "text": "Select Save"}
+    ],
+    "correct_order": ["S1", "S2", "S4", "S3", "S5"],
+    "explanation": "The Azure AI services diagnostic logging documentation describes this sequence: (1) Navigate to the Foundry resource and select Diagnostic settings under Monitoring; (2) Select '+ Add diagnostic setting' (unless editing an existing one); (3) Enter a name and configure the destinations (Archive to storage and Send to Log Analytics) with the target accounts; (4) Select the log categories (Audit, RequestResponse, AllMetrics) and set retention period; (5) Select Save. Note: entering the name and configuring destinations (step 4 in the document) precedes selecting log categories (step 6 in the document).",
+    "source": {
+      "path": "Azure AI services documentation",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging"
+    }
+  },
+  {
+    "id": 199,
+    "topic": "plan-and-manage",
+    "type": "sequence",
+    "question": "An organization needs to set up automated cost alerts for their Microsoft Foundry AI workload to prevent budget overruns. Arrange the following steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Search for 'Cost Management' in the Azure portal to navigate to the full Cost Management service"},
+      {"id": "S2", "text": "Ensure the scope is set to the resource group or subscription containing the Foundry resource"},
+      {"id": "S3", "text": "Create a budget with appropriate filters (for example, by resource or deployment tags) and set the spending threshold"},
+      {"id": "S4", "text": "Configure alert conditions and notification recipients (action groups) to be notified when costs approach or exceed thresholds"},
+      {"id": "S5", "text": "Validate alert thresholds after observing at least one full billing cycle trend before recalibrating"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The Foundry cost management documentation describes this best-practice sequence for setting up budget alerts: navigate to Cost Management, scope it correctly to the relevant resource group or subscription, create a budget with appropriate filters, configure the alert conditions and action groups for notifications, then validate and calibrate thresholds after observing normal usage. The documentation also notes: 'Azure OpenAI doesn't currently provide a hard limit functionality; you can start automation from action groups as part of budget notifications' for more advanced cost control.",
+    "source": {
+      "path": "Microsoft Foundry documentation",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs"
+    }
+  },
+  {
+    "id": 200,
+    "topic": "plan-and-manage",
+    "type": "hotspot",
+    "question": "Complete the following sentences about Azure AI Content Safety by selecting the correct value for each blank.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Azure AI Content Safety recognizes _____ distinct categories of objectionable content for both text and images.",
+        "options": [
+          {"id": "a", "text": "three (Hate, Sexual, Violence)"},
+          {"id": "b", "text": "four (Hate and Fairness, Sexual, Violence, Self-Harm)"},
+          {"id": "c", "text": "five (Hate, Sexual, Violence, Self-Harm, Misinformation)"},
+          {"id": "d", "text": "six (Hate, Sexual, Violence, Self-Harm, Spam, Phishing)"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "The Azure AI Content Safety Analyze Image API returns severity scores using the _____ severity scale.",
+        "options": [
+          {"id": "a", "text": "full 0-7 scale"},
+          {"id": "b", "text": "trimmed 0, 2, 4, 6 scale only"},
+          {"id": "c", "text": "binary 0 or 1 scale"},
+          {"id": "d", "text": "1-5 scale"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "The maximum text input length for the Azure AI Content Safety Analyze Text API is _____ characters by default.",
+        "options": [
+          {"id": "a", "text": "1,000"},
+          {"id": "b", "text": "5,000"},
+          {"id": "c", "text": "10,000"},
+          {"id": "d", "text": "55,000"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "According to the Azure AI Content Safety documentation: (B1) The service recognizes exactly four harm categories: Hate and Fairness (API term: Hate), Sexual, Violence, and Self-Harm. (B2) The image model returns severity using the trimmed scale of 0, 2, 4, and 6 only — not the full 0-7 range used by the text model. (B3) The default maximum input length for the Analyze Text API is 10,000 characters; longer texts must be split before submission.",
+    "source": {
+      "path": "Azure AI Content Safety documentation",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "Harm categories in Azure AI Content Safety",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories"
+    }
+  }
+]

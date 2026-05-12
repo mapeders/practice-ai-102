@@ -1,0 +1,456 @@
+[
+  {
+    "id": 161,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer wants to integrate Azure AI Video Indexer with their company intranet so employees can search the video library and jump to the exact timestamp where a specific word or phrase was spoken or appeared on screen. Which Video Indexer feature should the developer use to implement this deep-search capability within the web UI?",
+    "options": [
+      {"id": "A", "text": "The Timeline tab in the Video Indexer website, which allows text search and editing of transcripts"},
+      {"id": "B", "text": "The Filters option in the Video Indexer website search, which can filter by OCR text across all indexed videos"},
+      {"id": "C", "text": "The Open in editor option to clip specific moments by line"},
+      {"id": "D", "text": "The Download option to export insights JSON, then search offline"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure AI Video Indexer website search bar lets you enter keywords and then use Filters to narrow results by insight type, including OCR (on-screen text). Selecting a search result brings the player to that exact moment in the video. This is the deep-search capability described in the 'Search for exact moments in videos' unit.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Search for exact moments in videos with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-search"
+    }
+  },
+  {
+    "id": 162,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "A content manager needs to upload a video from a public URL to Azure AI Video Indexer and configure advanced indexing settings. Place the following steps in the correct order as described in the upload and index workflow.",
+    "items": [
+      {"id": "S1", "text": "Sign in to the Video Indexer website and select Upload"},
+      {"id": "S2", "text": "Select Enter URL, paste the source URL, and select Add"},
+      {"id": "S3", "text": "Configure Privacy, Streaming quality, and Video source language on the basic settings page"},
+      {"id": "S4", "text": "Expand Advanced settings to choose an indexing preset and optionally select a People model or Brand category"},
+      {"id": "S5", "text": "Select Review + upload, review the summary, then select Upload + index"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The Azure AI Video Indexer upload workflow requires: (1) signing in and selecting Upload, (2) providing the source URL, (3) configuring basic settings such as privacy and language, (4) expanding Advanced settings to choose an indexing preset and custom models, and (5) reviewing and confirming the upload. YouTube URLs are explicitly not supported; only publicly accessible direct file URLs or SAS URLs work.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+    }
+  },
+  {
+    "id": 163,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "You are uploading a video from Azure Blob Storage to Azure AI Video Indexer via a URL, but the storage account is behind a firewall. What is the correct approach to allow the upload to succeed?",
+    "options": [
+      {"id": "A", "text": "Disable the firewall temporarily during the upload, then re-enable it after indexing completes"},
+      {"id": "B", "text": "Use the Upload Video API with the useManagedIdentityToDownloadVideo=true parameter"},
+      {"id": "C", "text": "Generate a public access URL for the blob, bypassing the firewall entirely"},
+      {"id": "D", "text": "Download the video locally first and upload as a file from the browser"}
+    ],
+    "correct": ["B"],
+    "explanation": "When the source storage account is behind a firewall, the Azure AI Video Indexer documentation specifies that you must use the Upload Video API with the useManagedIdentityToDownloadVideo=true parameter. This allows Video Indexer to authenticate via Managed Identity to access the protected storage account.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+    }
+  },
+  {
+    "id": 164,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Azure AI Video Indexer can run on edge devices via Azure Arc. When using Video Indexer enabled by Azure Arc with uploaded video files, which indexing preset combines both key frame detection and transcription in the same indexing run?",
+    "options": [
+      {"id": "A", "text": "Basic video"},
+      {"id": "B", "text": "Basic audio"},
+      {"id": "C", "text": "Basic video and audio"},
+      {"id": "D", "text": "Advanced indexing"}
+    ],
+    "correct": ["C"],
+    "explanation": "According to the Azure AI Video Indexer overview, the 'Basic video and audio' preset for Arc-enabled Video Indexer includes both key frame detection (a video model) and transcription/translation (audio models). The 'Basic video' preset only covers video models such as key frame detection, object detection, and scene detection, while 'Basic audio' covers transcription and translation only.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 165,
+    "topic": "computer-vision",
+    "type": "mc_multi",
+    "question": "A media company wants to use cloud-based Azure AI Video Indexer to detect potentially inappropriate content in their uploaded videos. Which TWO insight types should they enable to cover both visual and textual content moderation?",
+    "options": [
+      {"id": "A", "text": "Visual content moderation — detects adult and racy visuals in the video frames"},
+      {"id": "B", "text": "Textual content moderation — detects explicit text in the audio transcript"},
+      {"id": "C", "text": "Audio effects detection — identifies alarm sounds and crowd reactions"},
+      {"id": "D", "text": "Sentiment analysis — identifies positive, negative, and neutral sentiments"},
+      {"id": "E", "text": "Black frame detection — identifies black frames in the video"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "Azure AI Video Indexer provides two dedicated content moderation models: Visual content moderation (a video model that detects adult and racy visuals) and Textual content moderation (an audio model that detects explicit text in the audio transcript). Together, these cover both the visual and spoken dimensions of inappropriate content.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 166,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Video Indexer audio analysis capabilities by selecting the correct option for each blank.\n\n**Blank 1**: Azure AI Video Indexer's speaker enumeration feature can detect up to _____ speakers in a single audio file.\n\n**Blank 2**: When uploading with the default preset, Audio effects detection detects _____ as the only audio event by default; the full set of events (alarm, dog barking, crowd reactions, etc.) requires choosing Advanced Audio Analysis.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Maximum number of speakers detectable in a single audio file",
+        "options": [
+          {"id": "a", "text": "8"},
+          {"id": "b", "text": "16"},
+          {"id": "c", "text": "32"},
+          {"id": "d", "text": "50"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Audio event detected by default with the standard preset",
+        "options": [
+          {"id": "a", "text": "Laughter"},
+          {"id": "b", "text": "Gunshot or explosion"},
+          {"id": "c", "text": "Silence"},
+          {"id": "d", "text": "Crowd reactions"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "According to the Azure AI Video Indexer overview, Speaker enumeration maps speakers to their words and can detect up to 16 speakers in a single audio file. For Audio effects detection, only silence is detected by default with the standard preset; the full event set (alarm/siren, dog barking, crowd reactions, gunshot/explosion, laughter, breaking glass, silence) requires selecting Advanced Audio Analysis on upload.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 167,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is reviewing the Azure AI Video Indexer documentation and notices that the 'Topic inference' model uses three ontologies to extract topics from video content. Which three ontologies does the Topic inference model use?",
+    "options": [
+      {"id": "A", "text": "IPTC, Wikipedia, and the Video Indexer hierarchical topic ontology"},
+      {"id": "B", "text": "IPTC, DBpedia, and the Azure AI topic taxonomy"},
+      {"id": "C", "text": "Wikipedia, Wikidata, and the OpenAI topic catalog"},
+      {"id": "D", "text": "IPTC, Reuters taxonomy, and the Video Indexer hierarchical topic ontology"}
+    ],
+    "correct": ["A"],
+    "explanation": "The Azure AI Video Indexer overview specifies that the Topic inference model uses three ontologies: IPTC, Wikipedia, and the Video Indexer hierarchical topic ontology. It extracts topics based on keywords from transcription (spoken words), OCR content (visual text), and celebrities recognized by facial recognition.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 168,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is using the Azure Vision Python SDK to analyze an image and wants the response to include automatically generated alt-text describing the image contents in a single sentence. Which VisualFeatures enumeration value should they include in the analyze() call?",
+    "options": [
+      {"id": "A", "text": "VisualFeatures.TAGS"},
+      {"id": "B", "text": "VisualFeatures.DENSE_CAPTIONS"},
+      {"id": "C", "text": "VisualFeatures.CAPTION"},
+      {"id": "D", "text": "VisualFeatures.OBJECTS"}
+    ],
+    "correct": ["C"],
+    "explanation": "The 'Analyze an image' unit lists VisualFeatures.CAPTION as the feature that generates a caption of the image in natural language (a single description). VisualFeatures.DENSE_CAPTIONS generates more detailed captions for individual detected objects. VisualFeatures.TAGS identifies keyword tags. VisualFeatures.OBJECTS returns bounding boxes for detected objects.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  },
+  {
+    "id": 169,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A solution architect needs to choose between Azure Vision and Azure Document Intelligence for an OCR scenario. The scenario involves extracting key-value pairs from structured invoice forms and integrating that data into an accounting workflow. Which service is the better fit, and why?",
+    "options": [
+      {"id": "A", "text": "Azure Vision, because it supports form processing and provides prebuilt models for invoices"},
+      {"id": "B", "text": "Azure Document Intelligence, because it is specifically designed to extract data from forms, invoices, and structured documents with prebuilt and custom models"},
+      {"id": "C", "text": "Azure Vision, because its Digital Asset Management capability indexes structured document data"},
+      {"id": "D", "text": "Azure Content Understanding, because it is the only service that supports text extraction from PDF invoices"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Explore Azure AI options for reading text' unit states that Azure Document Intelligence is specifically designed to extract text, key-value pairs, tables, and structures from documents such as forms, invoices, and receipts, and provides prebuilt models for common document types. Azure Vision is better suited for unstructured scanned documents, photographs with text, and digital asset management scenarios.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Read text in images",
+      "unit": "Explore Azure AI options for reading text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text"
+    }
+  },
+  {
+    "id": 170,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "An organization needs to build an Azure AI Custom Vision image classification solution. They decide to use separate resources for training and prediction so they can train in one Azure region and serve predictions from multiple regions. Which resource types do they need to provision in their Azure subscription?",
+    "options": [
+      {"id": "A", "text": "A single Azure AI Services multi-service resource, which handles both training and prediction"},
+      {"id": "B", "text": "An Azure AI Custom Vision training resource and an Azure AI Custom Vision prediction resource"},
+      {"id": "C", "text": "An Azure Machine Learning workspace resource and a separate Azure AI Vision resource"},
+      {"id": "D", "text": "An Azure AI Custom Vision training resource only; the prediction endpoint is automatically created at customvision.ai"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Azure AI Custom Vision' unit explains that Custom Vision requires two separate resources: a training resource (used to train models on custom images) and a prediction resource (used to generate predictions from new images). Each has its own endpoint and authentication keys. This separation allows training in one region while deploying prediction resources in other regions.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text"
+    }
+  },
+  {
+    "id": 171,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Custom Vision resources and the Custom Vision portal by selecting the correct option for each blank.\n\n**Blank 1**: Python developers can install the _____ PyPI package to perform both Custom Vision training and prediction tasks.\n\n**Blank 2**: To sign in to the Azure AI Custom Vision portal, you navigate to _____.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "PyPI package name for Azure AI Custom Vision (Python SDK)",
+        "options": [
+          {"id": "a", "text": "azure-ai-vision"},
+          {"id": "b", "text": "azure-cognitiveservices-vision-customvision"},
+          {"id": "c", "text": "azure-cognitiveservices-vision-computervision"},
+          {"id": "d", "text": "azure-ai-customvision-training"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "URL of the Azure AI Custom Vision portal",
+        "options": [
+          {"id": "a", "text": "https://portal.azure.com/#blade/customvision"},
+          {"id": "b", "text": "https://vision.azure.com/"},
+          {"id": "c", "text": "https://www.customvision.ai/"},
+          {"id": "d", "text": "https://ai.azure.com/customvision"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The 'Azure AI Custom Vision' unit states that Python developers use the azure-cognitiveservices-vision-customvision package from PyPI for both training and prediction. The Custom Vision portal is accessed at https://www.customvision.ai/ using Azure credentials. Each project in the portal has a unique project ID used by client applications.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text"
+    }
+  },
+  {
+    "id": 172,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer builds an Azure AI Custom Vision object detection client application in Python. After creating a CustomVisionPredictionClient and calling detect_image(), they iterate over results.predictions. Which property of each prediction object contains the coordinates of the detected object's location in the image?",
+    "options": [
+      {"id": "A", "text": "prediction.region"},
+      {"id": "B", "text": "prediction.bounding_box"},
+      {"id": "C", "text": "prediction.location"},
+      {"id": "D", "text": "prediction.rectangle"}
+    ],
+    "correct": ["B"],
+    "explanation": "According to the 'Develop an object detection client application' unit, each prediction object returned by detect_image() has a bounding_box property (with .left, .top, .height, .width sub-properties) in addition to tag_name and probability. This is the standard structure shown in the Python SDK code example for Custom Vision object detection.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text"
+    }
+  },
+  {
+    "id": 173,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "A developer is writing a Python client application to submit a new image to a trained Azure AI Custom Vision object detection model. Place the following code steps in the correct order as shown in the SDK example.",
+    "items": [
+      {"id": "S1", "text": "Import ApiKeyCredentials from msrest.authentication and CustomVisionPredictionClient from azure.cognitiveservices.vision.customvision.prediction"},
+      {"id": "S2", "text": "Create ApiKeyCredentials using the prediction resource key, then instantiate CustomVisionPredictionClient with the prediction endpoint"},
+      {"id": "S3", "text": "Open the image file in binary mode and read its bytes"},
+      {"id": "S4", "text": "Call prediction_client.detect_image() passing the project ID, published model name, and image data"},
+      {"id": "S5", "text": "Iterate over results.predictions; for each where probability > 0.5, access tag_name and bounding_box properties"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The 'Develop an object detection client application' unit shows the exact Python SDK pattern: import the required classes, authenticate with ApiKeyCredentials and instantiate the client, read the image bytes, call detect_image() with project ID and model name, then process each prediction by checking probability and accessing tag_name and bounding_box.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text"
+    }
+  },
+  {
+    "id": 174,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A team wants to use Azure AI Custom Vision to build an object detection project. They want to write C# code to train the model. Which NuGet package should they install for the training SDK?",
+    "options": [
+      {"id": "A", "text": "Microsoft.Azure.CognitiveServices.Vision.ComputerVision"},
+      {"id": "B", "text": "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training"},
+      {"id": "C", "text": "Azure.AI.Vision.ImageAnalysis"},
+      {"id": "D", "text": "Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Use Azure AI Custom Vision for object detection' unit states that C# developers use the Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training NuGet package for training and Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction for prediction. These are separate packages reflecting the separation of training and prediction resources.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect objects in images",
+      "unit": "Use Azure AI Custom Vision for object detection",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/2-understand-object-detection?pivots=text"
+    }
+  },
+  {
+    "id": 175,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When planning a face analysis solution using the Azure Face service, a developer needs to include facial liveness detection. What is the primary purpose of the liveness detection capability?",
+    "options": [
+      {"id": "A", "text": "To determine whether a person is currently awake or asleep based on eye aspect ratio analysis"},
+      {"id": "B", "text": "To verify that the input video is a real live stream and not a fake or spoof attack against a facial recognition system"},
+      {"id": "C", "text": "To assess whether the detected face has sufficient quality to be stored in a Person Group for recognition"},
+      {"id": "D", "text": "To identify whether a face in an image belongs to a celebrity in the pre-trained model"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit describes facial liveness as a capability that determines if the input video is a real stream or a fake, to prevent bad-intentioned individuals from spoofing a facial recognition system. It is a security feature for anti-spoofing, not a quality assessment or celebrity identification feature.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 176,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is using the Azure Face service to detect faces and needs to analyze head orientation. Which three components make up the head pose attribute returned by the Face service?",
+    "options": [
+      {"id": "A", "text": "Yaw, pitch, and roll"},
+      {"id": "B", "text": "X-rotation, Y-rotation, and Z-rotation"},
+      {"id": "C", "text": "Azimuth, elevation, and tilt"},
+      {"id": "D", "text": "Left-right, up-down, and clockwise rotation"}
+    ],
+    "correct": ["A"],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit lists the head pose attribute as returning pitch, roll, and yaw orientation in 3D space. These are the standard aviation/3D orientation terms used throughout the Face service API.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 177,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about the Azure Face service's face attribute analysis capabilities by selecting the correct option for each blank.\n\n**Blank 1**: When the Face service detects glasses on a face, the possible values returned for the Glasses attribute are No glasses, Reading glasses, Sunglasses, and _____.\n\n**Blank 2**: The Face service attribute that rates whether a detected face is suitable for recognition returns values of low, medium, or high and is called _____.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Fourth possible value for the Glasses face attribute",
+        "options": [
+          {"id": "a", "text": "Safety glasses"},
+          {"id": "b", "text": "Swimming Goggles"},
+          {"id": "c", "text": "Sports eyewear"},
+          {"id": "d", "text": "VR headset"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Face attribute name that assesses face suitability for recognition",
+        "options": [
+          {"id": "a", "text": "Blur"},
+          {"id": "b", "text": "Noise"},
+          {"id": "c", "text": "QualityForRecognition"},
+          {"id": "d", "text": "Exposure"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The 'Plan a face detection, analysis, or recognition solution' unit lists four Glasses values: No glasses, Reading glasses, Sunglasses, and Swimming Goggles. It also lists QualityForRecognition as the attribute that rates face quality for recognition purposes with values of low, medium, or high. Blur, Noise, and Exposure are separate quality-related attributes with their own value sets.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text"
+    }
+  },
+  {
+    "id": 178,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer wants to use a vision-capable generative AI model in Microsoft Foundry to build a chat application that can answer questions about images. Which of the following is listed as a multimodal model available in Microsoft Foundry for this purpose?",
+    "options": [
+      {"id": "A", "text": "OpenAI gpt-4o-vision"},
+      {"id": "B", "text": "Microsoft Phi-4-multimodal-instruct"},
+      {"id": "C", "text": "Azure AI Vision GPT-V"},
+      {"id": "D", "text": "OpenAI gpt-3.5-turbo-vision"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Use a vision-capable model in the Microsoft Foundry portal' unit explicitly lists Microsoft Phi-4-multimodal-instruct, OpenAI gpt-4.1, and OpenAI gpt-4.1-mini as multimodal models available in Microsoft Foundry. Options A, C, and D are not listed in that unit.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Use a vision-capable model in the Microsoft Foundry portal",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/2-deploy-multimodal-model?pivots=text"
+    }
+  },
+  {
+    "id": 179,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer uses the OpenAI Python SDK to call an image generation model deployed in Microsoft Foundry. They call client.images.generate() and receive a response. According to the client application unit, how is the generated image data returned in the response object?",
+    "options": [
+      {"id": "A", "text": "As a URL string pointing to the generated image hosted on Azure CDN"},
+      {"id": "B", "text": "As a Base64-encoded string in img_results.data[0].b64_json"},
+      {"id": "C", "text": "As a binary stream returned directly in img_results.image_bytes"},
+      {"id": "D", "text": "As a SAS URL in img_results.data[0].url that expires after 24 hours"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Create a client application that uses an image generation model' unit shows Python code where the generated image is returned in img_results.data[0].b64_json as a Base64-encoded string, which is then decoded using base64.b64decode() and written to a PNG file.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Generate images with AI",
+      "unit": "Create a client application that uses an image generation model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text"
+    }
+  },
+  {
+    "id": 180,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer submits a valid JPEG image for Azure Vision image analysis. The image is 2 MB in size and 100 x 100 pixels. They want the response to include the bounding box for each area of interest when cropping the image to a specific aspect ratio for a thumbnail. Which VisualFeatures value should they request?",
+    "options": [
+      {"id": "A", "text": "VisualFeatures.DENSE_CAPTIONS"},
+      {"id": "B", "text": "VisualFeatures.SMART_CROPS"},
+      {"id": "C", "text": "VisualFeatures.OBJECTS"},
+      {"id": "D", "text": "VisualFeatures.PEOPLE"}
+    ],
+    "correct": ["B"],
+    "explanation": "The 'Analyze an image' unit lists VisualFeatures.SMART_CROPS as the feature that 'Returns the bounding box of the specified aspect ratio for the area of interest', which is precisely the smart thumbnail cropping capability. VisualFeatures.OBJECTS returns bounding boxes for detected objects generally, VisualFeatures.PEOPLE returns bounding boxes for detected people, and VisualFeatures.DENSE_CAPTIONS generates detailed captions for detected objects rather than crop coordinates.",
+    "source": {
+      "path": "Azure AI Vision",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  }
+]
