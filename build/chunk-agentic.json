@@ -1,0 +1,398 @@
+[
+  {
+    "id": 61,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "In the Model Context Protocol (MCP), what decorator is used on a Python function to expose it as a tool that an MCP server can serve to clients?",
+    "options": [
+      {"id": "A", "text": "@mcp.resource"},
+      {"id": "B", "text": "@mcp.tool"},
+      {"id": "C", "text": "@mcp.function"},
+      {"id": "D", "text": "@mcp.handler"}
+    ],
+    "correct": ["B"],
+    "explanation": "The MCP unit on tool discovery states that an MCP server hosts a set of functions that are exposed as tools using the `@mcp.tool` decorator. Tools are a primitive type in MCP that enables servers to expose executable functionality to clients. The other decorators listed are not part of the MCP primitive set described in the unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Understand MCP tool discovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/2-understand-mcp-tool-discovery?pivots=text"
+    }
+  },
+  {
+    "id": 62,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When an MCP client connects to an MCP server, what method does it call to retrieve the list of available tools before registering them with the Azure AI Agent?",
+    "options": [
+      {"id": "A", "text": "session.get_tools()"},
+      {"id": "B", "text": "session.fetch_catalog()"},
+      {"id": "C", "text": "session.list_tools()"},
+      {"id": "D", "text": "session.discover_tools()"}
+    ],
+    "correct": ["C"],
+    "explanation": "According to the MCP client-server setup unit, the MCP client initializes an MCP client session and then discovers available tools from the MCP server using `session.list_tools()`. The client then generates Python function stubs that wrap the tools and registers those functions with the agent. The other method names are not described in this unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Integrate agent tools using an MCP server and client",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/3-mcp-client-server-setup?pivots=text"
+    }
+  },
+  {
+    "id": 63,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When using the Azure AI Agent Service's built-in `MCPTool` class to connect an agent to a remote MCP server, which `require_approval` parameter value causes the agent to pause and wait for developer approval before invoking **any** tool call?",
+    "options": [
+      {"id": "A", "text": "\"never\""},
+      {"id": "B", "text": "\"on_demand\""},
+      {"id": "C", "text": "\"always\""},
+      {"id": "D", "text": "\"selective\""}
+    ],
+    "correct": ["C"],
+    "explanation": "The unit on using Azure AI agents with MCP servers states that when `require_approval` is set to `\"always\"`, a developer must provide approval for every call; if no value is provided, `\"always\"` is the default. Setting it to `\"never\"` means no approval is required. The values `\"on_demand\"` and `\"selective\"` are not supported values described in the unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Use Azure AI agents with MCP servers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/4-use-azure-ai-agents-with-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 64,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Foundry IQ is described as a managed knowledge platform for AI agents. Which underlying Azure service does Foundry IQ build on to provide its retrieval capabilities?",
+    "options": [
+      {"id": "A", "text": "Azure Cosmos DB"},
+      {"id": "B", "text": "Azure SQL Database"},
+      {"id": "C", "text": "Azure AI Search"},
+      {"id": "D", "text": "Azure Blob Storage"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Explore Foundry IQ unit explicitly states that Foundry IQ is a managed knowledge platform for AI agents built on Azure AI Search. It provides retrieval-augmented generation capabilities as a shared service that multiple agents can use, eliminating the need to build custom RAG infrastructure for every agent. Azure Blob Storage is a data source that Foundry IQ can connect to, not its underlying platform.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Explore Foundry IQ",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/3-foundry-iq?pivots=text"
+    }
+  },
+  {
+    "id": 65,
+    "topic": "agentic",
+    "type": "mc_multi",
+    "question": "A developer needs to add a Foundry IQ knowledge base data source for SharePoint content. Which **two** SharePoint access types does Foundry IQ support, each suited to different retrieval needs?",
+    "options": [
+      {"id": "A", "text": "SharePoint Remote — real-time queries that always respect SharePoint permissions and require no index maintenance"},
+      {"id": "B", "text": "SharePoint Indexed — content preprocessed into Azure AI Search for faster retrieval and custom pipelines"},
+      {"id": "C", "text": "SharePoint Cached — periodic snapshots stored in Azure Blob Storage for offline access"},
+      {"id": "D", "text": "SharePoint Stream — live streaming of SharePoint document updates via Azure Event Hubs"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "The Configure data sources unit details two SharePoint options. SharePoint Remote provides real-time queries that automatically respect existing SharePoint permissions with no index maintenance required. SharePoint Indexed preprocesses SharePoint content into an Azure AI Search index, enabling faster response times, custom analyzers, and advanced search pipelines. The 'SharePoint Cached' and 'SharePoint Stream' options are not described in this unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Configure data sources for knowledge bases",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/4-data-requirements?pivots=text"
+    }
+  },
+  {
+    "id": 66,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When configuring Foundry IQ retrieval, an agent's instructions are described as the primary mechanism for controlling retrieval behavior. Which three behaviors must effective retrieval instructions specify?",
+    "options": [
+      {"id": "A", "text": "The model temperature, the maximum token limit, and the retry count"},
+      {"id": "B", "text": "When to retrieve, how to cite sources, and what to do when information is not found"},
+      {"id": "C", "text": "The vector dimension size, the chunk overlap percentage, and the embedding model name"},
+      {"id": "D", "text": "The data source type, the indexing schedule, and the semantic ranking threshold"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Configure retrieval with Foundry IQ unit states that effective instructions must specify three critical behaviors: (1) when to retrieve — telling the agent to always use the knowledge base and never rely on training data; (2) how to cite — specifying the exact format for source attribution; and (3) what to do when the knowledge base doesn't contain the answer — defining fallback behavior. The other answer choices describe infrastructure or model settings, not the instruction-level controls described in the unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Configure retrieval with Foundry IQ",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/5-configure-retrieval?pivots=text"
+    }
+  },
+  {
+    "id": 67,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "When using the Microsoft Agent Framework SDK to implement **concurrent orchestration**, place the following implementation steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Create a chat client (e.g., AzureOpenAIChatClient) with credentials"},
+      {"id": "S2", "text": "Define agent instances using create_agent with specific instructions and names"},
+      {"id": "S3", "text": "Use ConcurrentBuilder to build a workflow and add agents via participants()"},
+      {"id": "S4", "text": "Call the workflow's run method with the task input"},
+      {"id": "S5", "text": "Extract outputs from workflow events using get_outputs()"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The Use concurrent orchestration unit provides the following step-by-step implementation order: (1) set up a chat client with credentials; (2) define agent instances via create_agent; (3) use ConcurrentBuilder to build the workflow with agents as participants; (4) call the workflow's run method; (5) process results by extracting outputs with get_outputs(). This sequence reflects the build-then-run pattern described in the unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use concurrent orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/4-use-concurrent-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 68,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "In the Microsoft Agent Framework's **group chat orchestration**, a custom group chat manager is created by extending the base `GroupChatManager` class. During each conversation round, in which order does the manager call its methods?",
+    "options": [
+      {"id": "A", "text": "select_next_agent → should_terminate → filter_results → should_request_user_input"},
+      {"id": "B", "text": "should_request_user_input → should_terminate → filter_results → select_next_agent"},
+      {"id": "C", "text": "should_terminate → filter_results → should_request_user_input → select_next_agent"},
+      {"id": "D", "text": "filter_results → should_request_user_input → select_next_agent → should_terminate"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Use group chat orchestration unit specifies that during each round the chat manager calls methods in this exact order: (1) should_request_user_input — checks if human input is needed; (2) should_terminate — determines if the conversation should end; (3) filter_results — if ending, summarizes or processes the final conversation; (4) select_next_agent — if continuing, chooses the next agent to speak. This ensures user input and termination conditions are handled before moving the conversation forward.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use group chat orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/6-use-group-chat-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 69,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "A team is building a multi-agent solution where the best agent to handle each part of the task cannot be determined in advance and expertise requirements emerge dynamically during processing. Which Microsoft Agent Framework orchestration pattern is best suited to this scenario?",
+    "options": [
+      {"id": "A", "text": "Sequential orchestration"},
+      {"id": "B", "text": "Concurrent orchestration"},
+      {"id": "C", "text": "Group chat orchestration"},
+      {"id": "D", "text": "Handoff orchestration"}
+    ],
+    "correct": ["D"],
+    "explanation": "The Use handoff orchestration unit states that handoff orchestration is ideal when tasks need specialized knowledge but the number or order of agents cannot be determined in advance, and when expertise requirements emerge dynamically during processing. Sequential orchestration uses a fixed, predetermined order. Concurrent orchestration runs all agents simultaneously on the same task. Group chat orchestration is collaborative but does not perform dynamic routing based on content classification.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use handoff orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/7-use-handoff-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 70,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Magentic orchestration in the Microsoft Agent Framework uses a dedicated Magentic manager that maintains a **dynamic task ledger**. What does this ledger record?",
+    "options": [
+      {"id": "A", "text": "Azure resource costs and quota consumption for each agent invocation"},
+      {"id": "B", "text": "Goals, subgoals, and execution plans that are built and refined as the workflow progresses"},
+      {"id": "C", "text": "Token counts and model latency metrics for performance benchmarking"},
+      {"id": "D", "text": "User authentication tokens and session state for multi-turn conversations"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Use Magentic orchestration unit explains that the Magentic manager maintains a shared context, tracks progress, and builds a dynamic task ledger that records goals, subgoals, and execution plans, which are refined as the workflow progresses. This ledger is central to the pattern's emphasis on documenting the approach as much as delivering the final solution. The other options describe operational or security concerns not mentioned in the unit's ledger description.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use Magentic orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/8-use-magentic-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 71,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "Fill in the blanks about A2A agent discovery and hosting.\n\nWhen an A2A agent is hosted, it exposes its capabilities through a structured document called an **[BLANK_1]**, which is typically served at the standard endpoint `/.well-known/agent-card.json`. A client that wants to interact with the agent first retrieves this document, then initializes a connection using the agent's **[BLANK_2]** found within that document.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The structured document that describes an agent's capabilities, skills, and endpoints",
+        "options": [
+          {"id": "a", "text": "Agent Manifest"},
+          {"id": "b", "text": "Agent Card"},
+          {"id": "c", "text": "Agent Schema"},
+          {"id": "d", "text": "Service Descriptor"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "The property in the document that tells the client where the A2A service can be accessed",
+        "options": [
+          {"id": "a", "text": "Subscription key"},
+          {"id": "b", "text": "Endpoint URL"},
+          {"id": "c", "text": "Tenant ID"},
+          {"id": "d", "text": "Resource group name"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Define an A2A agent unit explains that an Agent Card is the structured document (like a digital business card) that exposes an agent's identity, capabilities, skills, and — critically — its Endpoint URL showing where the A2A service can be accessed. The Host an A2A server unit confirms it is served at the standard `/.well-known/agent-card.json` endpoint so clients can discover and connect to the agent.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Define an A2A agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/2-define-a2a-agent?pivots=text"
+    }
+  },
+  {
+    "id": 72,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "A developer is setting up an A2A agent server. Arrange the following steps in the correct implementation order.",
+    "items": [
+      {"id": "S1", "text": "Define the agent's skills and Agent Card"},
+      {"id": "S2", "text": "Initialize a request handler that links the Agent Executor with a Task Store"},
+      {"id": "S3", "text": "Set up the server application (e.g., Starlette) providing the Agent Card and request handler"},
+      {"id": "S4", "text": "Start the server using an ASGI server (e.g., Uvicorn) to listen on the network"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Host an A2A server unit provides an explicit four-step setup sequence: (1) define agent skills and Agent Card; (2) initialize a request handler linking the Agent Executor with a Task Store; (3) set up the server application with the Agent Card and request handler; (4) start the server using an ASGI server like Uvicorn. This order ensures all components are configured before the server begins accepting incoming requests.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Host an A2A server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/4-host-a2a-agent-server?pivots=text"
+    }
+  },
+  {
+    "id": 73,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When publishing a Foundry agent to Microsoft 365 with **Organization** scope rather than **Shared** scope, what key difference applies?",
+    "options": [
+      {"id": "A", "text": "Organization scope publishes only to SharePoint; Shared scope publishes to all Microsoft 365 apps"},
+      {"id": "B", "text": "Organization scope requires admin approval and appears under 'Built by your org'; Shared scope is immediately available under 'Your agents' without admin approval"},
+      {"id": "C", "text": "Organization scope uses a dedicated Azure subscription; Shared scope uses the Foundry project subscription"},
+      {"id": "D", "text": "Organization scope supports only Teams; Shared scope supports Teams and Copilot simultaneously"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Understand Foundry agent publishing options unit describes two distribution scopes: Shared scope makes the agent available immediately under 'Your agents' in Teams without admin approval and is best for personal testing or small team pilots; Organization scope makes the agent available to everyone in the tenant under 'Built by your org' but requires admin approval, making it suitable for production deployments. Both scopes can target Teams and Microsoft Copilot.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Understand Foundry agent publishing options",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/2-understand-publishing-options?pivots=text"
+    }
+  },
+  {
+    "id": 74,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Microsoft Work IQ connects AI agents to Microsoft 365 data and is built on which protocol that enables AI assistants to connect to external data sources and tools?",
+    "options": [
+      {"id": "A", "text": "OpenAPI 3.0"},
+      {"id": "B", "text": "Azure Service Bus"},
+      {"id": "C", "text": "Model Context Protocol (MCP)"},
+      {"id": "D", "text": "GraphQL"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Access Microsoft 365 data with Work IQ unit explicitly states that Work IQ is built on the Model Context Protocol (MCP), an open protocol that enables AI assistants to connect to external data sources and tools. Work IQ acts as an MCP server specifically designed for Microsoft 365 data, exposing tools, resources, and prompts that agents can discover and use to access emails, meetings, documents, Teams messages, and people information.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Access Microsoft 365 data with Work IQ",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/5-access-m365-data-workiq?pivots=text"
+    }
+  },
+  {
+    "id": 75,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "In Microsoft Foundry workflow patterns, which pattern explicitly pauses execution to request human input or approval before the workflow continues?",
+    "options": [
+      {"id": "A", "text": "Sequential"},
+      {"id": "B", "text": "Human-in-the-loop"},
+      {"id": "C", "text": "Group chat"},
+      {"id": "D", "text": "Parallel fan-out"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Identify Workflow Patterns unit defines the human-in-the-loop pattern as one that introduces pauses where user input or approval is required before the workflow can continue — it explicitly asks a question, waits for a response, and then resumes. Sequential workflows follow a fixed, step-by-step path without pausing. Group chat enables dynamic multi-agent collaboration. 'Parallel fan-out' is not one of the three predefined patterns described in the unit.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Identify Workflow Patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/3-identify-workflow-patterns?pivots=text"
+    }
+  },
+  {
+    "id": 76,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "Fill in the blanks about Power Fx usage in Microsoft Foundry agent workflows.\n\nPower Fx is an Excel-like language used in workflows to manipulate data and control flow. Formulas can reference **[BLANK_1]** variables, which store data captured or created during workflow execution for use in subsequent nodes. To iterate over a collection and apply the same formula to each item, a workflow uses a **[BLANK_2]** node powered by a Power Fx expression.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The type of Power Fx variable that stores data captured during workflow execution",
+        "options": [
+          {"id": "a", "text": "Global"},
+          {"id": "b", "text": "Local"},
+          {"id": "c", "text": "Static"},
+          {"id": "d", "text": "Persistent"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "The type of workflow node used to iterate over a collection with Power Fx",
+        "options": [
+          {"id": "a", "text": "While-loop"},
+          {"id": "b", "text": "Switch-case"},
+          {"id": "c", "text": "For-each"},
+          {"id": "d", "text": "Do-until"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The Apply Power Fx in Workflows unit explains that Power Fx formulas reference two variable types: system variables (contextual workflow information) and local variables (data captured during execution used in subsequent nodes). It also states that For-each nodes use Power Fx to iterate over collections, applying the same set of actions to each item — for example, `ForAll(Local.ItemList, Upper(Name))` applies a formula to every item in a list.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Apply Power Fx in Workflows",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/6-apply-power-fx?pivots=text"
+    }
+  },
+  {
+    "id": 77,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "An agent in the Microsoft Foundry portal receives a user message that requires a tool call. Arrange the tool-calling lifecycle steps in the correct order as described in the Foundry agent tools documentation.",
+    "items": [
+      {"id": "S1", "text": "User sends a message to the agent"},
+      {"id": "S2", "text": "Agent analyzes the request and determines which tools are needed"},
+      {"id": "S3", "text": "Agent invokes the appropriate tools with relevant parameters"},
+      {"id": "S4", "text": "Tools execute and return results to the agent"},
+      {"id": "S5", "text": "Agent incorporates results into a natural language response and returns it to the user"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The Extend agent capabilities with tools unit describes the tool-calling lifecycle as a five-step automatic process: (1) the user sends a message; (2) the agent analyzes the request to determine which tools are needed; (3) the agent invokes the tools with relevant parameters; (4) the tools execute and return results; (5) the agent incorporates results into a natural language response. This seamless integration means developers do not need to write complex orchestration code.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Extend agent capabilities with tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/7-extend-agent-capabilities?pivots=text"
+    }
+  },
+  {
+    "id": 78,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "A developer wants to connect a Foundry agent to an external third-party REST API that already has an OpenAPI 3.0 specification. According to the custom tool options available in Foundry Agent Service, which tool type should be used?",
+    "options": [
+      {"id": "A", "text": "Azure Functions tool"},
+      {"id": "B", "text": "Custom function (function calling) tool"},
+      {"id": "C", "text": "OpenAPI specification tool"},
+      {"id": "D", "text": "Azure Logic Apps tool"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Options for implementing custom tools unit states that OpenAPI specification tools allow you to connect an Azure AI Agent to an external API using an OpenAPI 3.0 specification, providing standardized, automated, and scalable API integrations. Azure Functions tools are for event-driven applications with triggers and bindings. Custom function tools are for integrating custom logic in various programming languages without an existing specification. Azure Logic Apps is a low-code/no-code option for adding workflow connectors, not for directly consuming an existing OpenAPI 3.0 spec.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Options for implementing custom tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/3-custom-tool-options?pivots=text"
+    }
+  }
+]

@@ -1,0 +1,671 @@
+[
+  {
+    "id": 101,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Which Azure AI Video Indexer capability requires Limited Access approval before it can be used?",
+    "options": [
+      {"id": "A", "text": "Speech transcription"},
+      {"id": "B", "text": "Facial recognition"},
+      {"id": "C", "text": "Scene segmentation"},
+      {"id": "D", "text": "Sentiment analysis"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure Video Indexer documentation states that facial recognition requires Limited Access approval, adhering to Microsoft's Responsible AI standard. Other capabilities such as speech transcription, scene segmentation, and sentiment analysis do not require this additional approval.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze video",
+      "unit": "Understand Azure Video Indexer capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text"
+    }
+  },
+  {
+    "id": 102,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer wants to detect adult or violent themes automatically in uploaded videos. Which Azure Video Indexer capability should they rely on?",
+    "options": [
+      {"id": "A", "text": "Labels"},
+      {"id": "B", "text": "Sentiment analysis"},
+      {"id": "C", "text": "Content moderation"},
+      {"id": "D", "text": "Scene segmentation"}
+    ],
+    "correct": ["C"],
+    "explanation": "According to the Understand Azure Video Indexer capabilities unit, content moderation is the feature specifically designed for detection of adult or violent themes in the video. Labels identify objects or themes, sentiment measures positive/negative tone, and scene segmentation breaks video into scenes.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze video",
+      "unit": "Understand Azure Video Indexer capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text"
+    }
+  },
+  {
+    "id": 103,
+    "topic": "computer-vision",
+    "type": "mc_multi",
+    "question": "A media company wants to extend the default recognition capabilities of Azure Video Indexer to handle domain-specific terminology and internal brand names. Which two custom models should they create? (Choose two.)",
+    "options": [
+      {"id": "A", "text": "A custom People model"},
+      {"id": "B", "text": "A custom Language model"},
+      {"id": "C", "text": "A custom Brands model"},
+      {"id": "D", "text": "A custom Animation model"}
+    ],
+    "correct": ["B", "C"],
+    "explanation": "The Extract custom insights unit explains that a custom Language model can be trained to detect and transcribe organization-specific terminology not in common usage, and a custom Brands model recognizes specific names as brands such as products, projects, or companies. A People model is for face recognition, and Animation model is not one of the three custom model types listed.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze video",
+      "unit": "Extract custom insights",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/3-extract-custom-insights?pivots=text"
+    }
+  },
+  {
+    "id": 104,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "What is the correct order of steps to create and use a custom Language model in Azure Video Indexer via the web portal?",
+    "items": [
+      {"id": "S1", "text": "Select the Language tab under Content model customization"},
+      {"id": "S2", "text": "Add a model and give it a name"},
+      {"id": "S3", "text": "Upload text files containing domain-specific vocabulary"},
+      {"id": "S4", "text": "Select the green Train option"},
+      {"id": "S5", "text": "Select the new language model when uploading or re-indexing a video"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The Customize a Language model how-to article describes this exact sequence: navigate to Content model customization, choose the Language tab, add a named model, upload text files, click Train, and then apply the model to videos. Training must happen after files are uploaded and before the model can be applied to new videos.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Customize a Language model in Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/customize-language-model-how-to"
+    }
+  },
+  {
+    "id": 105,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "You want to embed Video Indexer player and insights panels inside your company's intranet portal without granting employees access to the full Video Indexer account. Which approach should you use?",
+    "options": [
+      {"id": "A", "text": "Grant each employee a Viewer role on the Video Indexer account"},
+      {"id": "B", "text": "Embed Azure Video Indexer widgets in a custom HTML page"},
+      {"id": "C", "text": "Export video insights to JSON and host them separately"},
+      {"id": "D", "text": "Use ARM templates to provision a separate Video Indexer account for the intranet"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Use Video Analyzer widgets and APIs unit states that the widgets used in the Azure Video Indexer portal can be embedded in custom HTML interfaces, enabling you to share insights from specific videos without giving users full access to your Video Indexer account. The REST API approach requires account-level access tokens rather than scoped embeds.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze video",
+      "unit": "Use Video Analyzer widgets and APIs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text"
+    }
+  },
+  {
+    "id": 106,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Which Video Indexer REST API call pattern is used to obtain an access token before calling other API operations?",
+    "options": [
+      {"id": "A", "text": "GET https://api.videoindexer.ai/<location>/Accounts/<accountId>/Videos"},
+      {"id": "B", "text": "POST https://api.videoindexer.ai/<location>/Accounts/<accountId>/Videos"},
+      {"id": "C", "text": "GET https://api.videoindexer.ai/Auth/<location>/Accounts/<accountId>/AccessToken"},
+      {"id": "D", "text": "POST https://management.azure.com/subscriptions/<sub>/providers/Microsoft.VideoIndexer/accounts"}
+    ],
+    "correct": ["C"],
+    "explanation": "According to the Use Video Analyzer widgets and APIs unit, the access token is retrieved via a GET call to `https://api.videoindexer.ai/Auth/<location>/Accounts/<accountId>/AccessToken`. This token is then used as a query parameter on subsequent REST API calls.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze video",
+      "unit": "Use Video Analyzer widgets and APIs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text"
+    }
+  },
+  {
+    "id": 107,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Video Indexer account types by selecting the correct option for each blank.\n\n**Blank 1**: A __________ account provides up to 2,400 minutes of free indexing and does not require an Azure subscription.\n\n**Blank 2**: Classic accounts were retired on __________.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Account type that provides 2,400 free minutes without an Azure subscription",
+        "options": [
+          {"id": "a", "text": "Trial"},
+          {"id": "b", "text": "ARM-based paid"},
+          {"id": "c", "text": "Classic"},
+          {"id": "d", "text": "Enterprise"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Date when classic accounts were retired",
+        "options": [
+          {"id": "a", "text": "June 30, 2023"},
+          {"id": "b", "text": "December 31, 2023"},
+          {"id": "c", "text": "June 30, 2024"},
+          {"id": "d", "text": "January 1, 2025"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The Azure AI Video Indexer accounts overview page states that the trial account provides up to 2,400 minutes of free indexing without requiring an Azure subscription, and that classic accounts were retired on June 30, 2024. ARM-based paid accounts are the current production account type.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Azure AI Video Indexer accounts",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview"
+    }
+  },
+  {
+    "id": 108,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Which feature of paid (ARM-based) Azure Video Indexer accounts is NOT available on trial accounts?",
+    "options": [
+      {"id": "A", "text": "Video upload via the Video Indexer website"},
+      {"id": "B", "text": "Role Based Access Control (RBAC) user management"},
+      {"id": "C", "text": "Speech transcription"},
+      {"id": "D", "text": "Access to the Video Indexer REST API"}
+    ],
+    "correct": ["B"],
+    "explanation": "According to the accounts overview page, ARM-based paid accounts give access to security and management capabilities such as Role Based Access Control (RBAC) user management and Azure Monitor integration. Both trial and paid accounts support video upload, speech transcription, and REST API access.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Azure AI Video Indexer accounts",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview"
+    }
+  },
+  {
+    "id": 109,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer is building a client application that uses the Azure AI Vision service to analyze images. When the client app authenticates using key-based authentication, where is the authorization key found?",
+    "options": [
+      {"id": "A", "text": "In the Azure Active Directory token endpoint"},
+      {"id": "B", "text": "In the Azure portal or Microsoft Foundry portal for the resource"},
+      {"id": "C", "text": "In the ARM template output variables"},
+      {"id": "D", "text": "In the Azure AI Vision SDK configuration file"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Provision an Azure Vision resource unit states that the authorization key (used in key-based authentication) can be found and managed in the Azure portal, or if working in a Microsoft Foundry project, in the Microsoft Foundry portal. The endpoint URL follows the pattern `https://<resource_name>.cognitiveservices.azure.com/`.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze images",
+      "unit": "Provision an Azure Vision resource",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 110,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A user attempts to upload a video to Azure Video Indexer using a YouTube URL, but the upload fails. What is the reason?",
+    "options": [
+      {"id": "A", "text": "YouTube URLs are encrypted and cannot be decoded by Video Indexer"},
+      {"id": "B", "text": "URLs from streaming services such as YouTube are not supported"},
+      {"id": "C", "text": "The file must be under 2 GB and YouTube videos often exceed this limit"},
+      {"id": "D", "text": "Only SAS URLs from Azure Blob Storage are supported for URL uploads"}
+    ],
+    "correct": ["B"],
+    "explanation": "The upload and index media documentation explicitly states: 'You cannot use URLs from streaming services such as YouTube.' Valid URL inputs include a publicly accessible direct-access URL or a SAS URL from Azure Storage. The 2 GB limit applies to file uploads, not this restriction, and the constraint is specifically about streaming services.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+    }
+  },
+  {
+    "id": 111,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "What is the correct sequence of steps for using the Azure Vision Python SDK to extract text from an image using the Read OCR feature?",
+    "items": [
+      {"id": "S1", "text": "Install the azure-ai-vision-imageanalysis package"},
+      {"id": "S2", "text": "Instantiate an ImageAnalysisClient with the resource endpoint and key"},
+      {"id": "S3", "text": "Call analyze() with the image data and VisualFeatures.READ specified"},
+      {"id": "S4", "text": "Iterate over blocks, lines, and words in the readResult to extract text"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Read text with Azure Vision Image Analysis unit shows this exact pattern: install the SDK package, create an ImageAnalysisClient with endpoint and credential, call analyze() specifying VisualFeatures.READ (and optionally a language), and then process the response which is structured as blocks > lines > words.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Read text in images",
+      "unit": "Read text with Azure Vision Image Analysis",
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text"
+    }
+  },
+  {
+    "id": 112,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When using the Azure AI Face service Detect method, which Python client class should you instantiate to connect to the endpoint?",
+    "options": [
+      {"id": "A", "text": "ImageAnalysisClient"},
+      {"id": "B", "text": "ComputerVisionClient"},
+      {"id": "C", "text": "FaceClient"},
+      {"id": "D", "text": "CognitiveServicesCredentials"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Detect and analyze faces unit shows that the Face service Python SDK uses a `FaceClient` object instantiated with the endpoint and an `AzureKeyCredential`. The `ImageAnalysisClient` is for Azure Vision image analysis, and `ComputerVisionClient` is from the older SDK not described in this unit.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Detect and analyze faces",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/3-detect-analyze-faces?pivots=text"
+    }
+  },
+  {
+    "id": 113,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about Azure AI Video Indexer deployment and audio capabilities.\n\n**Blank 1**: Azure AI Video Indexer enabled by Azure __________ runs video analysis on edge devices and is suited for industries with strict data residency requirements.\n\n**Blank 2**: The cloud-based Video Indexer speaker enumeration model can detect up to __________ speakers in a single audio file.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Azure service that enables edge deployment of Video Indexer",
+        "options": [
+          {"id": "a", "text": "Arc"},
+          {"id": "b", "text": "Stack"},
+          {"id": "c", "text": "IoT Hub"},
+          {"id": "d", "text": "Kubernetes Service"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Maximum number of speakers detected in a single audio file",
+        "options": [
+          {"id": "a", "text": "8"},
+          {"id": "b", "text": "16"},
+          {"id": "c", "text": "32"},
+          {"id": "d", "text": "64"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Video Indexer overview states that Video Indexer enabled by Azure Arc runs on edge devices via Arc-enabled Kubernetes clusters and is particularly suited for industries with strict data residency requirements. The speaker enumeration audio model can detect up to 16 speakers in a single audio file.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+    }
+  },
+  {
+    "id": 114,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When analyzing an image with the Azure Vision Python SDK and you want the response to include a bounding box for each detected person, which VisualFeatures enumeration value should you specify?",
+    "options": [
+      {"id": "A", "text": "VisualFeatures.OBJECTS"},
+      {"id": "B", "text": "VisualFeatures.PEOPLE"},
+      {"id": "C", "text": "VisualFeatures.CAPTION"},
+      {"id": "D", "text": "VisualFeatures.DENSE_CAPTIONS"}
+    ],
+    "correct": ["B"],
+    "explanation": "According to the Analyze an image unit, VisualFeatures.PEOPLE returns the bounding box for detected people, while VisualFeatures.OBJECTS returns bounding boxes for general detected objects. CAPTION generates a single natural language caption and DENSE_CAPTIONS generates more detailed captions for detected objects.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  },
+  {
+    "id": 115,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about image requirements for Azure Vision image analysis.\n\n**Blank 1**: The maximum file size accepted for image analysis is __________ MB.\n\n**Blank 2**: Images must be in JPEG, PNG, GIF, or __________ format.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Maximum file size in MB",
+        "options": [
+          {"id": "a", "text": "2"},
+          {"id": "b", "text": "4"},
+          {"id": "c", "text": "8"},
+          {"id": "d", "text": "16"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Fourth supported image format alongside JPEG, PNG, and GIF",
+        "options": [
+          {"id": "a", "text": "TIFF"},
+          {"id": "b", "text": "WEBP"},
+          {"id": "c", "text": "BMP"},
+          {"id": "d", "text": "SVG"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The Analyze an image unit specifies that the file size must be less than 4 megabytes (MB) and the image must be in JPEG, PNG, GIF, or BMP format. Images must also be greater than 50 x 50 pixels in dimensions.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze images",
+      "unit": "Analyze an image",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+    }
+  },
+  {
+    "id": 116,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When using the Azure Vision Read API (VisualFeatures.READ), how is the OCR response text organized in the returned JSON?",
+    "options": [
+      {"id": "A", "text": "Paragraphs > sentences > tokens"},
+      {"id": "B", "text": "Pages > columns > rows"},
+      {"id": "C", "text": "Blocks > lines > words"},
+      {"id": "D", "text": "Sections > paragraphs > words"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Read text with Azure Vision Image Analysis unit specifies that OCR results are broken down into blocks (with the current service using one block), then lines, then words. Text values are included at both the line and word levels, allowing developers to read entire lines or extract individual words.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Read text in images",
+      "unit": "Read text with Azure Vision Image Analysis",
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text"
+    }
+  },
+  {
+    "id": 117,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "A developer needs to choose the right Azure AI service for reading text. Arrange these use-case descriptions in order from most suited for Azure Vision to most suited for Azure Document Intelligence.",
+    "items": [
+      {"id": "S1", "text": "Reading text from street signs and store names in photographs"},
+      {"id": "S2", "text": "Cataloging and analyzing large volumes of scanned image-based content (Digital Asset Management)"},
+      {"id": "S3", "text": "Extracting key-value pairs and tables from invoices and receipts"},
+      {"id": "S4", "text": "Using prebuilt models for common structured document types like W-2 forms"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Explore Azure AI options for reading text unit describes Azure Vision as best for photographs containing text (street signs, store names) and Digital Asset Management scenarios, while Azure Document Intelligence is specifically designed for extracting structured data, key-value pairs, and tables from forms, invoices, and receipts, especially with prebuilt models.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Read text in images",
+      "unit": "Explore Azure AI options for reading text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text"
+    }
+  },
+  {
+    "id": 118,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Which responsible AI consideration is specifically highlighted in the face-based solutions unit because facial data is personally identifiable?",
+    "options": [
+      {"id": "A", "text": "Reliability and safety"},
+      {"id": "B", "text": "Data privacy and security"},
+      {"id": "C", "text": "Inclusiveness"},
+      {"id": "D", "text": "Accountability"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Responsible AI considerations for face-based solutions unit explicitly identifies data privacy and security as a key consideration because facial data is personally identifiable and should be considered sensitive and private, requiring adequate protection for model training and inferencing data.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Responsible AI considerations for face-based solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/5-understand-considerations-for-face-analysis?pivots=text"
+    }
+  },
+  {
+    "id": 119,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A detected face ID returned by the Azure Face service is cached for how long before it expires if not persisted to a Person Group?",
+    "options": [
+      {"id": "A", "text": "1 hour"},
+      {"id": "B", "text": "12 hours"},
+      {"id": "C", "text": "24 hours"},
+      {"id": "D", "text": "48 hours"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Verify and identify faces unit states that a unique ID is assigned to a detected face and retained in the service resource for 24 hours. Face IDs added to a Person Group as persisted faces no longer expire after this 24-hour window.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Verify and identify faces",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text"
+    }
+  },
+  {
+    "id": 120,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "To identify faces in videos using the Azure Face service, what is the correct sequence of steps to create a facial recognition model?",
+    "items": [
+      {"id": "S1", "text": "Create a Person Group that defines the set of individuals to identify"},
+      {"id": "S2", "text": "Add a Person record for each individual within the Person Group"},
+      {"id": "S3", "text": "Add detected face images from multiple poses to each Person record"},
+      {"id": "S4", "text": "Train the facial recognition model"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Verify and identify faces unit describes this exact four-step sequence: first create a Person Group, then add Person records to it, then add multiple face images (in various poses) to each person, and finally train the model. The IDs of faces added this way become persisted faces that do not expire after 24 hours.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Verify and identify faces",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text"
+    }
+  },
+  {
+    "id": 121,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When training an object detection model in Azure AI Custom Vision, what is the key difference in image labeling compared to image classification?",
+    "options": [
+      {"id": "A", "text": "Object detection requires at least 50 images per class; classification requires only 15"},
+      {"id": "B", "text": "Object detection labels include a tag and a region (bounding box) for each object; classification assigns tags to the whole image"},
+      {"id": "C", "text": "Object detection uses multilabel tagging only; classification uses only single-label tagging"},
+      {"id": "D", "text": "Object detection requires you to annotate images using JSON only; classification uses the portal UI"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Train an object detector unit states that the most significant difference is the labeling: image classification requires one or more tags that apply to the whole image, while object detection requires each label to consist of a tag and a region defining the bounding box for each object in the image.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect objects in images",
+      "unit": "Train an object detector",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+    }
+  },
+  {
+    "id": 122,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "In Azure AI Custom Vision object detection, what does a bounding box with Left: 0.1, Top: 0.5, Width: 0.5, Height: 0.25 represent?",
+    "options": [
+      {"id": "A", "text": "A box starting at pixel (10, 50) with pixel dimensions 50 x 25"},
+      {"id": "B", "text": "A box whose top-left is one-tenth from the left edge and halfway down, spanning half the image width and a quarter of the image height"},
+      {"id": "C", "text": "A box covering 50% of the total image area starting at the top-left corner"},
+      {"id": "D", "text": "A box that covers the bottom-right quadrant of the image"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Train an object detector unit explains that bounding box values are proportional relative to source image size. Left: 0.1 means one-tenth from the left edge, Top: 0.5 means halfway down, Width: 0.5 is half the image width, and Height: 0.25 is a quarter of the image height — not absolute pixel values.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect objects in images",
+      "unit": "Train an object detector",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+    }
+  },
+  {
+    "id": 123,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "What is the correct order of steps to train and publish an Azure AI Custom Vision image classification model using the portal?",
+    "items": [
+      {"id": "S1", "text": "Create an image classification project associated with a training resource"},
+      {"id": "S2", "text": "Upload images and assign class label tags to them"},
+      {"id": "S3", "text": "Train and evaluate the classification model"},
+      {"id": "S4", "text": "Publish the trained model iteration to a prediction resource"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Train an image classification model unit lists the portal workflow in this order: create a project, upload and tag images, train and evaluate the model, test the model, and finally publish to a prediction resource. Publishing makes the model iteration available to client applications via the prediction endpoint.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Classify images",
+      "unit": "Train an image classification model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/3-understand-image-classification?pivots=text"
+    }
+  },
+  {
+    "id": 124,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer builds a Custom Vision image classification client application using the Python SDK. Which class should they instantiate to submit images for classification predictions?",
+    "options": [
+      {"id": "A", "text": "ImageAnalysisClient"},
+      {"id": "B", "text": "CustomVisionTrainingClient"},
+      {"id": "C", "text": "CustomVisionPredictionClient"},
+      {"id": "D", "text": "FaceClient"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Create an image classification client application unit shows that prediction is done using the `CustomVisionPredictionClient` class, authenticated with a Prediction-key header. The `ImageAnalysisClient` is for Azure Vision image analysis, `CustomVisionTrainingClient` is for training (not prediction), and `FaceClient` is for the Face service.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Classify images",
+      "unit": "Create an image classification client application",
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/4-use-trained-image-classifier?pivots=text"
+    }
+  },
+  {
+    "id": 125,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "When provisioning Azure Vision for image analysis, which option is recommended for development teams building solutions that combine generative AI, agents, and Azure Vision?",
+    "options": [
+      {"id": "A", "text": "A standalone Azure Vision resource to use the free tier"},
+      {"id": "B", "text": "A Microsoft Foundry project with an associated hub (Foundry Tools resource)"},
+      {"id": "C", "text": "A standalone Foundry Tools resource without a Foundry hub"},
+      {"id": "D", "text": "An Azure Cognitive Services multi-service resource in a resource group"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Provision an Azure Vision resource unit states that Microsoft Foundry projects are recommended for development of AI solutions that combine generative AI, agents, and pre-built Foundry Tools, or involve collaborative development by a team. A Foundry hub includes a Foundry Tools resource that provides Azure Vision. Standalone resources are suitable for simpler or single-service scenarios.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Analyze images",
+      "unit": "Provision an Azure Vision resource",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 126,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "A developer uses the Responses API to submit a local image to a multimodal model in Microsoft Foundry. How must the local image be formatted before inclusion in the prompt?",
+    "options": [
+      {"id": "A", "text": "As a raw binary stream in the HTTP request body"},
+      {"id": "B", "text": "As a Base64-encoded data URL in the format `data:image/<format>;base64,{image_data}`"},
+      {"id": "C", "text": "As a file path reference using the local filesystem URI scheme"},
+      {"id": "D", "text": "As a multipart form-data attachment"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Develop a vision-based chat app unit shows that for the Responses API a local image must be loaded, its data encoded in Base64 format, and submitted as a URL in the format `data:image/jpeg;base64,{image_data}` (with the format replaced as appropriate). Web-based images can use their direct URL instead.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Develop a vision-based chat app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text"
+    }
+  },
+  {
+    "id": 127,
+    "topic": "computer-vision",
+    "type": "mc_multi",
+    "question": "A developer is building a vision-based chat application that submits images to a multimodal model. Which two API options does the Develop a vision-based chat app unit describe for submitting image-based prompts? (Choose two.)",
+    "options": [
+      {"id": "A", "text": "The Responses API using input_image content type"},
+      {"id": "B", "text": "The ChatCompletions API using image_url content type"},
+      {"id": "C", "text": "The Batch API using file attachments"},
+      {"id": "D", "text": "The Embeddings API using image vectors"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "The Develop a vision-based chat app unit shows code examples for both the Responses API (using `input_image` type in the input array) and the ChatCompletions API (using `image_url` type in the messages array). The Batch API and Embeddings API are not described for this scenario.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Develop a vision-based chat app",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text"
+    }
+  },
+  {
+    "id": 128,
+    "topic": "computer-vision",
+    "type": "mc_single",
+    "question": "Which statement best describes how image generation models such as those available in Microsoft Foundry produce their output?",
+    "options": [
+      {"id": "A", "text": "They search a curated catalog of stock images and return the closest match"},
+      {"id": "B", "text": "They retrieve images from licensed image databases using semantic similarity"},
+      {"id": "C", "text": "They are generative AI models that create original new images from natural language input based on their training data"},
+      {"id": "D", "text": "They apply style transfer to existing user-uploaded photographs"}
+    ],
+    "correct": ["C"],
+    "explanation": "The What are image-generation models? unit explicitly states that image generation models are not search systems for finding appropriate images; they are AI models that generate new original images based on the data on which they were trained. The images generated are original and not retrieved from any curated catalog.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Generate images with AI",
+      "unit": "What are image-generation models?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/2-what-is-dall-e?pivots=text"
+    }
+  },
+  {
+    "id": 129,
+    "topic": "computer-vision",
+    "type": "sequence",
+    "question": "What is the correct sequence of steps for calling an image generation model using the Python SDK in Microsoft Foundry?",
+    "items": [
+      {"id": "S1", "text": "Instantiate the OpenAI client connected to the Foundry endpoint"},
+      {"id": "S2", "text": "Call client.images.generate() specifying model name, prompt, n, and size"},
+      {"id": "S3", "text": "Decode the returned Base64 b64_json image data"},
+      {"id": "S4", "text": "Write the decoded bytes to an output image file"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Create a client application that uses an image generation model unit shows the Python code calls `client.images.generate()` with parameters such as model, prompt, n, and size, receives Base64-encoded data in the `b64_json` field, decodes it with `base64.b64decode()`, and writes the resulting bytes to a file. The client must be instantiated before any API calls.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Generate images with AI",
+      "unit": "Create a client application that uses an image generation model",
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text"
+    }
+  },
+  {
+    "id": 130,
+    "topic": "computer-vision",
+    "type": "hotspot",
+    "question": "Complete the following statements about the Azure AI Custom Vision object detection workflow.\n\n**Blank 1**: In Azure AI Custom Vision, object detection labels differ from classification labels in that each label must include both a tag and a __________ defining the location of the object.\n\n**Blank 2**: After tagging an initial batch of images and training once, subsequent labeling can benefit from the __________ tool in the portal, which suggests both regions and object classes.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "What additional element is required in each object detection label beyond the tag?",
+        "options": [
+          {"id": "a", "text": "Confidence score"},
+          {"id": "b", "text": "Region (bounding box)"},
+          {"id": "c", "text": "Color mask"},
+          {"id": "d", "text": "Polygon outline"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Portal tool that suggests regions and object classes for subsequent labeling",
+        "options": [
+          {"id": "a", "text": "Auto-label"},
+          {"id": "b", "text": "Smart labeler"},
+          {"id": "c", "text": "Active learning"},
+          {"id": "d", "text": "Annotation assistant"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Train an object detector unit states that object detection labels must consist of a tag and a region (bounding box) for each object, unlike classification which tags the whole image. After training on an initial batch, the smart labeler tool in the Custom Vision portal can suggest both the regions and the classes of objects for new images.",
+    "source": {
+      "path": "Develop computer vision solutions in Azure",
+      "module": "Detect objects in images",
+      "unit": "Train an object detector",
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+    }
+  }
+]

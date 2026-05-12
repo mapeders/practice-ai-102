@@ -1,0 +1,509 @@
+[
+  {
+    "id": 79,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "The Microsoft Foundry model catalog organizes models into two broad categories. Which statement correctly describes the billing distinction between these categories?",
+    "options": [
+      {"id": "A", "text": "Models sold directly by Azure are billed through your Azure subscription, while models from partners and the community have their own licensing and pricing."},
+      {"id": "B", "text": "Models sold directly by Azure are free tier, while partner models require a separate marketplace purchase per request."},
+      {"id": "C", "text": "Both categories are billed identically through your Azure subscription but differ only in model size."},
+      {"id": "D", "text": "Partner and community models are billed through your Azure subscription, while Azure-direct models require a separate OpenAI account."}
+    ],
+    "correct": ["A"],
+    "explanation": "The Foundry model catalog contains 'Foundry Models sold directly by Azure,' which are billed through your Azure subscription (including Azure OpenAI models and models from Microsoft and other providers), and 'Foundry Models from partners and community,' which have their own independent licensing and pricing. The distinction is not about free vs. paid tiers but about who controls billing.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Explore the model catalog",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/2-explore-model-catalog?pivots=text"
+    }
+  },
+  {
+    "id": 80,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A developer needs to filter models in the Foundry catalog that are specifically trained on medical literature. Which filter attribute should they use?",
+    "options": [
+      {"id": "A", "text": "Capabilities"},
+      {"id": "B", "text": "Inference tasks"},
+      {"id": "C", "text": "Industry"},
+      {"id": "D", "text": "Collection"}
+    ],
+    "correct": ["C"],
+    "explanation": "The model catalog filter attribute 'Industry' shows models trained on industry-specific datasets such as medical literature, legal documents, or specific language corpora. These specialized models often outperform general-purpose models in their respective domains. The 'Capabilities' filter covers abilities like reasoning or tool calling, and 'Inference tasks' covers tasks like text generation or summarization.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Explore the model catalog",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/2-explore-model-catalog?pivots=text"
+    }
+  },
+  {
+    "id": 81,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A team is selecting a model for a real-time customer chat application where user experience depends on fast first responses. Which benchmark metric should they prioritize?",
+    "options": [
+      {"id": "A", "text": "MMLU-Pro score"},
+      {"id": "B", "text": "Time to first token (TTFT)"},
+      {"id": "C", "text": "HarmBench Attack Success Rate (ASR)"},
+      {"id": "D", "text": "Cost per output tokens"}
+    ],
+    "correct": ["B"],
+    "explanation": "Time to first token (TTFT) measures how long it takes until the first token arrives when using streaming, which directly impacts perceived responsiveness in interactive applications. For real-time chat where user experience depends on responsiveness, TTFT is the key performance metric. MMLU-Pro measures general knowledge quality, ASR measures safety robustness, and cost metrics address budget concerns.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Select models using benchmarks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text"
+    }
+  },
+  {
+    "id": 82,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A company must deploy a model where all data must remain within the European Union data zone, and they need pay-per-token billing rather than reserved capacity. Which deployment type should they select?",
+    "options": [
+      {"id": "A", "text": "Global Standard"},
+      {"id": "B", "text": "Data Zone Standard"},
+      {"id": "C", "text": "Data Zone Provisioned"},
+      {"id": "D", "text": "Standard"}
+    ],
+    "correct": ["B"],
+    "explanation": "Data Zone Standard deployments ensure data stays within a specific data zone (such as EU) on a pay-per-token basis and are best for scenarios requiring EU/US data zone compliance. Global Standard uses any Azure region and doesn't guarantee data zone residency. Data Zone Provisioned provides reserved PTUs (not pay-per-token) within a data zone. Standard is for single-region residency, not a broader data zone.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Deploy models to endpoints",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text"
+    }
+  },
+  {
+    "id": 83,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "When deploying a model in the Microsoft Foundry portal, what value does a developer use in the `model` parameter of API requests to route to their specific deployment?",
+    "options": [
+      {"id": "A", "text": "The endpoint URL of the deployment"},
+      {"id": "B", "text": "The model's catalog provider name"},
+      {"id": "C", "text": "The deployment name assigned during configuration"},
+      {"id": "D", "text": "The SKU of the virtual machine hosting the deployment"}
+    ],
+    "correct": ["C"],
+    "explanation": "During deployment, you assign a deployment name (which defaults to the model name but can be customized). In inference code, the `model` parameter of API requests uses this deployment name to route requests to the correct deployment. The endpoint URL is a separate connection detail used to reach the service, not the routing identifier within API calls.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Deploy models to endpoints",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text"
+    }
+  },
+  {
+    "id": 84,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A developer wants to use the Microsoft Foundry SDK to build an application that includes cloud evaluations and tracing for AI agent behavior. Which client object should they create?",
+    "options": [
+      {"id": "A", "text": "OpenAI client using the Azure OpenAI endpoint"},
+      {"id": "B", "text": "AzureOpenAI client using the Azure OpenAI endpoint"},
+      {"id": "C", "text": "AIProjectClient using the project endpoint"},
+      {"id": "D", "text": "AsyncOpenAI client using the project endpoint"}
+    ],
+    "correct": ["C"],
+    "explanation": "The AIProjectClient from the azure-ai-projects package connects to the project endpoint and provides Foundry-native operations including agents, cloud evaluations, tracing/observability, and project metadata. The OpenAI and AzureOpenAI clients are used for model inference tasks and do not provide Foundry-specific features like evaluations and tracing.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Choose an endpoint and SDK",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/03-microsoft-foundry-sdk?pivots=text"
+    }
+  },
+  {
+    "id": 85,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A developer migrating from the ChatCompletions API to the Responses API wants to maintain multi-turn conversation state without manually tracking history. Which Responses API feature supports this?",
+    "options": [
+      {"id": "A", "text": "The `instructions` parameter, which stores all prior turns"},
+      {"id": "B", "text": "The `previous_response_id` parameter that links responses together"},
+      {"id": "C", "text": "Setting `stream=True` to receive incremental context updates"},
+      {"id": "D", "text": "The `conversation_messages` list appended on each call"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Responses API includes a `previous_response_id` parameter that links a new call to a prior response, maintaining conversation context across multiple API calls without the developer having to manually manage a message history list. This is one of the key advantages of the Responses API over the ChatCompletions API, which requires manual conversation tracking.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the Responses API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/04-responses-api?pivots=text"
+    }
+  },
+  {
+    "id": 86,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A developer uses the ChatCompletions API to implement a multi-turn chat loop. After each model response, what must the developer do to preserve conversational context in the next turn?",
+    "options": [
+      {"id": "A", "text": "Pass a `previous_response_id` parameter to the next API call"},
+      {"id": "B", "text": "Manually append the assistant message to the conversation_messages list and include it in the next call"},
+      {"id": "C", "text": "Use the `stream=True` parameter so context is automatically retained"},
+      {"id": "D", "text": "Set `temperature=0` to ensure deterministic context retention"}
+    ],
+    "correct": ["B"],
+    "explanation": "Unlike the Responses API, the ChatCompletions API does not provide stateful response tracking. Developers must write code to manually track conversation history by appending both the user's message and the assistant's response to the conversation_messages list, which is then submitted in full on every subsequent API call.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the ChatCompletions API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/05-openai-api?pivots=text"
+    }
+  },
+  {
+    "id": 87,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A model is asked to calculate the factorial of 52. Rather than relying on its training data approximation, it needs to compute the exact value. Which tool should be specified in the Responses API call?",
+    "options": [
+      {"id": "A", "text": "web_search"},
+      {"id": "B", "text": "file_search"},
+      {"id": "C", "text": "function"},
+      {"id": "D", "text": "code_interpreter"}
+    ],
+    "correct": ["D"],
+    "explanation": "The code_interpreter tool provides the model with a sandboxed Python runtime in which it can generate and run Python code dynamically. This is ideal for exact mathematical computations. The web_search tool retrieves current internet information, file_search searches indexed document collections, and the function tool calls developer-defined application functions.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the code_interpreter tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/03-code-interpreter?pivots=text"
+    }
+  },
+  {
+    "id": 88,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A generative AI app needs to answer employee questions about internal HR policies stored in PDF files. The company wants a simple grounding solution without setting up Azure AI Search. Which tool is the best fit?",
+    "options": [
+      {"id": "A", "text": "web_search"},
+      {"id": "B", "text": "file_search"},
+      {"id": "C", "text": "code_interpreter"},
+      {"id": "D", "text": "function"}
+    ],
+    "correct": ["B"],
+    "explanation": "The file_search tool allows the model to search uploaded documents stored in a vector store and provide grounded answers from private or domain-specific files such as HR policy PDFs. It uses semantic retrieval over indexed document chunks. web_search accesses public internet data, code_interpreter runs Python code, and function calls developer-defined application logic.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the file_search tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/05-file-search?pivots=text"
+    }
+  },
+  {
+    "id": 89,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "An application uses the function tool and calls `responses.create()` with a `get_inventory()` function definition. After the model returns a function call in its output, what must the application do before the model can generate a final grounded answer?",
+    "options": [
+      {"id": "A", "text": "Re-submit the original prompt with a higher temperature setting"},
+      {"id": "B", "text": "Execute the function in application code and return the output as a `function_call_output` message in a follow-up call"},
+      {"id": "C", "text": "Append the function definition JSON to the conversation history and retry"},
+      {"id": "D", "text": "Pass the function call object directly as the `previous_response_id` parameter"}
+    ],
+    "correct": ["B"],
+    "explanation": "The function tool pattern requires the application—not the model—to execute the function. When the model returns a function_call in its output, the developer runs the corresponding function in their application code, then submits the result back as a `function_call_output` item in a new Responses API call. The model then uses that result to complete its response.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the function tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/06-function?pivots=text"
+    }
+  },
+  {
+    "id": 90,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A team is building a RAG solution using Azure AI Search. They want the best retrieval accuracy for their generative AI application. Which search technique does Microsoft recommend for generative AI applications?",
+    "options": [
+      {"id": "A", "text": "Keyword search only"},
+      {"id": "B", "text": "Semantic search only"},
+      {"id": "C", "text": "Vector search only"},
+      {"id": "D", "text": "Hybrid search combining keyword, semantic, and vector search"}
+    ],
+    "correct": ["D"],
+    "explanation": "Azure AI Search supports keyword, semantic, vector, and hybrid search techniques. The unit explicitly states that hybrid search—which combines keyword, semantic, and vector approaches—is recommended for generative AI applications because it provides the most accurate results by leveraging the strengths of each technique.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Ground your model with Retrieval Augmented Generation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/3-retrieval-augmented-generation?pivots=text"
+    }
+  },
+  {
+    "id": 91,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "A travel agency wants every AI response to use a specific brand voice with short paragraphs, and detailed system messages with few-shot examples are not producing consistent enough results. Which optimization strategy best addresses this need?",
+    "options": [
+      {"id": "A", "text": "Increase the temperature parameter to improve output diversity"},
+      {"id": "B", "text": "Add more documents to the Azure AI Search index"},
+      {"id": "C", "text": "Fine-tune the model on examples that demonstrate the desired brand voice"},
+      {"id": "D", "text": "Switch from the Responses API to the ChatCompletions API"}
+    ],
+    "correct": ["C"],
+    "explanation": "Fine-tuning is the appropriate strategy when prompt engineering alone fails to produce consistent style, tone, or format. By training the model on labeled examples that demonstrate the desired brand voice and formatting, the patterns become embedded in the model's weights, producing reliable behavior across all interactions. This is one of the key use cases for fine-tuning described in the module.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Fine-tune a model for consistent behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/4-fine-tune-model?pivots=text"
+    }
+  },
+  {
+    "id": 92,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "During model evaluation in Microsoft Foundry portal, which metric measures whether a model's responses are based on provided context rather than speculation, with a binary (grounded/not grounded) assessment option?",
+    "options": [
+      {"id": "A", "text": "Fluency"},
+      {"id": "B", "text": "Groundedness"},
+      {"id": "C", "text": "ROUGE"},
+      {"id": "D", "text": "Coherence"}
+    ],
+    "correct": ["B"],
+    "explanation": "Groundedness is a generation quality metric that evaluates whether responses are based on provided context rather than speculation. Groundedness Pro offers a binary assessment (grounded or not grounded) useful for factual accuracy requirements. Fluency evaluates linguistic quality, coherence assesses logical flow, and ROUGE is an NLP metric focused on recall for summarization tasks.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Evaluate model performance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/5-evaluate-performance?pivots=text"
+    }
+  },
+  {
+    "id": 93,
+    "topic": "genai-foundry",
+    "type": "mc_multi",
+    "question": "A developer is choosing between the Foundry SDK (AIProjectClient) and the OpenAI SDK for a new application. According to Microsoft Foundry guidance, which TWO scenarios should lead the developer to choose the Foundry SDK over the OpenAI SDK?",
+    "options": [
+      {"id": "A", "text": "The application needs to use the ChatCompletions API for maximum cross-platform compatibility"},
+      {"id": "B", "text": "The application needs to build and manage AI agents using the Foundry Agent Service"},
+      {"id": "C", "text": "The application requires cloud evaluations to validate AI response quality"},
+      {"id": "D", "text": "The developer wants to port existing OpenAI Python code with minimal changes"}
+    ],
+    "correct": ["B", "C"],
+    "explanation": "Microsoft recommends the Foundry SDK (AIProjectClient) when building apps that need Foundry-specific capabilities such as the Foundry Agent Service for building and managing AI agents, and cloud evaluations for testing and validating AI responses. Maximum cross-platform compatibility and minimal code changes for existing OpenAI code are reasons to use the OpenAI SDK instead.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Choose an endpoint and SDK",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/03-microsoft-foundry-sdk?pivots=text"
+    }
+  },
+  {
+    "id": 94,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "Arrange the correct order of steps in the RAG (Retrieval Augmented Generation) pattern when a user submits a question to a grounded generative AI application.",
+    "items": [
+      {"id": "S1", "text": "Convert the user question into an embedding and search the index for semantically relevant content"},
+      {"id": "S2", "text": "Add the retrieved document passages to the prompt as context"},
+      {"id": "S3", "text": "User submits a question to the application"},
+      {"id": "S4", "text": "Send the augmented prompt to the language model"},
+      {"id": "S5", "text": "Model generates a response grounded in the retrieved context"}
+    ],
+    "correct_order": ["S3", "S1", "S2", "S4", "S5"],
+    "explanation": "The RAG pattern follows these steps: (1) user submits a question, (2) the question is converted to an embedding and used to search the index (Retrieve), (3) retrieved passages are injected into the prompt (Augment), (4) the augmented prompt is sent to the model, and (5) the model generates a grounded response (Generate). This is the three-step retrieve-augment-generate pattern described in the unit.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Ground your model with Retrieval Augmented Generation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/3-retrieval-augmented-generation?pivots=text"
+    }
+  },
+  {
+    "id": 95,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "A developer is using the function tool with the Responses API. Arrange the steps of the function tool interaction pattern in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Application runs the matching function in its own code"},
+      {"id": "S2", "text": "Developer provides function definitions in the tools array of the API call"},
+      {"id": "S3", "text": "Model incorporates the function output into the final response"},
+      {"id": "S4", "text": "Model emits a function_call item indicating it needs the function to run"},
+      {"id": "S5", "text": "Application returns the function result as a function_call_output in a follow-up API call"}
+    ],
+    "correct_order": ["S2", "S4", "S1", "S5", "S3"],
+    "explanation": "The function tool workflow is: (1) developer defines tools in the tools array, (2) model evaluates the prompt and emits a function_call, (3) application executes the function, (4) application submits the result as a function_call_output, (5) model generates the final grounded answer using that output. The model never runs application code directly—it only requests that the application do so.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the function tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/06-function?pivots=text"
+    }
+  },
+  {
+    "id": 96,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "A team is deciding which optimization strategy to apply to a generative AI model. Arrange the recommended decision framework steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Add fine-tuning if the model still doesn't maintain consistent style and tone"},
+      {"id": "S2", "text": "Start with prompt engineering: test system messages, few-shot examples, and parameter tuning"},
+      {"id": "S3", "text": "Add RAG if the model needs access to specific, current, or private data"},
+      {"id": "S4", "text": "Combine strategies as needed for the application's specific requirements"}
+    ],
+    "correct_order": ["S2", "S3", "S1", "S4"],
+    "explanation": "The unit describes a specific incremental decision framework: (1) start with prompt engineering as the foundation, (2) add RAG if factual accuracy with domain-specific data is needed, (3) add fine-tuning if behavioral consistency remains insufficient, and (4) combine all strategies as needed. This order avoids unnecessary cost and complexity while building up to the optimization level required.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 97,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "Arrange the typical workflow for building a generative AI application using the Microsoft Foundry portal in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Customize and iterate on the generated code in your development environment"},
+      {"id": "S2", "text": "Explore prompts and settings in the Model playground"},
+      {"id": "S3", "text": "Use the Code tab in the playground to generate SDK code samples"},
+      {"id": "S4", "text": "Return to the playground to test new ideas and update the application"}
+    ],
+    "correct_order": ["S2", "S3", "S1", "S4"],
+    "explanation": "The Foundry portal workflow described in the unit is: (1) explore in the playground to test prompts, adjust settings, and find what works; (2) generate code samples using the Code tab which pre-populates endpoint, model name, and current settings; (3) take the generated code and customize it for specific needs; (4) iterate by returning to the playground to test new ideas, then updating code accordingly.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Explore with the model playground",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/02-chat-playground?pivots=text"
+    }
+  },
+  {
+    "id": 98,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "Complete the following statements about optimization strategies in Microsoft Foundry by selecting the correct option for each blank.\n\nWhen the primary goal is to improve **factual accuracy** by connecting the model to up-to-date, domain-specific data, you should use [BLANK_1]. When the model already has good factual knowledge but inconsistently follows a specific output format despite detailed prompts, you should use [BLANK_2]. Both strategies rely on [BLANK_3] as their underlying foundation for guiding model behavior.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "BLANK_1: The strategy for improving factual accuracy with domain-specific data",
+        "options": [
+          {"id": "a", "text": "RAG (Retrieval Augmented Generation)"},
+          {"id": "b", "text": "Fine-tuning"},
+          {"id": "c", "text": "Model distillation"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "BLANK_2: The strategy for enforcing consistent output format",
+        "options": [
+          {"id": "a", "text": "RAG (Retrieval Augmented Generation)"},
+          {"id": "b", "text": "Fine-tuning"},
+          {"id": "c", "text": "Embedding generation"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "BLANK_3: The foundational strategy that supports both RAG and fine-tuning",
+        "options": [
+          {"id": "a", "text": "Prompt engineering"},
+          {"id": "b", "text": "Vector search indexing"},
+          {"id": "c", "text": "Content filtering"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The compare-and-combine unit frames the optimization spectrum as follows: RAG 'optimizes for context' by retrieving factual, domain-specific data to ground responses; fine-tuning 'optimizes the model' by embedding consistent behavioral patterns into model weights; and prompt engineering is the foundation that supports both directions—used to instruct how the model behaves while RAG or fine-tuning are layered on top when prompting alone is insufficient.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 99,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "A developer configures a fine-tuning job in Microsoft Foundry. Match each scenario to the correct fine-tuning technique.\n\nScenario A: You have a curated dataset of ideal prompt-and-response pairs showing the exact tone and format you want. You use [BLANK_1].\n\nScenario B: You want to align the model to human judgment by providing pairs of preferred and non-preferred responses, with lower computational cost than traditional RL. You use [BLANK_2].",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "BLANK_1: Fine-tuning technique using labeled prompt-response pairs",
+        "options": [
+          {"id": "a", "text": "Supervised fine-tuning (SFT)"},
+          {"id": "b", "text": "Reinforcement fine-tuning (RFT)"},
+          {"id": "c", "text": "Direct Preference Optimization (DPO)"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "BLANK_2: Fine-tuning technique using preferred/non-preferred response pairs",
+        "options": [
+          {"id": "a", "text": "Supervised fine-tuning (SFT)"},
+          {"id": "b", "text": "Reinforcement fine-tuning (RFT)"},
+          {"id": "c", "text": "Direct Preference Optimization (DPO)"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "Microsoft Foundry offers three fine-tuning techniques: Supervised fine-tuning (SFT) trains on labeled prompt-response pairs and works best when there are clear, well-defined expected outputs. Direct Preference Optimization (DPO) aligns the model based on human preferences via preferred/non-preferred response pairs and is computationally lighter than traditional reinforcement learning. Reinforcement fine-tuning (RFT) uses a grader to reward better responses iteratively and suits complex tasks with many possible solutions.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Fine-tune a model for consistent behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/4-fine-tune-model?pivots=text"
+    }
+  },
+  {
+    "id": 100,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "Complete the following statements about benchmarks in the Microsoft Foundry model leaderboard.\n\nThe [BLANK_1] benchmark measures how well a model resists generating unsafe content, where a **lower** value indicates a safer model. The [BLANK_2] benchmark is used to evaluate code generation tasks as part of quality assessment. The [BLANK_3] metric provides a high-level quality overview by averaging accuracy scores across multiple benchmark datasets.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "BLANK_1: Safety benchmark measuring resistance to unsafe content (lower is safer)",
+        "options": [
+          {"id": "a", "text": "HarmBench (Attack Success Rate)"},
+          {"id": "b", "text": "ToxiGen (F1 score)"},
+          {"id": "c", "text": "WMDP (Weapons of Mass Destruction Proxy)"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "BLANK_2: Quality benchmark used to evaluate code generation tasks",
+        "options": [
+          {"id": "a", "text": "GPQA"},
+          {"id": "b", "text": "HumanEval+"},
+          {"id": "c", "text": "Arena-Hard"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "BLANK_3: High-level metric averaging accuracy across multiple benchmark datasets",
+        "options": [
+          {"id": "a", "text": "Latency P95"},
+          {"id": "b", "text": "Quality index"},
+          {"id": "c", "text": "Generated tokens per second (GTPS)"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "In Microsoft Foundry benchmarks: HarmBench calculates the Attack Success Rate (ASR) where lower values indicate safer models that better resist generating unsafe content. HumanEval+ (along with MBPP+) is used to assess code generation quality as part of the quality benchmark suite. The Quality index provides a high-level overview by averaging accuracy scores across multiple benchmark datasets covering reasoning, knowledge, math, and coding.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Select models using benchmarks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text"
+    }
+  }
+]
