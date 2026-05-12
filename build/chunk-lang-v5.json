@@ -1,0 +1,606 @@
+[
+  {
+    "id": 251,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When the Azure Language detection API encounters text with ambiguous character encoding that it cannot parse, what values does the response return for language name and confidence score?",
+    "options": [
+      {"id": "A", "text": "Language name: 'Mixed', confidence score: 0.5"},
+      {"id": "B", "text": "Language name: '(unknown)', confidence score: 0"},
+      {"id": "C", "text": "Language name: 'Undetermined', confidence score: NaN"},
+      {"id": "D", "text": "Language name: null, confidence score: -1"}
+    ],
+    "correct": ["B"],
+    "explanation": "When the language analyzer cannot parse text (for example, due to character encoding issues), the response returns the language name and ISO code as '(unknown)' and the confidence score as 0. This is distinct from multilingual text, which returns the dominant language but with a lower positive confidence rating.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 252,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A document submitted to the Azure Language detection API contains the text: 'I know a cool AI developer. He has a certain je ne sais quoi!' What will the API most likely return?",
+    "options": [
+      {"id": "A", "text": "Two separate results: one for English and one for French"},
+      {"id": "B", "text": "Language: '(unknown)', confidence score: 0"},
+      {"id": "C", "text": "The dominant language (English) with a lower confidence rating than a purely English document"},
+      {"id": "D", "text": "Language: 'French', because it is the most unusual part of the text"}
+    ],
+    "correct": ["C"],
+    "explanation": "Mixed language content within the same document causes the API to return the language with the largest representation (English here), but with a lower positive confidence rating that reflects the marginal strength of that assessment. Each document can only return a single primary language.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 253,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the following steps that describe what happens when the Azure Language detection API processes a batch of documents and returns results, in the correct logical order.",
+    "items": [
+      {"id": "S1", "text": "Client submits a JSON payload containing a collection of documents, each with a unique ID and text"},
+      {"id": "S2", "text": "The service evaluates each document and identifies the primary language"},
+      {"id": "S3", "text": "The service computes a confidence score between 0 and 1 for the detected language"},
+      {"id": "S4", "text": "The response returns the language name, ISO 6391 code, and confidence score for each document"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The language detection workflow proceeds: the client submits documents (up to 5,120 characters each, max 1,000 per collection), the service identifies the primary language per document, calculates a confidence score (0–1, higher = more confident), and returns language name, ISO 6391 code, and confidence score per document.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 254,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Which of the following entity categories is returned by the Azure Language Named Entity Recognition (NER) API when it identifies 'CEO' in the sentence 'Satya Nadella became CEO of Microsoft'?",
+    "options": [
+      {"id": "A", "text": "Person"},
+      {"id": "B", "text": "Organization"},
+      {"id": "C", "text": "PersonType"},
+      {"id": "D", "text": "JobTitle"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Azure Language NER API categorizes job roles and titles such as 'CEO' under the 'PersonType' category. In contrast, 'Satya Nadella' would be categorized as 'Person' and 'Microsoft' as 'Organization'.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract entities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/6-extract-entities?pivots=text"
+    }
+  },
+  {
+    "id": 255,
+    "topic": "natural-language",
+    "type": "mc_multi",
+    "question": "The Azure Language NER API processes the text: 'Microsoft was founded on April 4, 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.' Which entity categories are identified in this text? Select ALL that apply.",
+    "options": [
+      {"id": "A", "text": "Organization"},
+      {"id": "B", "text": "DateTime"},
+      {"id": "C", "text": "Person"},
+      {"id": "D", "text": "Location"},
+      {"id": "E", "text": "Event"}
+    ],
+    "correct": ["A", "B", "C", "D"],
+    "explanation": "The NER API identifies: 'Microsoft' as Organization, 'April 4, 1975' as DateTime, 'Bill Gates' and 'Paul Allen' as Person, and 'Albuquerque' and 'New Mexico' as Location. The word 'founded' is a verb and not categorized as an Event entity in this context.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract entities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/6-extract-entities?pivots=text"
+    }
+  },
+  {
+    "id": 256,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When using the Azure Language PII detection API's redaction feature, how does it mask detected PII entities in the returned text?",
+    "options": [
+      {"id": "A", "text": "It removes the PII entities entirely, leaving blank spaces"},
+      {"id": "B", "text": "It replaces PII entities with asterisks or a specified character"},
+      {"id": "C", "text": "It replaces PII entities with [REDACTED] tags"},
+      {"id": "D", "text": "It returns only a list of detected entities without a redacted version"}
+    ],
+    "correct": ["B"],
+    "explanation": "The PII detection API returns a redacted version of the text with PII replaced by asterisks or a specified character. The response includes both the list of detected entities (with categories and confidence scores) and the redacted text via the 'redacted_text' property.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract personally identifiable information (PII)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/7-extract-personal-information?pivots=text"
+    }
+  },
+  {
+    "id": 257,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer calls the Azure Language PII detection API against the text: 'Patient Sarah Johnson, SSN 123-45-6789, was admitted on 03/15/2024.' Which entity category does the API assign to '123-45-6789'?",
+    "options": [
+      {"id": "A", "text": "CreditCardNumber"},
+      {"id": "B", "text": "USSocialSecurityNumber"},
+      {"id": "C", "text": "NationalID"},
+      {"id": "D", "text": "FinancialAccountNumber"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure Language PII API categorizes a US Social Security Number pattern such as '123-45-6789' under the 'USSocialSecurityNumber' entity category. The API assigns this specific category rather than a generic financial identifier.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract personally identifiable information (PII)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/7-extract-personal-information?pivots=text"
+    }
+  },
+  {
+    "id": 258,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "A developer wants to call the Azure Language APIs using Python. Arrange the following setup steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Provision a Microsoft Foundry resource in the Azure subscription"},
+      {"id": "S2", "text": "Retrieve the resource endpoint and key from the Foundry portal"},
+      {"id": "S3", "text": "Create an AzureKeyCredential object with the resource key"},
+      {"id": "S4", "text": "Instantiate a TextAnalyticsClient with the endpoint and credential"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "You must first provision the Foundry resource to get access, then retrieve credentials from the portal, then construct the credential object, and finally instantiate the client. This matches the pattern shown in the Azure Language Python SDK documentation.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Azure Language in Microsoft Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/2-provision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 259,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Your security team requires that production code authenticating to Azure Language APIs avoids storing long-lived secrets. Which authentication approach does Microsoft recommend for production solutions?",
+    "options": [
+      {"id": "A", "text": "AzureKeyCredential with a resource key stored in environment variables"},
+      {"id": "B", "text": "DefaultAzureCredential using Microsoft Entra ID identity"},
+      {"id": "C", "text": "Basic authentication with a username and password"},
+      {"id": "D", "text": "SAS token passed in the request header"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure Language documentation explicitly states that for greater security in production solutions, Microsoft recommends using Microsoft Entra ID authentication (e.g., DefaultAzureCredential) rather than key-based authentication. The DefaultAzureCredential uses the default Azure identity of the running context.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Azure Language in Microsoft Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/2-provision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 260,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "The Azure Translator text translation API is called without specifying a 'from_language' parameter. What happens?",
+    "options": [
+      {"id": "A", "text": "The API returns an error requiring the source language to be specified"},
+      {"id": "B", "text": "The API defaults to English as the source language"},
+      {"id": "C", "text": "Azure Translator automatically detects the source language"},
+      {"id": "D", "text": "The API translates from all supported languages simultaneously"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Azure Translator translate method allows you to omit the 'from_language' parameter, in which case Azure Translator automatically detects the source language. The detected language is returned in the response as the 'detected_language' property.",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 261,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer wants to convert Japanese text written in Hiragana script into Latin characters without changing the language. Which Azure Translator method should they use?",
+    "options": [
+      {"id": "A", "text": "translate() with 'to_language' set to 'Latn'"},
+      {"id": "B", "text": "detect() followed by translate()"},
+      {"id": "C", "text": "transliterate() with from_script='Jpan' and to_script='Latn'"},
+      {"id": "D", "text": "transliterate() with from_script='Hiragana' and to_script='English'"}
+    ],
+    "correct": ["C"],
+    "explanation": "Transliteration converts characters from one script to another without changing the language. For Japanese Hiragana to Latin script, you call the transliterate() method with language='ja', from_script='Jpan', and to_script='Latn'. This produces a romanized version such as 'Kon'nichiwa' from 'こんにちは'.",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 262,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Using the Azure Translator Python SDK, a developer passes two InputTextItem objects in Spanish and Japanese to the translate() method with to_language=['fr', 'en']. How many translated text results are returned in total?",
+    "options": [
+      {"id": "A", "text": "2 (one per source document)"},
+      {"id": "B", "text": "4 (two source languages times two target languages)"},
+      {"id": "C", "text": "3 (one per unique language involved)"},
+      {"id": "D", "text": "1 (the API merges translations into a single result)"}
+    ],
+    "correct": ["B"],
+    "explanation": "The translate() method returns a translation object for each source document, and each translation object contains one translation per target language specified. With 2 source texts and 2 target languages, the total is 4 translation results (2 texts × 2 target languages).",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 263,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Translator feature to its correct description.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Converts characters from one script to another without changing the language",
+        "options": [
+          {"id": "a", "text": "Translate"},
+          {"id": "b", "text": "Transliterate"},
+          {"id": "c", "text": "Dictionary lookup"},
+          {"id": "d", "text": "Detect"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Returns equivalent words for a source term in a target language",
+        "options": [
+          {"id": "a", "text": "Translate"},
+          {"id": "b", "text": "Transliterate"},
+          {"id": "c", "text": "Dictionary lookup"},
+          {"id": "d", "text": "Detect"}
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "Returns the source language code and whether the language is supported for translation",
+        "options": [
+          {"id": "a", "text": "Translate"},
+          {"id": "b", "text": "Transliterate"},
+          {"id": "c", "text": "Dictionary lookup"},
+          {"id": "d", "text": "Detect"}
+        ],
+        "correct": "d"
+      }
+    ],
+    "explanation": "Azure Text Translation v3 (GA) exposes discrete operations: Transliterate converts scripts (e.g., Hiragana to Latin), Dictionary lookup returns equivalent words in a target language, and Detect returns the source language code plus a boolean indicating translation support.",
+    "source": {
+      "path": "Azure AI Translator documentation",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Text translation in Foundry Tools?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview"
+    }
+  },
+  {
+    "id": 264,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Text Translation regional endpoint to the data centers that process its requests.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "api-nam.cognitive.microsofttranslator.com",
+        "options": [
+          {"id": "a", "text": "East US 2 and West US 2"},
+          {"id": "b", "text": "Japan East and Southeast Asia"},
+          {"id": "c", "text": "France Central and West Europe"},
+          {"id": "d", "text": "Switzerland North and Switzerland West"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "api-apc.cognitive.microsofttranslator.com",
+        "options": [
+          {"id": "a", "text": "East US 2 and West US 2"},
+          {"id": "b", "text": "Japan East and Southeast Asia"},
+          {"id": "c", "text": "France Central and West Europe"},
+          {"id": "d", "text": "Switzerland North and Switzerland West"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "api-eur.cognitive.microsofttranslator.com",
+        "options": [
+          {"id": "a", "text": "East US 2 and West US 2"},
+          {"id": "b", "text": "Japan East and Southeast Asia"},
+          {"id": "c", "text": "France Central and West Europe"},
+          {"id": "d", "text": "Switzerland North and Switzerland West"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "Azure Text Translation data residency by regional endpoint: Americas (api-nam) routes to East US 2 and West US 2; Asia Pacific (api-apc) routes to Japan East and Southeast Asia; Europe (api-eur) routes to France Central and West Europe. For Switzerland, a custom resource endpoint must be used.",
+    "source": {
+      "path": "Azure AI Translator documentation",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Text translation in Foundry Tools?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview"
+    }
+  },
+  {
+    "id": 265,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the steps for using the Azure Language sentiment analysis feature in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Create an Azure Language resource to get an endpoint and key"},
+      {"id": "S2", "text": "Create a request using the REST API or a client library (C#, Java, JavaScript, Python)"},
+      {"id": "S3", "text": "Send the request with text data, authenticated using key and endpoint"},
+      {"id": "S4", "text": "Stream or store the response containing document-level and sentence-level sentiment labels and confidence scores"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The Azure Language sentiment analysis typical workflow is: provision a resource (get key + endpoint), create a request via REST API or SDK, send the authenticated request with text data, then consume the response. Sentiment labels (positive, neutral, negative) and confidence scores (0–1) are returned at both document and sentence levels.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is sentiment analysis and opinion mining in Azure Language service?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview"
+    }
+  },
+  {
+    "id": 266,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Opinion mining in Azure Language is also known by which technical term in Natural Language Processing?",
+    "options": [
+      {"id": "A", "text": "Intent extraction"},
+      {"id": "B", "text": "Aspect-based sentiment analysis"},
+      {"id": "C", "text": "Document-level sentiment classification"},
+      {"id": "D", "text": "Subjectivity detection"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Azure Language documentation identifies opinion mining as a feature of sentiment analysis that is also known as 'aspect-based sentiment analysis' in NLP. It provides more granular information about opinions related to specific words (such as product or service attributes) in text.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is sentiment analysis and opinion mining in Azure Language service?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview"
+    }
+  },
+  {
+    "id": 267,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "An organization needs to analyze multi-turn chat transcripts for PII and redact sensitive data. Which Azure Language PII feature type is optimized for this use case?",
+    "options": [
+      {"id": "A", "text": "Text PII — for synchronous string-based input"},
+      {"id": "B", "text": "Conversation PII — for turn-based chat or transcript data"},
+      {"id": "C", "text": "Document-based PII — for native files such as .pdf and .docx"},
+      {"id": "D", "text": "Prebuilt NER — for categorizing entities in unstructured text"}
+    ],
+    "correct": ["B"],
+    "explanation": "Conversation PII is specifically designed for multi-turn exchanges and transcript-oriented payloads where turn boundaries and conversation context affect detection behavior. It is optimized for asynchronous workloads that analyze chat and transcript structures, making it appropriate for contact centers and meeting transcripts.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the Personally Identifiable Information (PII) detection feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview"
+    }
+  },
+  {
+    "id": 268,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "A developer is building a Conversational Language Understanding (CLU) project using the custom machine learned model path. Arrange the following development lifecycle steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Define the schema: create intents and entities"},
+      {"id": "S2", "text": "Label utterance data with the defined intents and entities"},
+      {"id": "S3", "text": "Train the model on the labeled data"},
+      {"id": "S4", "text": "Review evaluation details and model performance"},
+      {"id": "S5", "text": "Deploy the model to make it available via the Runtime API"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The CLU custom machine learned model lifecycle follows this sequence: first define the schema (intents and entities), then label data (quality of labeling is key), then train, then view evaluation metrics to assess performance, and finally deploy the model to expose it via the Runtime API. An optional improve step can occur between evaluate and deploy.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "Conversational language understanding overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview"
+    }
+  },
+  {
+    "id": 269,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Which CLU path allows you to skip the data labeling step and deploy a model by providing only intent descriptions?",
+    "options": [
+      {"id": "A", "text": "Custom machine learned model path"},
+      {"id": "B", "text": "LLM-powered quick deploy path"},
+      {"id": "C", "text": "Orchestration workflow path"},
+      {"id": "D", "text": "Prebuilt NER path"}
+    ],
+    "correct": ["B"],
+    "explanation": "The CLU LLM-powered quick deploy path allows developers to skip data labeling. You define the schema by creating intents with detailed descriptions of their meaning, then deploy directly. The LLM-based training config uses the intent descriptions to predict intents without requiring labeled utterance examples.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "Conversational language understanding overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview"
+    }
+  },
+  {
+    "id": 270,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each custom text classification scenario to the correct project type.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A movie script that can ONLY be labeled as either 'Romance' or 'Comedy', never both",
+        "options": [
+          {"id": "a", "text": "Single label classification"},
+          {"id": "b", "text": "Multi label classification"},
+          {"id": "c", "text": "Custom NER"},
+          {"id": "d", "text": "Conversational language understanding"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A movie script that can be labeled as both 'Comedy' and 'Romance' simultaneously",
+        "options": [
+          {"id": "a", "text": "Single label classification"},
+          {"id": "b", "text": "Multi label classification"},
+          {"id": "c", "text": "Custom NER"},
+          {"id": "d", "text": "Conversational language understanding"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "Custom text classification supports two project types: single label classification (one class per document — e.g., a script is Romance OR Comedy) and multi label classification (multiple classes per document — e.g., a script can be both Comedy AND Romance). The documentation uses these exact movie script examples to illustrate the distinction.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom text classification?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview"
+    }
+  },
+  {
+    "id": 271,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the custom text classification project lifecycle steps in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Define your schema and identify the classes to differentiate"},
+      {"id": "S2", "text": "Label your data with the appropriate class assignments"},
+      {"id": "S3", "text": "Train the model on the labeled data"},
+      {"id": "S4", "text": "View the model's evaluation details"},
+      {"id": "S5", "text": "Deploy the model via the Analyze API"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The custom text classification lifecycle follows: define schema → label data → train → evaluate → deploy → classify. The documentation emphasizes that quality of labeling is a key factor in determining model performance, and schema definition (avoiding class ambiguity) must come first.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom text classification?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview"
+    }
+  },
+  {
+    "id": 272,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A financial services company wants to automatically extract loan application fields (e.g., borrower name, property address, loan amount) from thousands of unstructured mortgage documents. Which Azure Language feature is most appropriate?",
+    "options": [
+      {"id": "A", "text": "Prebuilt Named Entity Recognition (NER)"},
+      {"id": "B", "text": "Custom Named Entity Recognition (CNER)"},
+      {"id": "C", "text": "Key phrase extraction"},
+      {"id": "D", "text": "Custom text classification"}
+    ],
+    "correct": ["B"],
+    "explanation": "Custom NER (CNER) is designed specifically for extracting domain-specific entities from unstructured text such as contracts and financial documents. The documentation lists mortgage application data extraction as a primary example use case. Prebuilt NER covers general categories and would not recognize domain-specific financial fields without customization.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the custom named entity recognition (CNER) feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/overview"
+    }
+  },
+  {
+    "id": 273,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "According to the custom NER labeling best practices, which three principles should guide how you label entity instances in your training data?",
+    "options": [
+      {"id": "A", "text": "Label precisely, label consistently, label completely"},
+      {"id": "B", "text": "Label broadly, label frequently, label randomly"},
+      {"id": "C", "text": "Label only high-confidence instances, label unique values only, avoid overlapping labels"},
+      {"id": "D", "text": "Label at least 100 examples per entity, use human reviewers only, export to CSV format"}
+    ],
+    "correct": ["A"],
+    "explanation": "The Azure Language custom NER documentation explicitly identifies three labeling principles: label precisely (each entity to its right type, include only what you want extracted), label consistently (the same entity should have the same label across all files), and label completely (label all instances of the entity in all files).",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the custom named entity recognition (CNER) feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/overview"
+    }
+  },
+  {
+    "id": 274,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "What does the custom question answering (CQA) active learning feature do?",
+    "options": [
+      {"id": "A", "text": "Automatically generates new question-answer pairs from uploaded documents"},
+      {"id": "B", "text": "Improves answer quality based on real-world usage patterns and user queries"},
+      {"id": "C", "text": "Trains a new model every time a user submits an unanswered question"},
+      {"id": "D", "text": "Filters answers based on metadata tags before returning results"}
+    ],
+    "correct": ["B"],
+    "explanation": "The active learning feature of custom question answering improves answer quality over time based on real-world usage patterns and user queries. It is a separate capability from knowledge base creation (which extracts QA pairs from documents) and from metadata filtering (which uses tags to filter answers).",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom question answering?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview"
+    }
+  },
+  {
+    "id": 275,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "A team is designing an AI agent that needs to call Azure Language NLP capabilities. Match each architecture component of the Azure Language MCP server to its correct role.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The application (e.g., Microsoft Foundry or a custom app) that runs the agent",
+        "options": [
+          {"id": "a", "text": "Host"},
+          {"id": "b", "text": "Client"},
+          {"id": "c", "text": "Server"},
+          {"id": "d", "text": "Endpoint"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A program that exposes tools, resources, and prompts that an agent can discover and call",
+        "options": [
+          {"id": "a", "text": "Host"},
+          {"id": "b", "text": "Client"},
+          {"id": "c", "text": "Server"},
+          {"id": "d", "text": "Endpoint"}
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "A component within the host that manages connections to MCP servers and handles communication",
+        "options": [
+          {"id": "a", "text": "Host"},
+          {"id": "b", "text": "Client"},
+          {"id": "c", "text": "Server"},
+          {"id": "d", "text": "Endpoint"}
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Model Context Protocol (MCP) uses a three-component architecture: the Host is the application running the agent (e.g., Microsoft Foundry), the Client is a component within the host that manages MCP server connections, and the Server is the program that exposes tools (such as Azure Language NLP capabilities) for the agent to discover and call.",
+    "source": {
+      "path": "Develop a text analysis agent with the Azure Language MCP server",
+      "module": "Develop a text analysis agent with the Azure Language MCP server",
+      "unit": "Understand the Azure Language MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/02-understand-language-mcp?pivots=text"
+    }
+  }
+]
