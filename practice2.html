@@ -2397,8 +2397,14 @@
     // ============================================================
 
     const TOPICS = [
-      { id: "agentic",       title: "Implement an agentic solution",                 weight: "5-10%"  },
-      { id: "genai-foundry", title: "Implement generative AI solutions (Foundry)",  weight: "15-20%" },
+      { id: "agentic",         title: "Implement an agentic solution",
+        weight: "5-10%",   subtitle: "Foundry Agent Service, tools, RAG, multi-agent" },
+      { id: "genai-foundry",   title: "Implement generative AI solutions (Foundry)",
+        weight: "15-20%",  subtitle: "Model catalog, Prompt Flow, Responses API, content filters" },
+      { id: "computer-vision", title: "Implement computer vision solutions",
+        weight: "10-15%",  subtitle: "Image, video, face, OCR — exam priority: video" },
+      { id: "plan-and-manage", title: "Plan and manage an Azure AI solution",
+        weight: "20-25%",  subtitle: "Provisioning, RBAC, monitoring, networking, content safety" },
     ];
     const TOPIC_WEIGHTS = { "agentic": 7.5, "genai-foundry": 17.5 };
 
