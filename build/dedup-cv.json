@@ -1,0 +1,212 @@
+[
+  {
+    "id": 101,
+    "type": "mc_single",
+    "stem_fragment": "Which Azure AI Video Indexer capability requires Limited Access approval before it can be used?",
+    "unit": "Understand Azure Video Indexer capabilities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text"
+  },
+  {
+    "id": 102,
+    "type": "mc_single",
+    "stem_fragment": "A developer wants to detect adult or violent themes automatically in uploaded videos. Which Azure Video Indexer capability should they rely ",
+    "unit": "Understand Azure Video Indexer capabilities",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text"
+  },
+  {
+    "id": 103,
+    "type": "mc_multi",
+    "stem_fragment": "A media company wants to extend the default recognition capabilities of Azure Video Indexer to handle domain-specific terminology and intern",
+    "unit": "Extract custom insights",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/3-extract-custom-insights?pivots=text"
+  },
+  {
+    "id": 104,
+    "type": "sequence",
+    "stem_fragment": "What is the correct order of steps to create and use a custom Language model in Azure Video Indexer via the web portal?",
+    "unit": "Customize a Language model in Azure AI Video Indexer",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/customize-language-model-how-to"
+  },
+  {
+    "id": 105,
+    "type": "mc_single",
+    "stem_fragment": "You want to embed Video Indexer player and insights panels inside your company's intranet portal without granting employees access to the fu",
+    "unit": "Use Video Analyzer widgets and APIs",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text"
+  },
+  {
+    "id": 106,
+    "type": "mc_single",
+    "stem_fragment": "Which Video Indexer REST API call pattern is used to obtain an access token before calling other API operations?",
+    "unit": "Use Video Analyzer widgets and APIs",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text"
+  },
+  {
+    "id": 107,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following statements about Azure AI Video Indexer account types by selecting the correct option for each blank. **Blank 1**: A ",
+    "unit": "Azure AI Video Indexer accounts",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview"
+  },
+  {
+    "id": 108,
+    "type": "mc_single",
+    "stem_fragment": "Which feature of paid (ARM-based) Azure Video Indexer accounts is NOT available on trial accounts?",
+    "unit": "Azure AI Video Indexer accounts",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview"
+  },
+  {
+    "id": 109,
+    "type": "mc_single",
+    "stem_fragment": "A developer is building a client application that uses the Azure AI Vision service to analyze images. When the client app authenticates usin",
+    "unit": "Provision an Azure Vision resource",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text"
+  },
+  {
+    "id": 110,
+    "type": "mc_single",
+    "stem_fragment": "A user attempts to upload a video to Azure Video Indexer using a YouTube URL, but the upload fails. What is the reason?",
+    "unit": "Upload and index media with Azure AI Video Indexer",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media"
+  },
+  {
+    "id": 111,
+    "type": "sequence",
+    "stem_fragment": "What is the correct sequence of steps for using the Azure Vision Python SDK to extract text from an image using the Read OCR feature?",
+    "unit": "Read text with Azure Vision Image Analysis",
+    "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text"
+  },
+  {
+    "id": 112,
+    "type": "mc_single",
+    "stem_fragment": "When using the Azure AI Face service Detect method, which Python client class should you instantiate to connect to the endpoint?",
+    "unit": "Detect and analyze faces",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/3-detect-analyze-faces?pivots=text"
+  },
+  {
+    "id": 113,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following statements about Azure AI Video Indexer deployment and audio capabilities. **Blank 1**: Azure AI Video Indexer enable",
+    "unit": "What is Azure AI Video Indexer?",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview"
+  },
+  {
+    "id": 114,
+    "type": "mc_single",
+    "stem_fragment": "When analyzing an image with the Azure Vision Python SDK and you want the response to include a bounding box for each detected person, which",
+    "unit": "Analyze an image",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+  },
+  {
+    "id": 115,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following statements about image requirements for Azure Vision image analysis. **Blank 1**: The maximum file size accepted for ",
+    "unit": "Analyze an image",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text"
+  },
+  {
+    "id": 116,
+    "type": "mc_single",
+    "stem_fragment": "When using the Azure Vision Read API (VisualFeatures.READ), how is the OCR response text organized in the returned JSON?",
+    "unit": "Read text with Azure Vision Image Analysis",
+    "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text"
+  },
+  {
+    "id": 117,
+    "type": "sequence",
+    "stem_fragment": "A developer needs to choose the right Azure AI service for reading text. Arrange these use-case descriptions in order from most suited for A",
+    "unit": "Explore Azure AI options for reading text",
+    "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text"
+  },
+  {
+    "id": 118,
+    "type": "mc_single",
+    "stem_fragment": "Which responsible AI consideration is specifically highlighted in the face-based solutions unit because facial data is personally identifiab",
+    "unit": "Responsible AI considerations for face-based solutions",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/5-understand-considerations-for-face-analysis?pivots=text"
+  },
+  {
+    "id": 119,
+    "type": "mc_single",
+    "stem_fragment": "A detected face ID returned by the Azure Face service is cached for how long before it expires if not persisted to a Person Group?",
+    "unit": "Verify and identify faces",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text"
+  },
+  {
+    "id": 120,
+    "type": "sequence",
+    "stem_fragment": "To identify faces in videos using the Azure Face service, what is the correct sequence of steps to create a facial recognition model?",
+    "unit": "Verify and identify faces",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text"
+  },
+  {
+    "id": 121,
+    "type": "mc_single",
+    "stem_fragment": "When training an object detection model in Azure AI Custom Vision, what is the key difference in image labeling compared to image classifica",
+    "unit": "Train an object detector",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+  },
+  {
+    "id": 122,
+    "type": "mc_single",
+    "stem_fragment": "In Azure AI Custom Vision object detection, what does a bounding box with Left: 0.1, Top: 0.5, Width: 0.5, Height: 0.25 represent?",
+    "unit": "Train an object detector",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+  },
+  {
+    "id": 123,
+    "type": "sequence",
+    "stem_fragment": "What is the correct order of steps to train and publish an Azure AI Custom Vision image classification model using the portal?",
+    "unit": "Train an image classification model",
+    "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/3-understand-image-classification?pivots=text"
+  },
+  {
+    "id": 124,
+    "type": "mc_single",
+    "stem_fragment": "A developer builds a Custom Vision image classification client application using the Python SDK. Which class should they instantiate to subm",
+    "unit": "Create an image classification client application",
+    "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/4-use-trained-image-classifier?pivots=text"
+  },
+  {
+    "id": 125,
+    "type": "mc_single",
+    "stem_fragment": "When provisioning Azure Vision for image analysis, which option is recommended for development teams building solutions that combine generat",
+    "unit": "Provision an Azure Vision resource",
+    "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text"
+  },
+  {
+    "id": 126,
+    "type": "mc_single",
+    "stem_fragment": "A developer uses the Responses API to submit a local image to a multimodal model in Microsoft Foundry. How must the local image be formatted",
+    "unit": "Develop a vision-based chat app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text"
+  },
+  {
+    "id": 127,
+    "type": "mc_multi",
+    "stem_fragment": "A developer is building a vision-based chat application that submits images to a multimodal model. Which two API options does the Develop a ",
+    "unit": "Develop a vision-based chat app",
+    "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text"
+  },
+  {
+    "id": 128,
+    "type": "mc_single",
+    "stem_fragment": "Which statement best describes how image generation models such as those available in Microsoft Foundry produce their output?",
+    "unit": "What are image-generation models?",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/2-what-is-dall-e?pivots=text"
+  },
+  {
+    "id": 129,
+    "type": "sequence",
+    "stem_fragment": "What is the correct sequence of steps for calling an image generation model using the Python SDK in Microsoft Foundry?",
+    "unit": "Create a client application that uses an image generation model",
+    "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text"
+  },
+  {
+    "id": 130,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following statements about the Azure AI Custom Vision object detection workflow. **Blank 1**: In Azure AI Custom Vision, object",
+    "unit": "Train an object detector",
+    "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text"
+  }
+]

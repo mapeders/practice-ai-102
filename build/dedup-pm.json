@@ -1,0 +1,212 @@
+[
+  {
+    "id": 131,
+    "type": "mc_single",
+    "stem_fragment": "A developer is building a new AI solution on Azure that requires generative AI chat capabilities, speech-to-text, and document intelligence ",
+    "unit": "Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text"
+  },
+  {
+    "id": 132,
+    "type": "mc_single",
+    "stem_fragment": "You need to authenticate calls to an Azure Translator Foundry resource using a multi-service (Foundry) resource key. Which additional HTTP h",
+    "unit": "Authentication in Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "id": 133,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following sentences about Foundry Tools authentication by selecting the correct value for each blank.",
+    "unit": "Authentication in Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "id": 134,
+    "type": "mc_single",
+    "stem_fragment": "An Azure Function App needs to call the Azure Vision API (a Foundry Tool) without storing credentials in application settings. The organizat",
+    "unit": "Authentication in Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "id": 135,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following sentences about Foundry Tools security features by selecting the correct value for each blank.",
+    "unit": "Security for Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features"
+  },
+  {
+    "id": 136,
+    "type": "mc_single",
+    "stem_fragment": "Your company stores sensitive customer data in an Azure Language (Foundry Tool) resource for longer than 48 hours. The security team require",
+    "unit": "Security for Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features"
+  },
+  {
+    "id": 137,
+    "type": "mc_single",
+    "stem_fragment": "You need to restrict which network endpoints can make API calls to a Foundry Tools resource so that only resources within your corporate vir",
+    "unit": "Security for Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features"
+  },
+  {
+    "id": 138,
+    "type": "mc_single",
+    "stem_fragment": "When creating a private endpoint for a Microsoft Foundry resource in the Azure portal, what region constraint must the private endpoint sati",
+    "unit": "How to configure network isolation for Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+  },
+  {
+    "id": 139,
+    "type": "mc_single",
+    "stem_fragment": "After adding a private endpoint to a Microsoft Foundry project (with public access disabled), a developer on the corporate VPN reports they ",
+    "unit": "How to configure network isolation for Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+  },
+  {
+    "id": 140,
+    "type": "mc_single",
+    "stem_fragment": "An enterprise is deploying a network-isolated Microsoft Foundry resource with virtual network injection for their AI Agent Service. Which se",
+    "unit": "How to configure network isolation for Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+  },
+  {
+    "id": 141,
+    "type": "hotspot",
+    "stem_fragment": "Complete the following sentences about Microsoft Foundry's network isolation features by selecting the correct value for each blank.",
+    "unit": "How to configure network isolation for Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+  },
+  {
+    "id": 142,
+    "type": "mc_single",
+    "stem_fragment": "A developer is building generative AI applications in Visual Studio Code and wants to browse deployed models, test agents in integrated play",
+    "unit": "Developer tools and SDKs",
+    "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text"
+  },
+  {
+    "id": 143,
+    "type": "mc_single",
+    "stem_fragment": "Microsoft's Responsible AI guidelines define six core principles for AI development. A product team realizes their AI model generates loan d",
+    "unit": "Responsible AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text"
+  },
+  {
+    "id": 144,
+    "type": "mc_single",
+    "stem_fragment": "Your organization's AI chatbot occasionally generates factually incorrect medical information. Users are not informed that outputs may be in",
+    "unit": "Responsible AI",
+    "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text"
+  },
+  {
+    "id": 145,
+    "type": "mc_single",
+    "stem_fragment": "When planning a responsible generative AI solution using the Microsoft four-stage framework, what is the correct order of the stages?",
+    "unit": "Plan a responsible generative AI solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text"
+  },
+  {
+    "id": 146,
+    "type": "mc_single",
+    "stem_fragment": "During the Map stage of responsible AI planning for a generative AI cooking assistant, your team has produced a prioritized list of potentia",
+    "unit": "Map potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text"
+  },
+  {
+    "id": 147,
+    "type": "mc_single",
+    "stem_fragment": "A security engineer is conducting red team testing on a generative AI application. What is the primary purpose of red teaming in the context",
+    "unit": "Map potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text"
+  },
+  {
+    "id": 148,
+    "type": "mc_single",
+    "stem_fragment": "When measuring potential harms in a generative AI solution, what is the recommended testing approach to achieve coverage at scale after init",
+    "unit": "Measure potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text"
+  },
+  {
+    "id": 149,
+    "type": "mc_single",
+    "stem_fragment": "Microsoft Foundry's content filter guardrails classify content into severity levels for five categories. Which of the following is one of th",
+    "unit": "Mitigate potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text"
+  },
+  {
+    "id": 150,
+    "type": "mc_single",
+    "stem_fragment": "At which mitigation layer in the responsible generative AI framework would you apply Retrieval Augmented Generation (RAG) to reduce the risk",
+    "unit": "Mitigate potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text"
+  },
+  {
+    "id": 151,
+    "type": "mc_single",
+    "stem_fragment": "Before releasing a responsible generative AI solution, which of the following is a key operational capability that should be implemented to ",
+    "unit": "Manage a responsible generative AI solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text"
+  },
+  {
+    "id": 152,
+    "type": "mc_multi",
+    "stem_fragment": "When planning a responsible release of a generative AI solution in Microsoft Foundry, which TWO actions are recommended before or during the",
+    "unit": "Manage a responsible generative AI solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text"
+  },
+  {
+    "id": 153,
+    "type": "mc_multi",
+    "stem_fragment": "Which TWO Foundry Tools security features can be used together to restrict access to a Foundry resource to only authorized workloads within ",
+    "unit": "Security for Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features"
+  },
+  {
+    "id": 154,
+    "type": "sequence",
+    "stem_fragment": "Arrange the following steps in the correct order to configure inbound network isolation for a new Microsoft Foundry resource using a private",
+    "unit": "How to configure network isolation for Microsoft Foundry",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+  },
+  {
+    "id": 155,
+    "type": "sequence",
+    "stem_fragment": "A developer needs to authenticate a service principal to Microsoft Entra ID so it can call Foundry Tools using token-based auth. Place the f",
+    "unit": "Authentication in Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "id": 156,
+    "type": "sequence",
+    "stem_fragment": "You are implementing the Measure stage of the responsible generative AI process for a customer-facing AI assistant. Place the following step",
+    "unit": "Measure potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text"
+  },
+  {
+    "id": 157,
+    "type": "sequence",
+    "stem_fragment": "Arrange the four stages of the Microsoft responsible generative AI process in their correct sequential order.",
+    "unit": "Plan a responsible generative AI solution",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text"
+  },
+  {
+    "id": 158,
+    "type": "sequence",
+    "stem_fragment": "Place the following steps in correct order to implement the Map stage of responsible AI for a new generative AI solution in Microsoft Foundr",
+    "unit": "Map potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text"
+  },
+  {
+    "id": 159,
+    "type": "sequence",
+    "stem_fragment": "Arrange the following actions in the correct order to perform a zero-downtime API key rotation for a Foundry Tools resource that currently u",
+    "unit": "Security for Foundry Tools",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features"
+  },
+  {
+    "id": 160,
+    "type": "hotspot",
+    "stem_fragment": "A team is implementing a responsible generative AI solution in Microsoft Foundry. Match each mitigation action to the correct layer of the f",
+    "unit": "Mitigate potential harms",
+    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text"
+  }
+]
