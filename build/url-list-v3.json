@@ -1,0 +1,296 @@
+{
+  "computer-vision": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/1-introduction?pivots=text",
+      "module": "Analyze images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/1-introduction?pivots=text",
+      "module": "Read text in images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/1-introduction?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/1-introduction?pivots=text",
+      "module": "Classify images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/1-introduction?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/2-understand-object-detection?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Use Azure AI Custom Vision for object detection"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/1-introduction?pivots=text",
+      "module": "Analyze video",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/1-introduction?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/2-deploy-multimodal-model?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Use a vision-capable model in the Microsoft Foundry portal"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/1-introduction?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/3-dall-e-in-openai-studio?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Explore image-generation models in Microsoft Foundry portal"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-search",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Search for exact moments in videos with Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/3-extract-custom-insights?pivots=text",
+      "module": "Analyze video",
+      "unit": "Extract custom insights"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/customize-language-model-how-to",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Customize a Language model in Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text",
+      "module": "Read text in images",
+      "unit": "Explore Azure AI options for reading text"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/3-detect-analyze-faces?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Detect and analyze faces"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/5-understand-considerations-for-face-analysis?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Responsible AI considerations for face-based solutions"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/3-understand-image-classification?pivots=text",
+      "module": "Classify images",
+      "unit": "Train an image classification model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/4-use-trained-image-classifier?pivots=text",
+      "module": "Classify images",
+      "unit": "Create an image classification client application"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/2-what-is-dall-e?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "What are image-generation models?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Create a client application that uses an image generation model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text",
+      "module": "Analyze video",
+      "unit": "Understand Azure Video Indexer capabilities"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text",
+      "module": "Analyze video",
+      "unit": "Use Video Analyzer widgets and APIs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Azure AI Video Indexer accounts"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text",
+      "module": "Analyze images",
+      "unit": "Provision an Azure Vision resource"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text",
+      "module": "Read text in images",
+      "unit": "Read text with Azure Vision Image Analysis"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text",
+      "module": "Analyze images",
+      "unit": "Analyze an image"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Verify and identify faces"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Develop a vision-based chat app"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Train an object detector"
+    }
+  ],
+  "plan-and-manage": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/1-introduction?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "What is AI?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/1-introduction?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Developer tools and SDKs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Responsible AI"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Plan a responsible generative AI solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Manage a responsible generative AI solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Map potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Measure potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Mitigate potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication",
+      "module": "Azure AI services documentation",
+      "unit": "Authentication in Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features",
+      "module": "Azure AI services documentation",
+      "unit": "Security for Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link",
+      "module": "Azure AI services documentation",
+      "unit": "How to configure network isolation for Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Plan and manage costs for Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/commitment-tier",
+      "module": "Azure AI services documentation",
+      "unit": "Use Foundry Tools with commitment tier pricing"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits",
+      "module": "Azure OpenAI documentation",
+      "unit": "Azure OpenAI quotas and limits"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/diagnostic-logging",
+      "module": "Azure AI services documentation",
+      "unit": "Enable diagnostic logging for Azure AI services"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Understanding deployment types in Microsoft Foundry Models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "What is Azure AI Content Safety?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories",
+      "module": "Azure AI Content Safety documentation",
+      "unit": "Harm categories in Azure AI Content Safety"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry",
+      "module": "Microsoft Foundry documentation",
+      "unit": "Role-based access control for Microsoft Foundry"
+    }
+  ]
+}
