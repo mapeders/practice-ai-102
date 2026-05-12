@@ -1,0 +1,2000 @@
+[
+  {
+    "id": 251,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When the Azure Language detection API encounters text with ambiguous character encoding that it cannot parse, what values does the response return for language name and confidence score?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Language name: 'Mixed', confidence score: 0.5"
+      },
+      {
+        "id": "B",
+        "text": "Language name: '(unknown)', confidence score: 0"
+      },
+      {
+        "id": "C",
+        "text": "Language name: 'Undetermined', confidence score: NaN"
+      },
+      {
+        "id": "D",
+        "text": "Language name: null, confidence score: -1"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "When the language analyzer cannot parse text (for example, due to character encoding issues), the response returns the language name and ISO code as '(unknown)' and the confidence score as 0. This is distinct from multilingual text, which returns the dominant language but with a lower positive confidence rating.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 252,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A document submitted to the Azure Language detection API contains the text: 'I know a cool AI developer. He has a certain je ne sais quoi!' What will the API most likely return?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Two separate results: one for English and one for French"
+      },
+      {
+        "id": "B",
+        "text": "Language: '(unknown)', confidence score: 0"
+      },
+      {
+        "id": "C",
+        "text": "The dominant language (English) with a lower confidence rating than a purely English document"
+      },
+      {
+        "id": "D",
+        "text": "Language: 'French', because it is the most unusual part of the text"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Mixed language content within the same document causes the API to return the language with the largest representation (English here), but with a lower positive confidence rating that reflects the marginal strength of that assessment. Each document can only return a single primary language.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 253,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the following steps that describe what happens when the Azure Language detection API processes a batch of documents and returns results, in the correct logical order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Client submits a JSON payload containing a collection of documents, each with a unique ID and text"
+      },
+      {
+        "id": "S2",
+        "text": "The service evaluates each document and identifies the primary language"
+      },
+      {
+        "id": "S3",
+        "text": "The service computes a confidence score between 0 and 1 for the detected language"
+      },
+      {
+        "id": "S4",
+        "text": "The response returns the language name, ISO 6391 code, and confidence score for each document"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The language detection workflow proceeds: the client submits documents (up to 5,120 characters each, max 1,000 per collection), the service identifies the primary language per document, calculates a confidence score (0\u20131, higher = more confident), and returns language name, ISO 6391 code, and confidence score per document.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Detect language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language?pivots=text"
+    }
+  },
+  {
+    "id": 254,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Which of the following entity categories is returned by the Azure Language Named Entity Recognition (NER) API when it identifies 'CEO' in the sentence 'Satya Nadella became CEO of Microsoft'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Person"
+      },
+      {
+        "id": "B",
+        "text": "Organization"
+      },
+      {
+        "id": "C",
+        "text": "PersonType"
+      },
+      {
+        "id": "D",
+        "text": "JobTitle"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure Language NER API categorizes job roles and titles such as 'CEO' under the 'PersonType' category. In contrast, 'Satya Nadella' would be categorized as 'Person' and 'Microsoft' as 'Organization'.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract entities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/6-extract-entities?pivots=text"
+    }
+  },
+  {
+    "id": 255,
+    "topic": "natural-language",
+    "type": "mc_multi",
+    "question": "The Azure Language NER API processes the text: 'Microsoft was founded on April 4, 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.' Which entity categories are identified in this text? Select ALL that apply.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Organization"
+      },
+      {
+        "id": "B",
+        "text": "DateTime"
+      },
+      {
+        "id": "C",
+        "text": "Person"
+      },
+      {
+        "id": "D",
+        "text": "Location"
+      },
+      {
+        "id": "E",
+        "text": "Event"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": "The NER API identifies: 'Microsoft' as Organization, 'April 4, 1975' as DateTime, 'Bill Gates' and 'Paul Allen' as Person, and 'Albuquerque' and 'New Mexico' as Location. The word 'founded' is a verb and not categorized as an Event entity in this context.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract entities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/6-extract-entities?pivots=text"
+    }
+  },
+  {
+    "id": 256,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When using the Azure Language PII detection API's redaction feature, how does it mask detected PII entities in the returned text?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It removes the PII entities entirely, leaving blank spaces"
+      },
+      {
+        "id": "B",
+        "text": "It replaces PII entities with asterisks or a specified character"
+      },
+      {
+        "id": "C",
+        "text": "It replaces PII entities with [REDACTED] tags"
+      },
+      {
+        "id": "D",
+        "text": "It returns only a list of detected entities without a redacted version"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The PII detection API returns a redacted version of the text with PII replaced by asterisks or a specified character. The response includes both the list of detected entities (with categories and confidence scores) and the redacted text via the 'redacted_text' property.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract personally identifiable information (PII)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/7-extract-personal-information?pivots=text"
+    }
+  },
+  {
+    "id": 257,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer calls the Azure Language PII detection API against the text: 'Patient Sarah Johnson, SSN 123-45-6789, was admitted on 03/15/2024.' Which entity category does the API assign to '123-45-6789'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "CreditCardNumber"
+      },
+      {
+        "id": "B",
+        "text": "USSocialSecurityNumber"
+      },
+      {
+        "id": "C",
+        "text": "NationalID"
+      },
+      {
+        "id": "D",
+        "text": "FinancialAccountNumber"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure Language PII API categorizes a US Social Security Number pattern such as '123-45-6789' under the 'USSocialSecurityNumber' entity category. The API assigns this specific category rather than a generic financial identifier.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Extract personally identifiable information (PII)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/7-extract-personal-information?pivots=text"
+    }
+  },
+  {
+    "id": 258,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "A developer wants to call the Azure Language APIs using Python. Arrange the following setup steps in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Provision a Microsoft Foundry resource in the Azure subscription"
+      },
+      {
+        "id": "S2",
+        "text": "Retrieve the resource endpoint and key from the Foundry portal"
+      },
+      {
+        "id": "S3",
+        "text": "Create an AzureKeyCredential object with the resource key"
+      },
+      {
+        "id": "S4",
+        "text": "Instantiate a TextAnalyticsClient with the endpoint and credential"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "You must first provision the Foundry resource to get access, then retrieve credentials from the portal, then construct the credential object, and finally instantiate the client. This matches the pattern shown in the Azure Language Python SDK documentation.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Azure Language in Microsoft Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/2-provision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 259,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Your security team requires that production code authenticating to Azure Language APIs avoids storing long-lived secrets. Which authentication approach does Microsoft recommend for production solutions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AzureKeyCredential with a resource key stored in environment variables"
+      },
+      {
+        "id": "B",
+        "text": "DefaultAzureCredential using Microsoft Entra ID identity"
+      },
+      {
+        "id": "C",
+        "text": "Basic authentication with a username and password"
+      },
+      {
+        "id": "D",
+        "text": "SAS token passed in the request header"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure Language documentation explicitly states that for greater security in production solutions, Microsoft recommends using Microsoft Entra ID authentication (e.g., DefaultAzureCredential) rather than key-based authentication. The DefaultAzureCredential uses the default Azure identity of the running context.",
+    "source": {
+      "path": "Analyze text with Azure Language in Foundry Tools",
+      "module": "Analyze text with Azure Language in Foundry Tools",
+      "unit": "Azure Language in Microsoft Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/2-provision-resource?pivots=text"
+    }
+  },
+  {
+    "id": 260,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "The Azure Translator text translation API is called without specifying a 'from_language' parameter. What happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The API returns an error requiring the source language to be specified"
+      },
+      {
+        "id": "B",
+        "text": "The API defaults to English as the source language"
+      },
+      {
+        "id": "C",
+        "text": "Azure Translator automatically detects the source language"
+      },
+      {
+        "id": "D",
+        "text": "The API translates from all supported languages simultaneously"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure Translator translate method allows you to omit the 'from_language' parameter, in which case Azure Translator automatically detects the source language. The detected language is returned in the response as the 'detected_language' property.",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 261,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer wants to convert Japanese text written in Hiragana script into Latin characters without changing the language. Which Azure Translator method should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "translate() with 'to_language' set to 'Latn'"
+      },
+      {
+        "id": "B",
+        "text": "detect() followed by translate()"
+      },
+      {
+        "id": "C",
+        "text": "transliterate() with from_script='Jpan' and to_script='Latn'"
+      },
+      {
+        "id": "D",
+        "text": "transliterate() with from_script='Hiragana' and to_script='English'"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Transliteration converts characters from one script to another without changing the language. For Japanese Hiragana to Latin script, you call the transliterate() method with language='ja', from_script='Jpan', and to_script='Latn'. This produces a romanized version such as 'Kon'nichiwa' from '\u3053\u3093\u306b\u3061\u306f'.",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 262,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Using the Azure Translator Python SDK, a developer passes two InputTextItem objects in Spanish and Japanese to the translate() method with to_language=['fr', 'en']. How many translated text results are returned in total?",
+    "options": [
+      {
+        "id": "A",
+        "text": "2 (one per source document)"
+      },
+      {
+        "id": "B",
+        "text": "4 (two source languages times two target languages)"
+      },
+      {
+        "id": "C",
+        "text": "3 (one per unique language involved)"
+      },
+      {
+        "id": "D",
+        "text": "1 (the API merges translations into a single result)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The translate() method returns a translation object for each source document, and each translation object contains one translation per target language specified. With 2 source texts and 2 target languages, the total is 4 translation results (2 texts \u00d7 2 target languages).",
+    "source": {
+      "path": "Translate text and speech with Microsoft Foundry Tools",
+      "module": "Translate text and speech with Microsoft Foundry Tools",
+      "unit": "Translate text",
+      "url": "https://learn.microsoft.com/en-us/training/modules/translate-text-speech/3-azure-translator?pivots=text"
+    }
+  },
+  {
+    "id": 263,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Translator feature to its correct description.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Converts characters from one script to another without changing the language",
+        "options": [
+          {
+            "id": "a",
+            "text": "Translate"
+          },
+          {
+            "id": "b",
+            "text": "Transliterate"
+          },
+          {
+            "id": "c",
+            "text": "Dictionary lookup"
+          },
+          {
+            "id": "d",
+            "text": "Detect"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Returns equivalent words for a source term in a target language",
+        "options": [
+          {
+            "id": "a",
+            "text": "Translate"
+          },
+          {
+            "id": "b",
+            "text": "Transliterate"
+          },
+          {
+            "id": "c",
+            "text": "Dictionary lookup"
+          },
+          {
+            "id": "d",
+            "text": "Detect"
+          }
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "Returns the source language code and whether the language is supported for translation",
+        "options": [
+          {
+            "id": "a",
+            "text": "Translate"
+          },
+          {
+            "id": "b",
+            "text": "Transliterate"
+          },
+          {
+            "id": "c",
+            "text": "Dictionary lookup"
+          },
+          {
+            "id": "d",
+            "text": "Detect"
+          }
+        ],
+        "correct": "d"
+      }
+    ],
+    "explanation": "Azure Text Translation v3 (GA) exposes discrete operations: Transliterate converts scripts (e.g., Hiragana to Latin), Dictionary lookup returns equivalent words in a target language, and Detect returns the source language code plus a boolean indicating translation support.",
+    "source": {
+      "path": "Azure AI Translator documentation",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Text translation in Foundry Tools?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview"
+    }
+  },
+  {
+    "id": 264,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Text Translation regional endpoint to the data centers that process its requests.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "api-nam.cognitive.microsofttranslator.com",
+        "options": [
+          {
+            "id": "a",
+            "text": "East US 2 and West US 2"
+          },
+          {
+            "id": "b",
+            "text": "Japan East and Southeast Asia"
+          },
+          {
+            "id": "c",
+            "text": "France Central and West Europe"
+          },
+          {
+            "id": "d",
+            "text": "Switzerland North and Switzerland West"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "api-apc.cognitive.microsofttranslator.com",
+        "options": [
+          {
+            "id": "a",
+            "text": "East US 2 and West US 2"
+          },
+          {
+            "id": "b",
+            "text": "Japan East and Southeast Asia"
+          },
+          {
+            "id": "c",
+            "text": "France Central and West Europe"
+          },
+          {
+            "id": "d",
+            "text": "Switzerland North and Switzerland West"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "api-eur.cognitive.microsofttranslator.com",
+        "options": [
+          {
+            "id": "a",
+            "text": "East US 2 and West US 2"
+          },
+          {
+            "id": "b",
+            "text": "Japan East and Southeast Asia"
+          },
+          {
+            "id": "c",
+            "text": "France Central and West Europe"
+          },
+          {
+            "id": "d",
+            "text": "Switzerland North and Switzerland West"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "Azure Text Translation data residency by regional endpoint: Americas (api-nam) routes to East US 2 and West US 2; Asia Pacific (api-apc) routes to Japan East and Southeast Asia; Europe (api-eur) routes to France Central and West Europe. For Switzerland, a custom resource endpoint must be used.",
+    "source": {
+      "path": "Azure AI Translator documentation",
+      "module": "Azure AI Translator documentation",
+      "unit": "What is Azure Text translation in Foundry Tools?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview"
+    }
+  },
+  {
+    "id": 265,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the steps for using the Azure Language sentiment analysis feature in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create an Azure Language resource to get an endpoint and key"
+      },
+      {
+        "id": "S2",
+        "text": "Create a request using the REST API or a client library (C#, Java, JavaScript, Python)"
+      },
+      {
+        "id": "S3",
+        "text": "Send the request with text data, authenticated using key and endpoint"
+      },
+      {
+        "id": "S4",
+        "text": "Stream or store the response containing document-level and sentence-level sentiment labels and confidence scores"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The Azure Language sentiment analysis typical workflow is: provision a resource (get key + endpoint), create a request via REST API or SDK, send the authenticated request with text data, then consume the response. Sentiment labels (positive, neutral, negative) and confidence scores (0\u20131) are returned at both document and sentence levels.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is sentiment analysis and opinion mining in Azure Language service?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview"
+    }
+  },
+  {
+    "id": 266,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Opinion mining in Azure Language is also known by which technical term in Natural Language Processing?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Intent extraction"
+      },
+      {
+        "id": "B",
+        "text": "Aspect-based sentiment analysis"
+      },
+      {
+        "id": "C",
+        "text": "Document-level sentiment classification"
+      },
+      {
+        "id": "D",
+        "text": "Subjectivity detection"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Azure Language documentation identifies opinion mining as a feature of sentiment analysis that is also known as 'aspect-based sentiment analysis' in NLP. It provides more granular information about opinions related to specific words (such as product or service attributes) in text.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is sentiment analysis and opinion mining in Azure Language service?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview"
+    }
+  },
+  {
+    "id": 267,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "An organization needs to analyze multi-turn chat transcripts for PII and redact sensitive data. Which Azure Language PII feature type is optimized for this use case?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Text PII \u2014 for synchronous string-based input"
+      },
+      {
+        "id": "B",
+        "text": "Conversation PII \u2014 for turn-based chat or transcript data"
+      },
+      {
+        "id": "C",
+        "text": "Document-based PII \u2014 for native files such as .pdf and .docx"
+      },
+      {
+        "id": "D",
+        "text": "Prebuilt NER \u2014 for categorizing entities in unstructured text"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Conversation PII is specifically designed for multi-turn exchanges and transcript-oriented payloads where turn boundaries and conversation context affect detection behavior. It is optimized for asynchronous workloads that analyze chat and transcript structures, making it appropriate for contact centers and meeting transcripts.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the Personally Identifiable Information (PII) detection feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview"
+    }
+  },
+  {
+    "id": 268,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "A developer is building a Conversational Language Understanding (CLU) project using the custom machine learned model path. Arrange the following development lifecycle steps in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Define the schema: create intents and entities"
+      },
+      {
+        "id": "S2",
+        "text": "Label utterance data with the defined intents and entities"
+      },
+      {
+        "id": "S3",
+        "text": "Train the model on the labeled data"
+      },
+      {
+        "id": "S4",
+        "text": "Review evaluation details and model performance"
+      },
+      {
+        "id": "S5",
+        "text": "Deploy the model to make it available via the Runtime API"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The CLU custom machine learned model lifecycle follows this sequence: first define the schema (intents and entities), then label data (quality of labeling is key), then train, then view evaluation metrics to assess performance, and finally deploy the model to expose it via the Runtime API. An optional improve step can occur between evaluate and deploy.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "Conversational language understanding overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview"
+    }
+  },
+  {
+    "id": 269,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Which CLU path allows you to skip the data labeling step and deploy a model by providing only intent descriptions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Custom machine learned model path"
+      },
+      {
+        "id": "B",
+        "text": "LLM-powered quick deploy path"
+      },
+      {
+        "id": "C",
+        "text": "Orchestration workflow path"
+      },
+      {
+        "id": "D",
+        "text": "Prebuilt NER path"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The CLU LLM-powered quick deploy path allows developers to skip data labeling. You define the schema by creating intents with detailed descriptions of their meaning, then deploy directly. The LLM-based training config uses the intent descriptions to predict intents without requiring labeled utterance examples.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "Conversational language understanding overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview"
+    }
+  },
+  {
+    "id": 270,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each custom text classification scenario to the correct project type.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A movie script that can ONLY be labeled as either 'Romance' or 'Comedy', never both",
+        "options": [
+          {
+            "id": "a",
+            "text": "Single label classification"
+          },
+          {
+            "id": "b",
+            "text": "Multi label classification"
+          },
+          {
+            "id": "c",
+            "text": "Custom NER"
+          },
+          {
+            "id": "d",
+            "text": "Conversational language understanding"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A movie script that can be labeled as both 'Comedy' and 'Romance' simultaneously",
+        "options": [
+          {
+            "id": "a",
+            "text": "Single label classification"
+          },
+          {
+            "id": "b",
+            "text": "Multi label classification"
+          },
+          {
+            "id": "c",
+            "text": "Custom NER"
+          },
+          {
+            "id": "d",
+            "text": "Conversational language understanding"
+          }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "Custom text classification supports two project types: single label classification (one class per document \u2014 e.g., a script is Romance OR Comedy) and multi label classification (multiple classes per document \u2014 e.g., a script can be both Comedy AND Romance). The documentation uses these exact movie script examples to illustrate the distinction.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom text classification?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview"
+    }
+  },
+  {
+    "id": 271,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the custom text classification project lifecycle steps in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Define your schema and identify the classes to differentiate"
+      },
+      {
+        "id": "S2",
+        "text": "Label your data with the appropriate class assignments"
+      },
+      {
+        "id": "S3",
+        "text": "Train the model on the labeled data"
+      },
+      {
+        "id": "S4",
+        "text": "View the model's evaluation details"
+      },
+      {
+        "id": "S5",
+        "text": "Deploy the model via the Analyze API"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The custom text classification lifecycle follows: define schema \u2192 label data \u2192 train \u2192 evaluate \u2192 deploy \u2192 classify. The documentation emphasizes that quality of labeling is a key factor in determining model performance, and schema definition (avoiding class ambiguity) must come first.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom text classification?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview"
+    }
+  },
+  {
+    "id": 272,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A financial services company wants to automatically extract loan application fields (e.g., borrower name, property address, loan amount) from thousands of unstructured mortgage documents. Which Azure Language feature is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prebuilt Named Entity Recognition (NER)"
+      },
+      {
+        "id": "B",
+        "text": "Custom Named Entity Recognition (CNER)"
+      },
+      {
+        "id": "C",
+        "text": "Key phrase extraction"
+      },
+      {
+        "id": "D",
+        "text": "Custom text classification"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Custom NER (CNER) is designed specifically for extracting domain-specific entities from unstructured text such as contracts and financial documents. The documentation lists mortgage application data extraction as a primary example use case. Prebuilt NER covers general categories and would not recognize domain-specific financial fields without customization.",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the custom named entity recognition (CNER) feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/overview"
+    }
+  },
+  {
+    "id": 273,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "According to the custom NER labeling best practices, which three principles should guide how you label entity instances in your training data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Label precisely, label consistently, label completely"
+      },
+      {
+        "id": "B",
+        "text": "Label broadly, label frequently, label randomly"
+      },
+      {
+        "id": "C",
+        "text": "Label only high-confidence instances, label unique values only, avoid overlapping labels"
+      },
+      {
+        "id": "D",
+        "text": "Label at least 100 examples per entity, use human reviewers only, export to CSV format"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Azure Language custom NER documentation explicitly identifies three labeling principles: label precisely (each entity to its right type, include only what you want extracted), label consistently (the same entity should have the same label across all files), and label completely (label all instances of the entity in all files).",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is the custom named entity recognition (CNER) feature in Azure Language?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-named-entity-recognition/overview"
+    }
+  },
+  {
+    "id": 274,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "What does the custom question answering (CQA) active learning feature do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automatically generates new question-answer pairs from uploaded documents"
+      },
+      {
+        "id": "B",
+        "text": "Improves answer quality based on real-world usage patterns and user queries"
+      },
+      {
+        "id": "C",
+        "text": "Trains a new model every time a user submits an unanswered question"
+      },
+      {
+        "id": "D",
+        "text": "Filters answers based on metadata tags before returning results"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The active learning feature of custom question answering improves answer quality over time based on real-world usage patterns and user queries. It is a separate capability from knowledge base creation (which extracts QA pairs from documents) and from metadata filtering (which uses tags to filter answers).",
+    "source": {
+      "path": "Azure AI Language documentation",
+      "module": "Azure AI Language documentation",
+      "unit": "What is custom question answering?",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview"
+    }
+  },
+  {
+    "id": 275,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "A team is designing an AI agent that needs to call Azure Language NLP capabilities. Match each architecture component of the Azure Language MCP server to its correct role.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The application (e.g., Microsoft Foundry or a custom app) that runs the agent",
+        "options": [
+          {
+            "id": "a",
+            "text": "Host"
+          },
+          {
+            "id": "b",
+            "text": "Client"
+          },
+          {
+            "id": "c",
+            "text": "Server"
+          },
+          {
+            "id": "d",
+            "text": "Endpoint"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A program that exposes tools, resources, and prompts that an agent can discover and call",
+        "options": [
+          {
+            "id": "a",
+            "text": "Host"
+          },
+          {
+            "id": "b",
+            "text": "Client"
+          },
+          {
+            "id": "c",
+            "text": "Server"
+          },
+          {
+            "id": "d",
+            "text": "Endpoint"
+          }
+        ],
+        "correct": "c"
+      },
+      {
+        "id": "B3",
+        "prompt": "A component within the host that manages connections to MCP servers and handles communication",
+        "options": [
+          {
+            "id": "a",
+            "text": "Host"
+          },
+          {
+            "id": "b",
+            "text": "Client"
+          },
+          {
+            "id": "c",
+            "text": "Server"
+          },
+          {
+            "id": "d",
+            "text": "Endpoint"
+          }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Model Context Protocol (MCP) uses a three-component architecture: the Host is the application running the agent (e.g., Microsoft Foundry), the Client is a component within the host that manages MCP server connections, and the Server is the program that exposes tools (such as Azure Language NLP capabilities) for the agent to discover and call.",
+    "source": {
+      "path": "Develop a text analysis agent with the Azure Language MCP server",
+      "module": "Develop a text analysis agent with the Azure Language MCP server",
+      "unit": "Understand the Azure Language MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-text-analysis-agent-language-mcp/02-understand-language-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 276,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "You need to transcribe a single spoken utterance from an audio file using the Azure Speech SDK in Python. Which SpeechRecognizer method should you call?",
+    "options": [
+      {
+        "id": "A",
+        "text": "recognize_once_async()"
+      },
+      {
+        "id": "B",
+        "text": "start_continuous_recognition_async()"
+      },
+      {
+        "id": "C",
+        "text": "transcribe_async()"
+      },
+      {
+        "id": "D",
+        "text": "recognize_keyword_async()"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The recognize_once_async() method transcribes a single spoken utterance and then stops. start_continuous_recognition_async() is used for ongoing transcription of multiple utterances. transcribe_async() and recognize_keyword_async() are not the standard method names for this purpose in the Speech SDK.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Speech to Text API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/3-speech-to-text?pivots=text"
+    }
+  },
+  {
+    "id": 277,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When using the Azure Speech SDK for speech-to-text, which object encapsulates the subscription key and endpoint needed to connect to the Azure Speech resource?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AudioConfig"
+      },
+      {
+        "id": "B",
+        "text": "SpeechRecognizer"
+      },
+      {
+        "id": "C",
+        "text": "SpeechConfig"
+      },
+      {
+        "id": "D",
+        "text": "RecognitionResult"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A SpeechConfig object holds the connection details \u2014 specifically the subscription key and endpoint (or region). AudioConfig defines the audio input source (microphone or file). SpeechRecognizer is the proxy client created from SpeechConfig and AudioConfig. RecognitionResult is the return value of a recognition call.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Speech to Text API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/3-speech-to-text?pivots=text"
+    }
+  },
+  {
+    "id": 278,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "After calling recognize_once_async() with the Azure Speech SDK, the returned SpeechRecognitionResult has a Reason property. Which value indicates that speech was successfully transcribed?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SynthesizingAudioCompleted"
+      },
+      {
+        "id": "B",
+        "text": "RecognizedSpeech"
+      },
+      {
+        "id": "C",
+        "text": "NoMatch"
+      },
+      {
+        "id": "D",
+        "text": "TranslationSynthesisCompleted"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "RecognizedSpeech in the Reason property indicates successful transcription, and the Text property contains the result. NoMatch means audio was parsed but no speech was recognized. SynthesizingAudioCompleted belongs to speech synthesis results, not recognition. TranslationSynthesisCompleted is returned from speech translation operations.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Speech to Text API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/3-speech-to-text?pivots=text"
+    }
+  },
+  {
+    "id": 279,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "You are building a Python application that uses the Azure Speech SDK to convert text to speech. Which SDK class acts as the proxy client for the Text to Speech API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "SpeechRecognizer"
+      },
+      {
+        "id": "B",
+        "text": "TranslationRecognizer"
+      },
+      {
+        "id": "C",
+        "text": "SpeechSynthesizer"
+      },
+      {
+        "id": "D",
+        "text": "AudioConfig"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "SpeechSynthesizer is the proxy client for the Text to Speech API. Its speak_text_async() method converts a text string to spoken audio. SpeechRecognizer handles speech-to-text. TranslationRecognizer is used for speech translation. AudioConfig defines audio input or output configuration, not the synthesis operation itself.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Text to Speech API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/4-text-to-speech?pivots=text"
+    }
+  },
+  {
+    "id": 280,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When a SpeechSynthesizer.speak_text_async() call succeeds, what value is set in the SpeechSynthesisResult.Reason property?",
+    "options": [
+      {
+        "id": "A",
+        "text": "RecognizedSpeech"
+      },
+      {
+        "id": "B",
+        "text": "SynthesizingAudioStarted"
+      },
+      {
+        "id": "C",
+        "text": "SynthesizingAudioCompleted"
+      },
+      {
+        "id": "D",
+        "text": "AudioOutputCompleted"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "SynthesizingAudioCompleted is set in the Reason property when speech synthesis is successful, and the AudioData property contains the resulting audio stream. RecognizedSpeech belongs to speech recognition results. SynthesizingAudioStarted and AudioOutputCompleted are not the documented success result values for speak_text_async().",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Text to Speech API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/4-text-to-speech?pivots=text"
+    }
+  },
+  {
+    "id": 281,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "In SSML, which element specifies the neural voice to use and can also set a speaking style such as 'cheerful' using the mstts:express-as child element?",
+    "options": [
+      {
+        "id": "A",
+        "text": "<prosody>"
+      },
+      {
+        "id": "B",
+        "text": "<speak>"
+      },
+      {
+        "id": "C",
+        "text": "<voice>"
+      },
+      {
+        "id": "D",
+        "text": "<say-as>"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The <voice> element wraps text to be spoken by a specific named neural voice, and can contain <mstts:express-as style='cheerful'> to set a speaking style. <speak> is the mandatory root element. <prosody> adjusts rate, pitch, and volume but does not select a voice or style. <say-as> controls how a value like a phone number or date is read aloud.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use Speech Synthesis Markup Language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup?pivots=text"
+    }
+  },
+  {
+    "id": 282,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "To submit an SSML string to the Azure Speech SDK's SpeechSynthesizer instead of plain text, which method should you call?",
+    "options": [
+      {
+        "id": "A",
+        "text": "speak_text_async()"
+      },
+      {
+        "id": "B",
+        "text": "speak_ssml_async()"
+      },
+      {
+        "id": "C",
+        "text": "synthesize_markup_async()"
+      },
+      {
+        "id": "D",
+        "text": "render_ssml_async()"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "speak_ssml_async() accepts an SSML XML string and synthesizes it with the full SSML feature set. speak_text_async() accepts plain text only. synthesize_markup_async() and render_ssml_async() are not SDK method names for this purpose.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use Speech Synthesis Markup Language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup?pivots=text"
+    }
+  },
+  {
+    "id": 283,
+    "topic": "natural-language",
+    "type": "mc_multi",
+    "question": "In an SSML document, which TWO capabilities can the <phoneme> element provide when customizing text-to-speech output?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Specify a custom phonetic pronunciation using an alphabet such as SAPI"
+      },
+      {
+        "id": "B",
+        "text": "Adjust the overall speaking rate of the utterance"
+      },
+      {
+        "id": "C",
+        "text": "Force the text to be read as a specific data type such as a date or phone number"
+      },
+      {
+        "id": "D",
+        "text": "Provide an alternative phonetic rendering for a word like pronouncing 'SQL' as 'sequel'"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "The <phoneme> element lets you specify the exact phonetic pronunciation of a word using a supported alphabet (such as SAPI or IPA), which is useful for abbreviations like 'SQL'. Adjusting speaking rate is done with the <prosody> element. Reading a string as a date or phone number is the role of the <say-as> element.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use Speech Synthesis Markup Language",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup?pivots=text"
+    }
+  },
+  {
+    "id": 284,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the steps for using the Azure Speech SDK to perform speech-to-text transcription of an audio file in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create a SpeechConfig object with the subscription key and endpoint"
+      },
+      {
+        "id": "S2",
+        "text": "Create an AudioConfig object specifying the audio file path"
+      },
+      {
+        "id": "S3",
+        "text": "Instantiate a SpeechRecognizer using the SpeechConfig and AudioConfig"
+      },
+      {
+        "id": "S4",
+        "text": "Call recognize_once_async() and process the SpeechRecognitionResult"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The documented pattern is: (1) create SpeechConfig with credentials, (2) create AudioConfig to specify input source, (3) construct a SpeechRecognizer from both config objects, and (4) invoke recognize_once_async() to transcribe a single utterance and inspect the result.",
+    "source": {
+      "path": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "module": "Create speech-enabled apps with Azure Speech in Microsoft Foundry Tools",
+      "unit": "Use the Speech to Text API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-speech-enabled-apps/3-speech-to-text?pivots=text"
+    }
+  },
+  {
+    "id": 285,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Azure Speech's diarization feature can distinguish and label different speakers in a multi-speaker recording. What is the maximum number of unique speakers the service can identify in a single audio recording?",
+    "options": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "20"
+      },
+      {
+        "id": "C",
+        "text": "35"
+      },
+      {
+        "id": "D",
+        "text": "100"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure Speech service can identify up to 35 different speakers in an audio recording. If more than 35 speakers are detected, the service throws an error. This limit applies to the diarization feature available in real-time and batch transcription.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech to text overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-to-text"
+    }
+  },
+  {
+    "id": 286,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer needs the fastest possible synchronous transcription of a pre-recorded audio file with predictable latency, such as generating meeting notes quickly. Which Azure Speech feature is most appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Real-time transcription via the Speech SDK"
+      },
+      {
+        "id": "B",
+        "text": "Fast transcription via the fast transcription API"
+      },
+      {
+        "id": "C",
+        "text": "Batch transcription via the REST API"
+      },
+      {
+        "id": "D",
+        "text": "Custom speech endpoint transcription"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Fast transcription is designed for transcribing pre-recorded audio files as quickly as possible with predictable latency, making it suitable for meeting notes and voicemail. Real-time transcription targets live audio streams. Batch transcription is asynchronous and optimized for large volumes rather than fast single-file results. Custom speech endpoint transcription is a customization feature, not a distinct transcription mode for speed.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech to text overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-to-text"
+    }
+  },
+  {
+    "id": 287,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "When using a custom speech model exclusively for batch transcription, which deployment step can you skip to conserve resources and reduce costs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Uploading training data to Speech Studio"
+      },
+      {
+        "id": "B",
+        "text": "Evaluating the model's Word Error Rate (WER)"
+      },
+      {
+        "id": "C",
+        "text": "Deploying a hosted custom endpoint"
+      },
+      {
+        "id": "D",
+        "text": "Creating a Speech resource in Azure"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A hosted deployment endpoint is not required to use a custom speech model with the Batch Transcription API. You can reference the model by its model ID in the batch transcription request, which avoids the per-hour endpoint hosting cost. Uploading training data, evaluating WER, and having a Speech resource are all required steps.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Custom speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/custom-speech-overview"
+    }
+  },
+  {
+    "id": 288,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Which quantitative metric does the Azure Speech service use to evaluate the accuracy improvement of a custom speech model compared to the base model?",
+    "options": [
+      {
+        "id": "A",
+        "text": "BLEU score"
+      },
+      {
+        "id": "B",
+        "text": "Word Error Rate (WER)"
+      },
+      {
+        "id": "C",
+        "text": "F1 score"
+      },
+      {
+        "id": "D",
+        "text": "Mean Opinion Score (MOS)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The custom speech evaluation pipeline provides a Word Error Rate (WER) score, which you use to determine whether additional training is needed. BLEU score measures machine translation quality. F1 score measures classification precision and recall. Mean Opinion Score (MOS) rates speech synthesis naturalness.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Custom speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/custom-speech-overview"
+    }
+  },
+  {
+    "id": 289,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Place the steps for building and deploying a custom speech model in Azure Speech Studio in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create a custom speech project and select a base model"
+      },
+      {
+        "id": "S2",
+        "text": "Upload test and training data (audio + transcripts or plain text)"
+      },
+      {
+        "id": "S3",
+        "text": "Train the model and evaluate WER against the test dataset"
+      },
+      {
+        "id": "S4",
+        "text": "Deploy the trained model to a custom endpoint"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The custom speech workflow documented by Microsoft is: (1) create a project and choose the base model, (2) upload training and test data, (3) train the model and evaluate recognition quality with WER, and (4) deploy to a custom endpoint (unless using only for batch transcription). This sequence matches the diagram in the custom speech overview.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Custom speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/custom-speech-overview"
+    }
+  },
+  {
+    "id": 290,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Batch transcription in Azure Speech processes audio files asynchronously. Which interface is used to submit and retrieve batch transcription jobs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Speech SDK SpeechRecognizer with batch mode flag"
+      },
+      {
+        "id": "B",
+        "text": "Speech to text REST API"
+      },
+      {
+        "id": "C",
+        "text": "Azure Cognitive Services Management REST API"
+      },
+      {
+        "id": "D",
+        "text": "Azure Blob Storage REST API directly"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Both the Speech to text REST API and the Speech CLI support batch transcription. You submit a Transcription_Create request with audio URIs, then poll the REST API for status and retrieve results asynchronously. The Speech SDK SpeechRecognizer does not have a batch mode flag. The Azure Cognitive Services Management API and Azure Blob Storage API are infrastructure tools, not transcription submission interfaces.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Batch transcription overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription"
+    }
+  },
+  {
+    "id": 291,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Arrange the steps for submitting and retrieving a batch transcription job using the Azure Speech to text REST API in the correct order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Locate or upload audio files and obtain public or SAS URIs for each file"
+      },
+      {
+        "id": "S2",
+        "text": "Submit a Transcription_Create request with audio URIs, language, and optional model ID"
+      },
+      {
+        "id": "S3",
+        "text": "Poll the REST API to check transcription status until the job completes"
+      },
+      {
+        "id": "S4",
+        "text": "Retrieve and download the transcription results from the storage container"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The batch transcription workflow is: (1) prepare audio file URIs (public or SAS), (2) create the transcription job via Transcription_Create, (3) poll asynchronously for job status (checking every ~10 minutes is recommended), and (4) download the completed results. Submitting the job before having valid audio URIs, or skipping status polling, will cause the job to fail or results to be missed.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Batch transcription overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription"
+    }
+  },
+  {
+    "id": 292,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Speech translation scenario to the correct feature name.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A user speaks in English and receives a translated audio response in Spanish using a pretrained neural voice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speech-to-text translation"
+          },
+          {
+            "id": "b",
+            "text": "Speech-to-speech translation"
+          },
+          {
+            "id": "c",
+            "text": "Batch transcription"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "An international meeting has attendees speaking different languages; the system detects the input language automatically and translates all speech to one target language without restarting the session",
+        "options": [
+          {
+            "id": "a",
+            "text": "Multi-lingual speech translation"
+          },
+          {
+            "id": "b",
+            "text": "Custom speech translation"
+          },
+          {
+            "id": "c",
+            "text": "Batch speech translation"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Speech-to-speech translation takes audio input and returns synthesized translated speech using pretrained neural voices. Multi-lingual speech translation automatically detects multiple input languages in a single session without requiring a specified source language, making it ideal for multilingual meetings or travel scenarios.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech translation overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation"
+    }
+  },
+  {
+    "id": 293,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "Multi-lingual speech translation in Azure Speech can handle sessions where the speaker switches languages without restarting. What is unique about the source language configuration in multi-lingual mode?",
+    "options": [
+      {
+        "id": "A",
+        "text": "You must pre-specify all expected source languages in a list before the session starts"
+      },
+      {
+        "id": "B",
+        "text": "No source language needs to be specified; the service detects input language automatically"
+      },
+      {
+        "id": "C",
+        "text": "The source language is locked once the first utterance is spoken"
+      },
+      {
+        "id": "D",
+        "text": "Multi-lingual mode requires a custom speech model to enable language detection"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Multi-lingual speech translation does not require you to specify an input language. The service automatically detects the spoken language across a wide range of languages and handles language switches within the same session without requiring any session restart or additional configuration.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech translation overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation"
+    }
+  },
+  {
+    "id": 294,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "Match each Azure Speech text-to-speech concept to its correct description.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The XML-based markup language used to fine-tune pitch, pronunciation, rate, and volume in speech synthesis",
+        "options": [
+          {
+            "id": "a",
+            "text": "SSML"
+          },
+          {
+            "id": "b",
+            "text": "SRGS"
+          },
+          {
+            "id": "c",
+            "text": "ONNX"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "The visual description of a phoneme used to animate facial expressions in sync with synthesized speech",
+        "options": [
+          {
+            "id": "a",
+            "text": "Viseme"
+          },
+          {
+            "id": "b",
+            "text": "Phoneme"
+          },
+          {
+            "id": "c",
+            "text": "Prosody"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B3",
+        "prompt": "The feature that allows asynchronous synthesis of audio files longer than 10 minutes, such as audiobooks",
+        "options": [
+          {
+            "id": "a",
+            "text": "Real-time synthesis via the Speech SDK"
+          },
+          {
+            "id": "b",
+            "text": "Batch synthesis API"
+          },
+          {
+            "id": "c",
+            "text": "Fast transcription API"
+          }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "SSML is the XML-based markup language for controlling speech synthesis attributes. Visemes are the key facial poses corresponding to phonemes, used for lip-sync animation (currently supported for en-US neural voices). The batch synthesis API is used for asynchronous synthesis of long content such as audiobooks, where responses are polled rather than returned in real time.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Text to speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/text-to-speech"
+    }
+  },
+  {
+    "id": 295,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "In Azure Speech text-to-speech billing, which statement is correct about how characters are counted for Standard (neural) voices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the plain text words are billed; SSML markup tags are not counted"
+      },
+      {
+        "id": "B",
+        "text": "All characters in the SSML body are billed including phonemes and prosody tags, except the <speak> and <voice> tags"
+      },
+      {
+        "id": "C",
+        "text": "Billing is per second of audio output, not per character"
+      },
+      {
+        "id": "D",
+        "text": "Chinese characters count as one billable character each, the same as Latin characters"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "For standard neural voices, billing is based on the total characters in the SSML body including markup like phonemes and pitch tags \u2014 but excluding the <speak> and <voice> tags themselves. Billing is not per second of output audio. Each Chinese character (and other CJK characters) counts as two billable characters.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Text to speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/text-to-speech"
+    }
+  },
+  {
+    "id": 296,
+    "topic": "natural-language",
+    "type": "sequence",
+    "question": "Place the steps for using the Azure Speech translation capability to build a real-time speech-to-speech translation application in the correct logical order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Configure a SpeechTranslationConfig with source language and one or more target languages"
+      },
+      {
+        "id": "S2",
+        "text": "Create a TranslationRecognizer with the translation config and an audio input source"
+      },
+      {
+        "id": "S3",
+        "text": "Start continuous recognition to receive interim and final translated text results"
+      },
+      {
+        "id": "S4",
+        "text": "Optionally synthesize the translated text into speech using a pretrained neural voice"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The speech translation workflow requires: first setting up SpeechTranslationConfig with source and target languages, then creating a TranslationRecognizer, starting continuous recognition to receive translated text in real time, and optionally invoking speech synthesis on the translated output to produce speech-to-speech translation.",
+    "source": {
+      "path": "Azure AI Speech documentation",
+      "module": "Azure AI Speech documentation",
+      "unit": "Speech translation overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation"
+    }
+  },
+  {
+    "id": 297,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "The Azure Speech MCP server exposes speech capabilities to AI agents. Which storage resource is specifically required by the Speech MCP server to support both speech-to-text and text-to-speech operations?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Azure SQL Database to store transcription metadata"
+      },
+      {
+        "id": "B",
+        "text": "An Azure Cosmos DB container for conversation history"
+      },
+      {
+        "id": "C",
+        "text": "An Azure Blob Storage container with a SAS URL"
+      },
+      {
+        "id": "D",
+        "text": "An Azure File Share for audio file streaming"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Azure Speech MCP server requires an Azure Blob Storage container and a SAS URL. Text-to-speech saves generated audio files to the container, and speech-to-text can read audio from publicly accessible URLs or from the blob container via a SAS URL. No SQL, Cosmos DB, or Azure Files dependency is required.",
+    "source": {
+      "path": "Develop a speech agent with the Azure Speech MCP server",
+      "module": "Develop a speech agent with the Azure Speech MCP server",
+      "unit": "Understand the Azure Speech MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-speech-agent-speech-mcp/02-understand-speech-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 298,
+    "topic": "natural-language",
+    "type": "hotspot",
+    "question": "For each Azure Speech MCP server scenario, identify the correct tool that the agent will call.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A user says 'Transcribe this WAV audio file for me.' The agent calls the Speech MCP tool named:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speech-to-text (Recognize)"
+          },
+          {
+            "id": "b",
+            "text": "Text-to-speech (Synthesize)"
+          },
+          {
+            "id": "c",
+            "text": "Translation"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A user says 'Generate an MP3 audio file from this paragraph of text.' The agent calls the Speech MCP tool named:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Speech-to-text (Recognize)"
+          },
+          {
+            "id": "b",
+            "text": "Text-to-speech (Synthesize)"
+          },
+          {
+            "id": "c",
+            "text": "Batch transcription"
+          }
+        ],
+        "correct": "b"
+      }
+    ],
+    "explanation": "The Azure Speech MCP server exposes exactly two core tools: Speech-to-text (Recognize) for converting audio files to text, and Text-to-speech (Synthesize) for converting text into audio files. The agent autonomously selects the appropriate tool based on the user's natural language prompt without any hardcoded routing logic.",
+    "source": {
+      "path": "Develop a speech agent with the Azure Speech MCP server",
+      "module": "Develop a speech agent with the Azure Speech MCP server",
+      "unit": "Understand the Azure Speech MCP server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-speech-agent-speech-mcp/02-understand-speech-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 299,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "The Azure Voice Live API uses a WebSocket-based connection for real-time bidirectional audio. Which client event should typically be sent first after establishing a Voice Live API session to configure voice type, modalities, and turn detection?",
+    "options": [
+      {
+        "id": "A",
+        "text": "input_audio_buffer.append"
+      },
+      {
+        "id": "B",
+        "text": "session.update"
+      },
+      {
+        "id": "C",
+        "text": "response.create"
+      },
+      {
+        "id": "D",
+        "text": "session.avatar.connect"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The session.update event is typically the first event sent by the caller on a newly established Voice Live API session. It configures wide-ranging session settings including voice type, modalities (text/audio), turn detection (such as azure_semantic_vad), audio formats, and instructions. input_audio_buffer.append adds audio data, response.create triggers a model response, and session.avatar.connect sets up WebRTC avatar streaming.",
+    "source": {
+      "path": "Develop an Azure Speech Voice Live Agent in Microsoft Foundry",
+      "module": "Develop an Azure Speech Voice Live Agent in Microsoft Foundry",
+      "unit": "Explore the Azure Voice Live API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-voice-live-agent/2-voice-live-api?pivots=text"
+    }
+  },
+  {
+    "id": 300,
+    "topic": "natural-language",
+    "type": "mc_single",
+    "question": "A developer needs to transcribe speech using the Azure OpenAI gpt-4o-transcribe model deployed in Microsoft Foundry. Which Python client class should be used to call the audio transcription endpoint?",
+    "options": [
+      {
+        "id": "A",
+        "text": "azure.cognitiveservices.speech.SpeechRecognizer"
+      },
+      {
+        "id": "B",
+        "text": "openai.AzureOpenAI with client.audio.transcriptions.create()"
+      },
+      {
+        "id": "C",
+        "text": "azure.ai.translation.text.TextTranslationClient"
+      },
+      {
+        "id": "D",
+        "text": "azure.cognitiveservices.speech.SpeechSynthesizer"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "When using gpt-4o-transcribe (or gpt-4o-mini-transcribe) deployed in Microsoft Foundry, you use the AzureOpenAI client from the OpenAI SDK and call client.audio.transcriptions.create() with the model deployment name and an open audio file handle. SpeechRecognizer and SpeechSynthesizer are Azure Speech SDK classes for the traditional Speech service, not for the OpenAI-based transcription models. TextTranslationClient is for text translation, not transcription.",
+    "source": {
+      "path": "Develop a speech-capable generative AI application",
+      "module": "Develop a speech-capable generative AI application",
+      "unit": "Transcribe speech",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-audio-apps/3-develop-audio-chat-app?pivots=text"
+    }
+  }
+]
