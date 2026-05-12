@@ -1,0 +1,373 @@
+[
+  {
+    "id": 46,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "Place the steps for creating your first agent in the Microsoft Foundry portal in the correct order, per the 'Build your first agent' unit.",
+    "items": [
+      {"id": "S1", "text": "Navigate to https://ai.azure.com and select your Foundry project"},
+      {"id": "S2", "text": "Select Build > Agents in the left navigation, then Create"},
+      {"id": "S3", "text": "Enter agent details: Name, Description, and Model (selected from a deployed model in your project)"},
+      {"id": "S4", "text": "Test the agent in the integrated Playground tab and refine instructions"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The 'Build your first agent in Microsoft Foundry' unit prescribes navigating to ai.azure.com, opening the project, selecting Build > Agents > Create, filling in Name/Description/Model (the dropdown only shows already-deployed models), then testing in the Playground.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Build your first agent in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/4-build-agent-azure-portal?pivots=text"
+    }
+  },
+  {
+    "id": 47,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are preparing to release a Microsoft Foundry generative AI solution. Per the 'Manage a responsible generative AI solution' unit, place the release-readiness activities in the order Microsoft prescribes.",
+    "items": [
+      {"id": "S1", "text": "Complete prerelease reviews with legal, privacy, security, and accessibility teams"},
+      {"id": "S2", "text": "Devise a phased delivery plan that releases the solution to a restricted group of users first"},
+      {"id": "S3", "text": "Create an incident response plan with estimates for responding to unanticipated incidents"},
+      {"id": "S4", "text": "Create a rollback plan defining the steps to revert the solution to a previous state"},
+      {"id": "S5", "text": "Track telemetry and enable users to report inaccurate, harmful, or otherwise problematic content"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4", "S5"],
+    "explanation": "The 'Manage a responsible generative AI solution' unit lists prerelease compliance reviews (legal, privacy, security, accessibility) first, followed by release-and-operate planning: phased delivery plan, incident response plan, rollback plan, and finally telemetry plus user feedback channels for reporting harmful or inaccurate content.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Manage a responsible generative AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text"
+    }
+  },
+  {
+    "id": 48,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You are integrating a custom Python function recent_snowfall(location: str) into a Foundry Agent. According to the 'How to integrate custom tools' unit, after defining the function and its FunctionTool wrapper with parameters/description/strict, how is the tool typically invoked at runtime?",
+    "options": [
+      {"id": "A", "text": "The agent decides on its own when to call the function based on prompts; you do not write code that explicitly calls it."},
+      {"id": "B", "text": "The application code must read each user prompt, classify intent, and call recent_snowfall manually before sending the result to the model."},
+      {"id": "C", "text": "Python custom functions can only be invoked through Azure Functions queue triggers."},
+      {"id": "D", "text": "The function executes only when wrapped in an OpenAPI 3.0 spec."}
+    ],
+    "correct": ["A"],
+    "explanation": "The unit's note emphasizes the declarative nature of agents: developers don't write code that explicitly calls custom tool functions—the agent decides when to call them based on the prompt, function name, description, and parameters. Function calling, Azure Functions, and OpenAPI tools are different integration options, not pre-requisites for each other.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate custom tools into your agent",
+      "unit": "How to integrate custom tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/4-how-use-custom-tools?pivots=text"
+    }
+  },
+  {
+    "id": 49,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When attaching an Azure AI Agent to a remote MCP server using the MCPTool object, you want the agent to pause and request approval before any tool invocation. Which require_approval value should you use?",
+    "options": [
+      {"id": "A", "text": "always (which is also the default if not specified)"},
+      {"id": "B", "text": "manual"},
+      {"id": "C", "text": "tool"},
+      {"id": "D", "text": "never"}
+    ],
+    "correct": ["A"],
+    "explanation": "Per the 'Use Azure AI agents with MCP servers' unit, MCPTool's require_approval supports 'always' (developer must approve every call—this is the default if no value is set) and 'never' (no approval required). When approval is required, the agent returns an mcp_approval_request and you respond with mcp_approval_response containing approval_request_id and an approve boolean.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Use Azure AI agents with MCP servers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/4-use-azure-ai-agents-with-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 50,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "Per the 'Compare and combine optimization strategies' unit, place the four steps of Microsoft's recommended decision framework for choosing optimization strategies in the documented order.",
+    "items": [
+      {"id": "S1", "text": "Start with prompt engineering: test system messages, few-shot examples, and parameter tuning"},
+      {"id": "S2", "text": "Add RAG if accuracy matters: implement RAG with Azure AI Search when the model needs current or private data"},
+      {"id": "S3", "text": "Add fine-tuning if consistency matters: fine-tune when the model doesn't reliably maintain style/tone/format"},
+      {"id": "S4", "text": "Combine as needed: layer strategies based on the application's specific requirements"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The unit's decision framework recommends starting simple and adding complexity only when needed: (1) prompt engineering first, (2) add RAG if you need access to specific or current data, (3) add fine-tuning if you need consistent style/tone/format, (4) combine strategies as required. This incremental approach avoids unnecessary cost and complexity.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 51,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You are introducing your team to Microsoft's six core principles of Responsible AI before they design a new Foundry application. Match each scenario to the correct principle from the 'Responsible AI' unit.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A loan-approval ML model must avoid bias based on gender or ethnicity so it doesn't unfairly advantage or disadvantage specific groups of applicants. This concern is the principle of [BLANK].",
+        "options": [
+          {"id": "a", "text": "Fairness"},
+          {"id": "b", "text": "Reliability and safety"},
+          {"id": "c", "text": "Inclusiveness"},
+          {"id": "d", "text": "Accountability"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Users should be made fully aware of an AI system's purpose, how it works, and its limitations (such as confidence scores and the data used to train it). This is the principle of [BLANK].",
+        "options": [
+          {"id": "a", "text": "Transparency"},
+          {"id": "b", "text": "Privacy and security"},
+          {"id": "c", "text": "Fairness"},
+          {"id": "d", "text": "Reliability and safety"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Microsoft's six Responsible AI principles are Fairness, Reliability and safety, Privacy and security, Inclusiveness, Transparency, and Accountability. Avoiding gender/ethnicity bias in loan approval falls under Fairness; making purpose, mechanics, limitations, and confidence visible to users is the Transparency principle.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text"
+    }
+  },
+  {
+    "id": 52,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You're scoping the AI capabilities you'll integrate into a Microsoft Foundry application. Per the 'What is AI?' unit, match each use case to the correct AI capability category.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "An automated checkout in a grocery store identifies the products in a customer's basket from camera streams without scanning barcodes. This is an application of [BLANK].",
+        "options": [
+          {"id": "a", "text": "Computer vision"},
+          {"id": "b", "text": "Natural language processing"},
+          {"id": "c", "text": "Computer speech"},
+          {"id": "d", "text": "Information extraction"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "An expense-claims app extracts purchase dates, line item details, and total costs from scanned receipts by combining language reasoning with document understanding. This is the capability category of [BLANK].",
+        "options": [
+          {"id": "a", "text": "Information extraction"},
+          {"id": "b", "text": "Generative AI and agents"},
+          {"id": "c", "text": "Computer speech"},
+          {"id": "d", "text": "Natural language processing"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'What is AI?' unit lists Generative AI and agents, Natural language processing, Computer speech, Computer vision, and Information extraction. Identifying products from camera streams is Computer vision; extracting structured fields from scanned receipts by combining language reasoning, document understanding, and vision is the Information extraction category.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "What is AI?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text"
+    }
+  },
+  {
+    "id": 53,
+    "topic": "genai-foundry",
+    "type": "mc_multi",
+    "question": "You are choosing tools for a Microsoft Foundry generative AI application that uses the OpenAI Responses API. Per the 'What are tools?' unit, which TWO of the following Responses API tools enable the model to GROUND its responses in external information rather than only its training data? (Choose 2.)",
+    "options": [
+      {"id": "A", "text": "web_search"},
+      {"id": "B", "text": "file_search"},
+      {"id": "C", "text": "code_interpreter"},
+      {"id": "D", "text": "function"},
+      {"id": "E", "text": "image_generation"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "The 'What are tools?' unit describes web_search as enabling the model to find general information on the Internet so it can base responses on more current data than it was trained on, and file_search as enabling the model to search files uploaded to a dedicated vector search index to ground responses in specific knowledge. code_interpreter runs Python; function calls custom application code; image_generation is not listed in this unit's tool inventory.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "What are tools?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/02-what-are-tools?pivots=text"
+    }
+  },
+  {
+    "id": 54,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "Per the 'Compare and combine optimization strategies' unit, you have already invested in prompt engineering and added Retrieval Augmented Generation (RAG) but the model still inconsistently follows your brand voice and structured response format. Which strategy should you add next, and why?",
+    "options": [
+      {"id": "A", "text": "Fine-tuning, because it produces the most consistent model behavior by embedding the desired patterns directly in the model's weights."},
+      {"id": "B", "text": "Switch to a smaller base model, because smaller models are easier to keep on-tone."},
+      {"id": "C", "text": "Replace RAG with a longer system message that includes the entire knowledge base, because grounding is no longer needed once you have your brand voice."},
+      {"id": "D", "text": "Drop prompt engineering entirely, because RAG and fine-tuning together always replace it."}
+    ],
+    "correct": ["A"],
+    "explanation": "The unit's decision framework states fine-tuning is the right next step when 'consistency matters'-when the model doesn't reliably maintain the desired style, tone, or format despite detailed prompts. Fine-tuning embeds the patterns in the model's weights for the most consistent behavior. The unit is explicit that the strategies are complementary; you do not drop prompt engineering or RAG when you add fine-tuning.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 55,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "You're connecting a client to a remote A2A agent. Complete the configuration according to the 'Connect to your A2A agent' unit.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The first thing the client must do is fetch the [BLANK] from the agent server's well-known endpoint to learn the agent's metadata and capabilities.",
+        "options": [
+          {"id": "a", "text": "Agent Card"},
+          {"id": "b", "text": "OpenAPI spec"},
+          {"id": "c", "text": "Service principal token"},
+          {"id": "d", "text": "Tool manifest"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "For long-running tasks where the user benefits from receiving partial output as it's produced, the client should use a [BLANK] request.",
+        "options": [
+          {"id": "a", "text": "Streaming"},
+          {"id": "b", "text": "Non-streaming"},
+          {"id": "c", "text": "Batch"},
+          {"id": "d", "text": "Idempotent"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Per 'Connect to your A2A agent', the client first retrieves the Agent Card from a well-known endpoint to establish a connection. Streaming requests return responses incrementally as the agent processes the request—useful for long-running tasks or real-time UX—while non-streaming requests wait for a complete response.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Connect to your A2A agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/5-connect-to-a2a-agent?pivots=text"
+    }
+  },
+  {
+    "id": 56,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are creating a new Microsoft Foundry resource that hosts multiple projects. According to the 'Microsoft Foundry' unit, which statement about Foundry resources and projects is TRUE?",
+    "options": [
+      {"id": "A", "text": "A Foundry resource can support one or more child projects, with one designated as the default project."},
+      {"id": "B", "text": "A Foundry resource can host exactly one project; multi-project setups require separate resources."},
+      {"id": "C", "text": "Projects must always live in a Foundry hub (classic) resource for production support."},
+      {"id": "D", "text": "Each project gets its own Azure subscription automatically."}
+    ],
+    "correct": ["A"],
+    "explanation": "The 'Microsoft Foundry' unit explicitly states a Foundry resource can support one or more child projects, with one of them designated the default. Each project belongs to a single Foundry resource, but a single resource hosts multiple projects.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text"
+    }
+  },
+  {
+    "id": 57,
+    "topic": "genai-foundry",
+    "type": "mc_multi",
+    "question": "Looking at the Foundry Models catalog you need to choose the right specialized model for two requirements: (1) generating embeddings for semantic search and (2) converting audio recordings to text. Which TWO model types from the catalog are appropriate? (Choose 2.)",
+    "options": [
+      {"id": "A", "text": "An embedding model (e.g., Ada or Cohere)"},
+      {"id": "B", "text": "A speech-to-text model (e.g., GPT-4o-transcribe)"},
+      {"id": "C", "text": "An image generation model (e.g., GPT-image-1)"},
+      {"id": "D", "text": "A text-to-speech model (e.g., GPT-4o-tts)"},
+      {"id": "E", "text": "A reasoning chat model (e.g., Claude Opus 4.6)"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "Per the 'Explore the model catalog' unit: embedding models like Ada and Cohere convert text into numerical representations for semantic search and RAG; speech-to-text models like GPT-4o-transcribe convert audio to text. Image generation produces images from text, text-to-speech does the opposite of transcription, and reasoning models excel at math/code/logic.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Explore the model catalog",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/2-explore-model-catalog?pivots=text"
+    }
+  },
+  {
+    "id": 58,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "Your team has legacy code using the OpenAI ChatCompletions API and wants to keep using it for cross-platform compatibility. Per the 'Generate responses with the ChatCompletions API' unit, how does the ChatCompletions API differ from the Responses API in terms of conversational state?",
+    "options": [
+      {"id": "A", "text": "ChatCompletions is stateless: you must manually track conversation history by appending each user/assistant message to the messages array on every call."},
+      {"id": "B", "text": "ChatCompletions is stateful: it remembers prior messages by session ID server-side."},
+      {"id": "C", "text": "Both APIs store conversation in the same project endpoint automatically."},
+      {"id": "D", "text": "ChatCompletions requires you to provide a previous_completion_id parameter."}
+    ],
+    "correct": ["A"],
+    "explanation": "The unit explicitly states ChatCompletions does NOT provide stateful response tracking; you must manually maintain conversation_messages by appending each user message and assistant response, then submitting the entire conversation in each turn. The Responses API, by contrast, is stateful via previous_response_id.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the ChatCompletions API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/05-openai-api?pivots=text"
+    }
+  },
+  {
+    "id": 59,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You're using the Responses API and want the model to fetch fresh information from the internet (e.g., recent product announcements) and incorporate the results into its answer. Which entry in the tools array enables this?",
+    "options": [
+      {"id": "A", "text": "{ \"type\": \"web_search\" }"},
+      {"id": "B", "text": "{ \"type\": \"bing_grounding\" }"},
+      {"id": "C", "text": "{ \"type\": \"file_search\", \"vector_store_ids\": [...] }"},
+      {"id": "D", "text": "{ \"type\": \"function\", \"name\": \"web_search\" }"}
+    ],
+    "correct": ["A"],
+    "explanation": "The 'Use the web_search tool' unit specifies adding tools=[{\"type\": \"web_search\"}] to the responses.create() call. The model then decides when fresh data is needed, issues queries, reviews results, and incorporates them into its grounded answer. file_search uses vector stores; function defines a developer function; bing_grounding is the Foundry agent built-in tool, not the Responses API tool name.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the web_search tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/04-web-search?pivots=text"
+    }
+  },
+  {
+    "id": 60,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You are mitigating potential harms in a generative AI solution per the four-layer model in the 'Mitigate potential harms' unit. Match the mitigation to the correct layer.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Configuring Microsoft Foundry guardrails (content filters with safe/low/medium/high severity across hate-and-fairness, sexual, violence, self-harm, task-adherence categories, plus prompt shields) is a mitigation at the [BLANK] layer.",
+        "options": [
+          {"id": "a", "text": "Safety system"},
+          {"id": "b", "text": "Model"},
+          {"id": "c", "text": "System message and grounding"},
+          {"id": "d", "text": "User experience"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Choosing a smaller, fit-for-purpose foundation model or fine-tuning it with your own data so its responses are better scoped to your scenario is a mitigation at the [BLANK] layer.",
+        "options": [
+          {"id": "a", "text": "Model"},
+          {"id": "b", "text": "Safety system"},
+          {"id": "c", "text": "User experience"},
+          {"id": "d", "text": "Application"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The four mitigation layers are Model, Safety system, System message and grounding, and User experience. Foundry guardrails (content filters with severity levels and prompt shields) sit at the Safety system layer. Choosing/fine-tuning the foundation model sits at the Model layer.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Mitigate potential harms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text"
+    }
+  }
+]

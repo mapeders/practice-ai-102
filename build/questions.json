@@ -1,0 +1,2341 @@
+[
+  {
+    "id": 1,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You are setting up the Microsoft Foundry extension for Visual Studio Code so a teammate can manage existing Foundry agents from VS Code. After installing the extension, what is the FIRST action you must take before the agent's resources will appear in the Microsoft Foundry panel?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Right-click your Microsoft Foundry project in the Azure Resources pane and select 'Open in Foundry Extension'."
+      },
+      {
+        "id": "B",
+        "text": "Run 'az login' from the integrated terminal and reload the VS Code window."
+      },
+      {
+        "id": "C",
+        "text": "Install the Azure Functions Core Tools to enable agent debugging."
+      },
+      {
+        "id": "D",
+        "text": "Manually create a YAML agent definition file in the workspace root."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "After installing the Microsoft Foundry extension, you select the Azure icon in the activity bar, sign in if prompted, expand the Foundry section in your subscription, then right-click the Microsoft Foundry project and choose 'Open in Foundry Extension'. Only then does the extension's Resources section show your agents, model deployments, connections, and vector stores.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Set up Visual Studio Code for agent development",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/5-set-up-vs-code?pivots=text"
+    }
+  },
+  {
+    "id": 2,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Your team is preparing to develop AI agents using the Microsoft Foundry extension for Visual Studio Code. The Resources section of the extension organizes the resources you can manage. Which of the following is NOT one of the resource types managed under that section?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vector stores"
+      },
+      {
+        "id": "B",
+        "text": "Declarative agents and hosted agents"
+      },
+      {
+        "id": "C",
+        "text": "Azure Logic Apps connections"
+      },
+      {
+        "id": "D",
+        "text": "Deployed models"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Microsoft Foundry extension Resources section manages deployed models, declarative and hosted agents, connections, and vector stores. Azure Logic Apps connections are not managed in this pane; the Tools section of the extension provides the model catalog, playgrounds, and deployment features instead.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Set up Visual Studio Code for agent development",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/5-set-up-vs-code?pivots=text"
+    }
+  },
+  {
+    "id": 3,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You are building an HR assistant agent that uses a Foundry IQ knowledge base. Users complain that the agent sometimes answers from its training data instead of citing the knowledge base. Following Microsoft's guidance for configuring retrieval, which change to the agent instructions BEST resolves this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add explicit rules that the agent must ALWAYS search the knowledge base, must NEVER answer from training data, must include citations in a specific format, and must respond with a fallback message when information isn't found."
+      },
+      {
+        "id": "B",
+        "text": "Lower the model temperature to 0 and set max_tokens to a small value."
+      },
+      {
+        "id": "C",
+        "text": "Switch the underlying model from gpt-4o-mini to gpt-4o so it has more parametric knowledge."
+      },
+      {
+        "id": "D",
+        "text": "Move the knowledge_tool to the front of the tools array so it is always selected first."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Foundry IQ retrieval guidance says effective instructions specify three behaviors: WHEN to retrieve, HOW to cite, and WHAT to do when unsure. The recommended pattern explicitly requires the agent to ALWAYS search the knowledge base, NEVER use training data, format citations consistently, and use a defined fallback. Tool ordering, temperature, and switching to a larger model do not address the root cause of inconsistent retrieval behavior.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Configure retrieval with Foundry IQ",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/5-configure-retrieval?pivots=text"
+    }
+  },
+  {
+    "id": 4,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "A retailer wants to integrate a constantly evolving catalog of inventory and ordering tools with an Azure AI Agent. The team wants the agent to dynamically discover available tools at runtime rather than hard-coding each one. Which integration approach does the Microsoft Foundry guidance recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Connect the agent to a Model Context Protocol (MCP) server that exposes a catalog of tools the agent can discover and call on demand."
+      },
+      {
+        "id": "B",
+        "text": "Use the built-in code_interpreter tool and let the agent generate API calls inline."
+      },
+      {
+        "id": "C",
+        "text": "Embed each tool definition in the agent's system prompt as JSON schema."
+      },
+      {
+        "id": "D",
+        "text": "Use an Azure Logic App as the front-door so the agent calls a single workflow."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Integrate MCP Tools with Azure AI Agents' module teaches that Model Context Protocol (MCP) servers integrate with AI agents to provide a catalog of tools accessible on demand, making the solution more robust and scalable as systems grow or change frequently. Hard-coding tools in the system prompt or relying on code_interpreter does not provide dynamic discovery.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Introduction",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/1-introduction?pivots=text"
+    }
+  },
+  {
+    "id": 5,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are writing the system message for a Microsoft Foundry travel-advisor chat application using prompt engineering. According to the 'Optimize model output with prompt engineering' unit, place the items of the recommended system-message design checklist in the order Microsoft prescribes.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Start with the assistant's role: state the role and the expected outcome for a typical request"
+      },
+      {
+        "id": "S2",
+        "text": "Define boundaries: list the topics, actions, and content types the assistant should avoid"
+      },
+      {
+        "id": "S3",
+        "text": "Specify the output format: state plainly any required format and keep it consistent"
+      },
+      {
+        "id": "S4",
+        "text": "Add a 'when unsure' policy: tell the model what to do when the request is ambiguous, out of scope, or it lacks information"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The unit's checklist for designing a system message lists the four steps in this exact order: (1) start with the assistant's role, (2) define boundaries, (3) specify the output format, (4) add a 'when unsure' policy. Following the order keeps high-level role context first and operational fallbacks last.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Optimize model output with prompt engineering",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/2-prompt-engineering?pivots=text"
+    }
+  },
+  {
+    "id": 6,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Your team has a Foundry agent published directly to Microsoft Teams from the Foundry portal. A new requirement says you need custom middleware between Teams and the agent to log every message and apply transformation logic before forwarding to Foundry. Which approach does the Microsoft 365 Agents Toolkit guidance recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build a proxy application with the Microsoft 365 Agents Toolkit that sits between Teams/Copilot and the Foundry agent and applies your middleware."
+      },
+      {
+        "id": "B",
+        "text": "Continue publishing directly from Foundry and add an Azure Front Door rule to insert headers."
+      },
+      {
+        "id": "C",
+        "text": "Move the agent into Power Automate and use a custom connector."
+      },
+      {
+        "id": "D",
+        "text": "Add the middleware as a function tool on the Foundry agent itself."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Agents Toolkit unit explains that direct Foundry publishing handles most scenarios, but when you need custom SSO, middleware logic, multi-environment deployment, or advanced debugging, you create a proxy application with the Microsoft 365 Agents Toolkit. The proxy receives messages from Teams/Copilot through Azure Bot Service, runs your middleware, and forwards to the Foundry agent.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Advanced - Use Microsoft 365 Agents Toolkit",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/4-agents-toolkit-advanced?pivots=text"
+    }
+  },
+  {
+    "id": 7,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are mapping potential harms for a smart-kitchen copilot built on Microsoft Foundry. Per the 'Map potential harms' unit, place the four steps of the harm-mapping stage in the order documented.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Identify potential harms relevant to the planned solution"
+      },
+      {
+        "id": "S2",
+        "text": "Prioritize identified harms by likelihood and impact"
+      },
+      {
+        "id": "S3",
+        "text": "Test and verify the prioritized harms (for example with red team testing)"
+      },
+      {
+        "id": "S4",
+        "text": "Document and share the verified harms with stakeholders"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The 'Map potential harms' unit lists four steps in order: identify potential harms, prioritize identified harms (by likelihood and impact), test and verify the prioritized harms (commonly using red team testing), and document and share the verified harms. The list must be maintained and updated as new harms are found.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Map potential harms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text"
+    }
+  },
+  {
+    "id": 8,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "You are implementing a group chat orchestration with the Microsoft Agent Framework SDK. Order the implementation steps as described in the documentation.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create your chat client (e.g., AzureOpenAIChatClient) with appropriate credentials"
+      },
+      {
+        "id": "S2",
+        "text": "Define your agents using the chat client's create_agent method, giving each a name and role-specific instructions"
+      },
+      {
+        "id": "S3",
+        "text": "Build the workflow with GroupChatBuilder, add agents via participants(), and call build()"
+      },
+      {
+        "id": "S4",
+        "text": "Run the workflow with run() and process events with get_outputs()"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The Microsoft Agent Framework documentation prescribes: (1) create the chat client, (2) define agents via create_agent, (3) build the group chat workflow with GroupChatBuilder.participants(...).build(), then (4) run() the workflow and call get_outputs() to extract aggregated agent responses.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use group chat orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/6-use-group-chat-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 9,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "During each round of a group chat orchestration, the chat manager calls a defined sequence of methods. Place the methods in the order they are invoked.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "should_request_user_input"
+      },
+      {
+        "id": "S2",
+        "text": "should_terminate"
+      },
+      {
+        "id": "S3",
+        "text": "filter_results (only if terminating)"
+      },
+      {
+        "id": "S4",
+        "text": "select_next_agent (only if continuing)"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The group chat manager call order documented for the Microsoft Agent Framework is: should_request_user_input, then should_terminate, then either filter_results (when ending) or select_next_agent (when continuing). User input and termination conditions are evaluated before advancing the conversation.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use group chat orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/6-use-group-chat-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 10,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "You are publishing an A2A agent so other agents and routing services can discover and invoke it. Complete the configuration by selecting the correct artifact for each blank.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The structured document a routing agent retrieves to discover the agent's identity, endpoint URL, capabilities, default I/O modes, and skills is the agent's [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Agent Card"
+          },
+          {
+            "id": "b",
+            "text": "Agent Skill"
+          },
+          {
+            "id": "c",
+            "text": "Tool manifest"
+          },
+          {
+            "id": "d",
+            "text": "OpenAPI specification"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Each individual capability the agent advertises (with an ID, name, description, tags, examples, and input/output modes) is an [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Agent Skill"
+          },
+          {
+            "id": "b",
+            "text": "Function tool"
+          },
+          {
+            "id": "c",
+            "text": "Plugin spec"
+          },
+          {
+            "id": "d",
+            "text": "Capability binding"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "In the A2A protocol, the Agent Card is the digital business card listing the agent's identity, endpoint URL, capabilities, default I/O modes, skills, and authentication support. Each Agent Skill within that card describes a specific capability with ID, name, description, tags, examples, and input/output modes.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Define an A2A agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/2-define-a2a-agent?pivots=text"
+    }
+  },
+  {
+    "id": 11,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "When developing Foundry-based generative AI applications in Visual Studio Code, which extension does Microsoft provide to browse project resources, deploy models from the catalog, test agents in playgrounds, and configure declarative or hosted agents using a visual designer and YAML files?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Foundry Toolkit extension for Visual Studio Code"
+      },
+      {
+        "id": "B",
+        "text": "The Azure Resources extension"
+      },
+      {
+        "id": "C",
+        "text": "The Bot Framework Composer extension"
+      },
+      {
+        "id": "D",
+        "text": "The GitHub Codespaces extension"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Developer tools and SDKs' unit explicitly names the Foundry Toolkit extension for Visual Studio Code as the tool that supports browsing project resources, deploying models from the catalog, testing in playgrounds, configuring declarative/hosted agents via designer and YAML, and generating integration code.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Developer tools and SDKs",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text"
+    }
+  },
+  {
+    "id": 12,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are comparing two models in the Microsoft Foundry portal model leaderboard. The 'Estimated cost' metric shown on the leaderboard combines input and output costs. According to the documentation, what input/output token ratio is used to compute Estimated cost?",
+    "options": [
+      {
+        "id": "A",
+        "text": "3 input tokens for every 1 output token"
+      },
+      {
+        "id": "B",
+        "text": "1 input token for every 1 output token"
+      },
+      {
+        "id": "C",
+        "text": "1 input token for every 3 output tokens"
+      },
+      {
+        "id": "D",
+        "text": "10 input tokens for every 1 output token"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Select models using benchmarks' unit states that Estimated cost combines input and output costs using a typical 3:1 ratio (three input tokens for every output token), giving a single comparable number. Lower values indicate more cost-effective models.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Select models using benchmarks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text"
+    }
+  },
+  {
+    "id": 13,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "While experimenting in the Microsoft Foundry Model playground, you are happy with a chat session's prompts and settings and want to start writing application code. The playground exposes a Code button in the chat pane. Which choices does the generated code sample let you customize?",
+    "options": [
+      {
+        "id": "A",
+        "text": "API (Responses or ChatCompletions), language, and SDK"
+      },
+      {
+        "id": "B",
+        "text": "Azure region, network egress rules, and content-filter level"
+      },
+      {
+        "id": "C",
+        "text": "Vector store, embedding model, and chunk size"
+      },
+      {
+        "id": "D",
+        "text": "Authentication method, RBAC role, and managed identity"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Model playground unit explains that code samples generated from the Code button include choices for API (Responses API or ChatCompletions), language, and SDK. The samples are pre-populated with the project endpoint, deployment name, and current settings.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Explore with the model playground",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/02-chat-playground?pivots=text"
+    }
+  },
+  {
+    "id": 14,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are building a chat app that should answer HR questions using a small set of policy PDFs and want to use the Responses API's file_search tool. Following the documented flow, what client object do you create FIRST to host your indexed documents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A vector store via client.vector_stores.create(name=\"...\")"
+      },
+      {
+        "id": "B",
+        "text": "An Azure AI Search index via the search admin client"
+      },
+      {
+        "id": "C",
+        "text": "A Foundry IQ knowledge base via the agents API"
+      },
+      {
+        "id": "D",
+        "text": "An Azure Blob container with the PDF files"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The file_search unit's example creates a vector store with client.vector_stores.create(name=\"policy-docs\"), then uploads files via client.vector_stores.files.upload_and_poll, and references the vector store id in the tools array of responses.create. file_search uses vector stores, not Azure AI Search indexes or Foundry IQ knowledge bases.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the file_search tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/05-file-search?pivots=text"
+    }
+  },
+  {
+    "id": 15,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You are grounding a travel-advisor chat app with Retrieval Augmented Generation (RAG) in Microsoft Foundry. Complete the design choices.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The retrieval component recommended by Microsoft Foundry for RAG is [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure AI Search"
+          },
+          {
+            "id": "b",
+            "text": "Azure Cosmos DB for MongoDB vCore (only)"
+          },
+          {
+            "id": "c",
+            "text": "Azure Data Explorer"
+          },
+          {
+            "id": "d",
+            "text": "Azure Cognitive Services Content Moderator"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Microsoft recommends [BLANK] search for generative AI applications because it combines keyword, semantic, and vector search for the most accurate results.",
+        "options": [
+          {
+            "id": "a",
+            "text": "hybrid"
+          },
+          {
+            "id": "b",
+            "text": "keyword-only"
+          },
+          {
+            "id": "c",
+            "text": "fuzzy"
+          },
+          {
+            "id": "d",
+            "text": "boolean"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'Ground your model with RAG' unit names Azure AI Search as the retrieval component for RAG in Microsoft Foundry. It supports keyword, semantic, vector, and hybrid search, and the unit explicitly recommends hybrid search for generative AI applications.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Ground your model with Retrieval Augmented Generation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/3-retrieval-augmented-generation?pivots=text"
+    }
+  },
+  {
+    "id": 16,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Microsoft Foundry supports two primary types of agents. A team wants the agent's full configuration (model, instructions, tools) to live in YAML for code review and version control, with no custom container or runtime. According to the documentation, which agent type fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Declarative prompt-based agent"
+      },
+      {
+        "id": "B",
+        "text": "Hosted agent (containerized, deployed in code)"
+      },
+      {
+        "id": "C",
+        "text": "Workflow agent only"
+      },
+      {
+        "id": "D",
+        "text": "External agent registered through Bot Framework"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Microsoft Foundry has declarative agents (prompt-based or workflow) defined through configuration, and hosted agents that are containerized and deployed in code. A prompt-based declarative agent is the most accessible type and matches the requirement to keep configuration in YAML. Hosted agents require a code-built container; workflow agents specifically describe multi-agent orchestration in YAML.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Understand AI agents and Microsoft Foundry Agent Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/2-understand-ai-agents-foundry?pivots=text"
+    }
+  },
+  {
+    "id": 17,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are establishing a baseline measurement of potential harms in a Microsoft Foundry generative AI solution. Per the 'Measure potential harms' unit, place the three steps of the generalized measurement approach in the documented order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Prepare a diverse selection of input prompts likely to elicit each potential harm"
+      },
+      {
+        "id": "S2",
+        "text": "Submit the prompts to the system and retrieve the generated output"
+      },
+      {
+        "id": "S3",
+        "text": "Apply pre-defined criteria to evaluate the output and categorize its level of potential harm"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "explanation": "The 'Measure potential harms' unit prescribes a three-step approach: (1) prepare diverse input prompts likely to produce each documented harm, (2) submit the prompts and retrieve generated output, then (3) apply pre-defined criteria (such as harmful/not harmful or a graded scale) to categorize the output. The results form the baseline you track improvements against.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Measure potential harms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text"
+    }
+  },
+  {
+    "id": 18,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "A retail company's customer support agent is overwhelmed with repetitive questions about order history, refunds, and shipping status. According to the 'Why use custom tools' unit, which architecture is recommended for this scenario in Foundry Agent Service?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a custom tool that connects the AI agent to the company's CRM system so it can retrieve orders, process refunds, and check shipping statuses."
+      },
+      {
+        "id": "B",
+        "text": "Use the built-in code_interpreter tool so the agent can compute refund amounts dynamically."
+      },
+      {
+        "id": "C",
+        "text": "Embed the entire CRM dataset into the system prompt every request."
+      },
+      {
+        "id": "D",
+        "text": "Replace the agent with a fine-tuned model trained on past tickets."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The unit's customer support automation scenario explicitly recommends a custom tool that connects the Azure AI Agent to the CRM, so the agent can retrieve order histories, process refunds, and provide real-time shipping updates. code_interpreter, prompt-stuffed datasets, and fine-tuning don't address dynamic CRM access.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Why use custom tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/2-why-use-custom-tools?pivots=text"
+    }
+  },
+  {
+    "id": 19,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Your team manages a Foundry agent that uses MCP for dynamic tool discovery. A new microservice gets added every two weeks. With MCP, how is the new tool made available to the agent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Register the new function on the MCP server with the @mcp.tool decorator; the MCP client discovers it dynamically and adds the wrapper to the agent's tool definitions—no agent code changes needed."
+      },
+      {
+        "id": "B",
+        "text": "Redeploy the agent with a new system prompt listing the tool."
+      },
+      {
+        "id": "C",
+        "text": "Add a fine-tuning example for the new tool and retrain the model."
+      },
+      {
+        "id": "D",
+        "text": "Add the tool to the agent's YAML and republish from the Foundry portal."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "MCP servers host functions exposed via the @mcp.tool decorator. The MCP client connects to the server and dynamically discovers the tools, generating wrappers added to the agent's tool definitions. New tools can be added centrally without modifying the agent code—this is MCP's 'integrate once' advantage.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Understand MCP tool discovery",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/2-understand-mcp-tool-discovery?pivots=text"
+    }
+  },
+  {
+    "id": 20,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "According to the Foundry IQ 'Understanding RAG' unit, the RAG process uses three coordinated steps. Which step provides the FACTUAL CONTEXT to the model along with the user question?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Augment - combine retrieved content with the user's question to provide factual context"
+      },
+      {
+        "id": "B",
+        "text": "Generate - the model creates the response"
+      },
+      {
+        "id": "C",
+        "text": "Tokenize - chunk text before sending it to the model"
+      },
+      {
+        "id": "D",
+        "text": "Embed - convert the response to a vector for storage"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The Foundry IQ RAG unit describes the three-step process as Retrieve (search the knowledge base), Augment (combine retrieved content with the user's question to provide factual context), then Generate (the agent creates a response using both training and retrieved data). Augment is the step that injects factual context.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Understanding RAG for agents",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/2-understand-rag?pivots=text"
+    }
+  },
+  {
+    "id": 21,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You want a Foundry agent to read your team's recent Outlook emails, Teams messages, and SharePoint documents to answer 'What did Sarah share about the auth feature?'. Which Microsoft component provides this Microsoft 365 data access via the Model Context Protocol?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Work IQ"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Foundry IQ"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Search"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Graph Connectors"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Access Microsoft 365 data with Work IQ' unit explains Work IQ is a CLI and MCP server that connects AI assistants to Microsoft 365 Copilot data (emails, meetings, documents, Teams messages, people). It runs on the Model Context Protocol. Foundry IQ is for general organizational knowledge, not Microsoft 365 inboxes/calendars.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Access Microsoft 365 data with Work IQ",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/5-access-m365-data-workiq?pivots=text"
+    }
+  },
+  {
+    "id": 22,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You're designing a Foundry workflow that supports both a fixed validate-enrich-respond pipeline AND an approval pause where a human must confirm before a refund is issued. Which two workflow patterns combine to model this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sequential workflow plus human-in-the-loop"
+      },
+      {
+        "id": "B",
+        "text": "Group chat plus concurrent orchestration"
+      },
+      {
+        "id": "C",
+        "text": "Magentic plus handoff"
+      },
+      {
+        "id": "D",
+        "text": "Sequential plus fan-out"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Identify Workflow Patterns' unit defines sequential workflows as fixed step-by-step pipelines and human-in-the-loop workflows as patterns that pause for user input or approval. Combining them gives the deterministic pipeline plus an approval gate. Group chat is for dynamic multi-agent dialogue and is unrelated to this requirement.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Identify Workflow Patterns",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/3-identify-workflow-patterns?pivots=text"
+    }
+  },
+  {
+    "id": 23,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "Place the implementation steps of a Microsoft Foundry Agent (built with the Microsoft Agent Framework) in the correct order, per the 'Create an Azure AI agent' unit.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create a Microsoft Foundry project and copy the project connection string"
+      },
+      {
+        "id": "S2",
+        "text": "Set up authentication credentials with AzureCliCredential"
+      },
+      {
+        "id": "S3",
+        "text": "Connect to your project client with AzureOpenAIResponsesClient"
+      },
+      {
+        "id": "S4",
+        "text": "Create an Agent instance with the client, instructions, and tools"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The Microsoft Agent Framework documentation lists the steps as: create the Foundry project, add the connection string, authenticate with AzureCliCredential, connect with AzureOpenAIResponsesClient, then create the Agent instance with client + instructions + tools. AgentSession is then used to manage conversation state on top of the agent.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop an AI agent with Microsoft Agent Framework",
+      "unit": "Create an Azure AI agent with Microsoft Agent Framework",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/3-create-azure-ai-agent?pivots=text"
+    }
+  },
+  {
+    "id": 24,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You're modeling a Microsoft Agent Framework workflow where ONE message must be sent to several specialized agents in parallel (one checks flights, another checks hotels). Which edge type connects them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fan-Out edge"
+      },
+      {
+        "id": "B",
+        "text": "Switch-Case edge"
+      },
+      {
+        "id": "C",
+        "text": "Fan-In edge"
+      },
+      {
+        "id": "D",
+        "text": "Conditional edge"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Understand agent orchestration' unit defines Fan-Out edges as those that send a single message to multiple executors simultaneously (e.g., one request to several agents — one for flights, one for hotels). Fan-In combines multiple outputs back into one; Switch-Case routes by classification; Conditional fires only when conditions match.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Understand agent orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/3-understand-agent-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 25,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Your customer-service multi-agent system needs to dynamically transfer control between specialists (billing, technical, escalation) based on each user message's content. The set and order of agents is unknown at design time. Which Microsoft Agent Framework orchestration pattern is the BEST fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Handoff orchestration"
+      },
+      {
+        "id": "B",
+        "text": "Sequential orchestration"
+      },
+      {
+        "id": "C",
+        "text": "Concurrent orchestration"
+      },
+      {
+        "id": "D",
+        "text": "Group chat orchestration"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Use handoff orchestration' unit recommends handoff for cases where specialized expertise is needed but the number/order of agents can't be determined in advance, with clear signals for when to transfer control. Sequential needs a fixed order; concurrent runs agents simultaneously; group chat is for collaborative discussion.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use handoff orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/7-use-handoff-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 26,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "You are implementing an A2A Agent Executor for a 'Hello World' agent. Complete the design.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The Agent Executor uses [BLANK] to understand the incoming request (user input, task context).",
+        "options": [
+          {
+            "id": "a",
+            "text": "RequestContext"
+          },
+          {
+            "id": "b",
+            "text": "AgentSession"
+          },
+          {
+            "id": "c",
+            "text": "MessageBuffer"
+          },
+          {
+            "id": "d",
+            "text": "TaskContext"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Results, task updates, and artifacts are sent back to the client through the [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "EventQueue"
+          },
+          {
+            "id": "b",
+            "text": "ResponseStream"
+          },
+          {
+            "id": "c",
+            "text": "OutputChannel"
+          },
+          {
+            "id": "d",
+            "text": "ChatHistory"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'Implement an Agent Executor' unit specifies that the AgentExecutor uses RequestContext to read incoming request details and an EventQueue to send messages, task updates, or artifacts back to clients. The two primary operations are Execute and Cancel.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Implement an agent executor",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/3-implement-agent-executor?pivots=text"
+    }
+  },
+  {
+    "id": 27,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are deploying gpt-4o-mini for a customer-facing chat workload that needs the highest possible quota and pay-per-token billing, with no specific data-residency constraints. Which Microsoft Foundry deployment type does Microsoft recommend whenever possible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Global Standard"
+      },
+      {
+        "id": "B",
+        "text": "Global Batch"
+      },
+      {
+        "id": "C",
+        "text": "Data Zone Provisioned"
+      },
+      {
+        "id": "D",
+        "text": "Developer"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Deploy models to endpoints' unit explicitly states Global Standard deployments use any Azure region on a pay-per-token basis, are best for general workloads, and provide the highest quota; Microsoft recommends Global Standard whenever possible. Global Batch is for asynchronous jobs at 50% discount; Data Zone Provisioned is for reserved PTUs with EU/US residency; Developer is for fine-tuned model evaluation only.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Deploy models to endpoints",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text"
+    }
+  },
+  {
+    "id": 28,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You need to choose between the Foundry SDK and the OpenAI SDK for a new chat application on Microsoft Foundry.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "If your app needs Foundry Agent Service, tool-invocation/approval workflows, cloud evaluations, and tracing, Microsoft recommends [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "the Foundry SDK with AIProjectClient"
+          },
+          {
+            "id": "b",
+            "text": "the OpenAI SDK only"
+          },
+          {
+            "id": "c",
+            "text": "Azure CLI"
+          },
+          {
+            "id": "d",
+            "text": "Bot Framework SDK"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "For maximum compatibility with existing OpenAI code and direct chat completions or Responses calls without Foundry-specific features, you should use [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "the OpenAI SDK"
+          },
+          {
+            "id": "b",
+            "text": "the Foundry SDK only"
+          },
+          {
+            "id": "c",
+            "text": "the Bing Search SDK"
+          },
+          {
+            "id": "d",
+            "text": "Microsoft Graph SDK"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'Choose an endpoint and SDK' unit says use the Foundry SDK (AIProjectClient) when you need Foundry-specific features like agents, tool-invocation/approval, evaluations, tracing, and connections. Use the OpenAI SDK when you need maximum OpenAI compatibility, portability, and minimal Foundry dependency. Both can be combined in the same app.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Choose an endpoint and SDK",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/03-microsoft-foundry-sdk?pivots=text"
+    }
+  },
+  {
+    "id": 29,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You're calling the Responses API and want the model to call your own Python function get_account_balance(account_id) when relevant. According to the 'Use the function tool' unit, who actually executes the function body?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Your application code—the model only emits a function_call request, your code runs the function and sends back a function_call_output item with the result."
+      },
+      {
+        "id": "B",
+        "text": "The Foundry Agent Service runs the function in a managed sandbox."
+      },
+      {
+        "id": "C",
+        "text": "The OpenAI service executes the function in its own runtime."
+      },
+      {
+        "id": "D",
+        "text": "The function tool only works for built-in helpers like get_time and cannot run developer-defined functions."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the function tool unit: the model emits a function call, your application runs the matching function, and you return the result via a function_call_output item with the original call_id; the model then incorporates the result into its final answer. The model never executes your code; it orchestrates the calls.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the function tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/06-function?pivots=text"
+    }
+  },
+  {
+    "id": 30,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You have already tried prompt engineering and few-shot examples but the model still inconsistently follows your brand voice and formatting requirements. Of the techniques described in the 'Fine-tune a model for consistent behavior' unit, which Microsoft Foundry fine-tuning technique works BEST when there are clear, well-defined ways to approach a task and you have a labeled dataset of prompt-response pairs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Supervised fine-tuning (SFT)"
+      },
+      {
+        "id": "B",
+        "text": "Reinforcement fine-tuning (RFT)"
+      },
+      {
+        "id": "C",
+        "text": "Direct Preference Optimization (DPO)"
+      },
+      {
+        "id": "D",
+        "text": "Retrieval Augmented Generation (RAG)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the unit, SFT trains the model on labeled prompt-and-response pairs in JSONL and is best when there are clear, well-defined ways to approach the task. RFT is for complex tasks with many possible solutions and uses a grader; DPO aligns to human preferences via preferred/non-preferred pairs; RAG is grounding, not fine-tuning.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Fine-tune a model for consistent behavior",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/4-fine-tune-model?pivots=text"
+    }
+  },
+  {
+    "id": 31,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "Your team is choosing between the Foundry portal and the Microsoft Foundry VS Code extension for agent development. The lead requires Git-tracked configuration in YAML, integrated debugging, and rapid iteration alongside application code. Which approach does the documentation recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the Microsoft Foundry extension for Visual Studio Code"
+      },
+      {
+        "id": "B",
+        "text": "Use the Foundry portal exclusively"
+      },
+      {
+        "id": "C",
+        "text": "Use Power Automate flows"
+      },
+      {
+        "id": "D",
+        "text": "Use Microsoft Copilot Studio"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the 'Explore development approaches' unit, the VS Code extension is ideal for developer-centric workflows, version control integration, rapid iteration, and code-first development. The Foundry portal is recommended for visual configuration, centralized management, and quick prototyping without local setup.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Explore development approaches",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/3-explore-development-approaches?pivots=text"
+    }
+  },
+  {
+    "id": 32,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You want your Foundry agent to answer support questions grounded in PDFs that are uploaded directly to the agent (not in an enterprise Azure AI Search index). According to the Foundry tool catalog documentation, which built-in tool should you add?",
+    "options": [
+      {
+        "id": "A",
+        "text": "File Search (creates a vector store for the uploaded documents)"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Search tool (connects to an existing enterprise index)"
+      },
+      {
+        "id": "C",
+        "text": "Bing Web Search"
+      },
+      {
+        "id": "D",
+        "text": "OpenAPI tool"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Extend agent capabilities with tools' unit explains that File Search provides RAG over documents you upload directly to the agent and stores them in a vector store. Azure AI Search is for enterprise-scale existing search indexes; File Search is the right answer for documents uploaded to the agent.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Extend agent capabilities with tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/7-extend-agent-capabilities?pivots=text"
+    }
+  },
+  {
+    "id": 33,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You need to integrate your Azure AI Agent with an external SaaS REST API. The vendor publishes an OpenAPI 3.0 specification. According to the 'Options for implementing custom tools' unit, which custom tool option is the BEST fit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OpenAPI specification tool"
+      },
+      {
+        "id": "B",
+        "text": "Custom function (function calling) coded in Python"
+      },
+      {
+        "id": "C",
+        "text": "Azure Functions with HTTP triggers"
+      },
+      {
+        "id": "D",
+        "text": "Azure Logic Apps with a custom connector"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Foundry Agent Service exposes OpenAPI specification tools specifically for connecting agents to external APIs described by OpenAPI 3.0. They provide standardized, automated integrations and let Foundry handle parameter mapping. Custom functions and Azure Functions are alternatives but require you to write the wrapper; Logic Apps is for low-code workflows.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Options for implementing custom tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/3-custom-tool-options?pivots=text"
+    }
+  },
+  {
+    "id": 34,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "Place the steps of integrating MCP tools with an Azure AI Agent in the correct order, per the 'Integrate agent tools using an MCP server and client' unit.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Initialize the MCP server with FastMCP and define tools using the @mcp.tool decorator"
+      },
+      {
+        "id": "S2",
+        "text": "Initialize an MCP client session and connect to the server"
+      },
+      {
+        "id": "S3",
+        "text": "Call session.list_tools() and wrap each tool in an async function that invokes session.call_tool"
+      },
+      {
+        "id": "S4",
+        "text": "Bundle the tool functions into a FunctionTool and register it with the agent's toolset"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The MCP integration unit prescribes: server side defines tools via FastMCP and @mcp.tool; client side initializes the session, calls list_tools(), wraps each tool in an async function that invokes session.call_tool, and bundles them into a FunctionTool registered to the agent.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Integrate agent tools using an MCP server and client",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/3-mcp-client-server-setup?pivots=text"
+    }
+  },
+  {
+    "id": 35,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are planning a responsible generative AI solution in Microsoft Foundry using Microsoft's four-stage process. Place the stages in the order documented in 'Plan a responsible generative AI solution'.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Map potential harms relevant to the planned solution"
+      },
+      {
+        "id": "S2",
+        "text": "Measure the presence of these harms in the outputs generated by the solution"
+      },
+      {
+        "id": "S3",
+        "text": "Mitigate the harms at multiple layers and ensure transparent communication of risks"
+      },
+      {
+        "id": "S4",
+        "text": "Manage the solution responsibly via a deployment and operational readiness plan"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The 'Plan a responsible generative AI solution' unit defines the four-stage process as Map -> Measure -> Mitigate -> Manage. These stages correspond closely to the functions in the NIST AI Risk Management Framework and structure the rest of the responsible-AI module.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Plan a responsible generative AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text"
+    }
+  },
+  {
+    "id": 36,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When publishing a Foundry agent, your IT admin asks for it to be available organization-wide under 'Built by your org' in Teams. According to the publishing options unit, which publish scope must you choose AND what additional step is required?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Organization scope, which requires admin approval"
+      },
+      {
+        "id": "B",
+        "text": "Shared scope, available immediately without admin approval"
+      },
+      {
+        "id": "C",
+        "text": "Organization scope, no admin approval required because Entra ID grants it automatically"
+      },
+      {
+        "id": "D",
+        "text": "Personal scope, available only to the publisher"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The publishing options unit's table specifies that Shared scope is available immediately without admin approval and appears under 'Your agents' (best for personal/pilot use), whereas Organization scope appears under 'Built by your org' for everyone in the tenant and REQUIRES admin approval—best for production deployments.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Understand Foundry agent publishing options",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/2-understand-publishing-options?pivots=text"
+    }
+  },
+  {
+    "id": 37,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "A published Foundry agent works correctly in the Foundry playground but its custom tools fail when invoked from Microsoft Teams. According to the 'Test and iterate your integrated agent' unit, what is the MOST LIKELY cause?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The published agent has its own Entra identity that doesn't have RBAC permissions on the resources the tools access; you must reassign permissions to the published agent identity in the Azure portal."
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Teams doesn't support custom tools; only built-in tools work in Teams."
+      },
+      {
+        "id": "C",
+        "text": "The agent must be migrated to Microsoft Copilot Studio for tools to work."
+      },
+      {
+        "id": "D",
+        "text": "Tools require the user's personal token; the user must paste it into Teams."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the test/iterate unit's troubleshooting table: when tools work in Foundry but fail in Teams, the published agent's identity is missing required permissions. The fix is to find the published identity and assign RBAC roles to it on the resources the tools call—dev-time permissions on your project identity don't transfer.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Test and iterate your integrated agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/6-test-iterate-agent?pivots=text"
+    }
+  },
+  {
+    "id": 38,
+    "topic": "agentic",
+    "type": "mc_multi",
+    "question": "You are using the Microsoft Foundry workflow visual designer. Which TWO node types can manage variables and pass data between subsequent nodes? (Choose 2.)",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set Variable (Data transformation node)"
+      },
+      {
+        "id": "B",
+        "text": "Parse value (Data transformation node)"
+      },
+      {
+        "id": "C",
+        "text": "End"
+      },
+      {
+        "id": "D",
+        "text": "Basic chat"
+      },
+      {
+        "id": "E",
+        "text": "Invoke (Agent)"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "The 'Create workflows in Microsoft Foundry' unit lists Data transformation nodes as Set Variable, Reset Variable, and Parse value—these manage variables and shape data passed between nodes. End marks workflow conclusion, Basic chat sends/receives messages, and Invoke runs an agent—none are primarily data transformation.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Create workflows in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/4-create-workflows-microsoft-foundry?pivots=text"
+    }
+  },
+  {
+    "id": 39,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You are invoking a Foundry workflow named 'triage-workflow' from Python using the OpenAI client. Which extra_body shape correctly references the workflow as the agent for the conversation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "extra_body={\"agent\": {\"name\": \"triage-workflow\", \"type\": \"agent_reference\"}}"
+      },
+      {
+        "id": "B",
+        "text": "extra_body={\"workflow_id\": \"triage-workflow\"}"
+      },
+      {
+        "id": "C",
+        "text": "extra_body={\"flow\": \"triage-workflow\"}"
+      },
+      {
+        "id": "D",
+        "text": "extra_body={\"plugin\": {\"name\": \"triage-workflow\"}}"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the 'Use workflows in code' unit, you invoke a saved workflow by name through openai_client.responses.create with extra_body={\"agent\": {\"name\": workflow_name, \"type\": \"agent_reference\"}}. The conversation is created via openai_client.conversations.create() and reused via conversation=conversation.id.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Use workflows in code",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/8-use-workflows-in-code?pivots=text"
+    }
+  },
+  {
+    "id": 40,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are running the code_interpreter tool from a Microsoft Foundry Responses API call. Per the 'Use the code_interpreter tool' unit, place the steps of how the tool works at runtime in the documented order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "You send a request: include code_interpreter in your tools array"
+      },
+      {
+        "id": "S2",
+        "text": "Model analyzes the task: the model determines if code execution is needed"
+      },
+      {
+        "id": "S3",
+        "text": "Model generates code: the model writes Python code to accomplish the task"
+      },
+      {
+        "id": "S4",
+        "text": "Code runs: the code runs in a sandboxed environment with access to common libraries"
+      },
+      {
+        "id": "S5",
+        "text": "Results returned: the model receives the output and incorporates it into its response"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The 'Use the code_interpreter tool' unit lists five steps in this order: send the request with code_interpreter in tools, the model analyzes whether code is needed, the model generates Python code, the code runs in a sandbox (with libraries like pandas, numpy, math), and the model receives the output to compose its final response.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the code_interpreter tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/03-code-interpreter?pivots=text"
+    }
+  },
+  {
+    "id": 41,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You're using the Microsoft Agent Framework SDK to broadcast the SAME task to multiple specialized agents in parallel and gather their independent answers (e.g., for ensemble reasoning). Which builder class implements this pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ConcurrentBuilder"
+      },
+      {
+        "id": "B",
+        "text": "GroupChatBuilder"
+      },
+      {
+        "id": "C",
+        "text": "MagenticBuilder"
+      },
+      {
+        "id": "D",
+        "text": "WorkflowBuilder with a switch-case edge group"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Use concurrent orchestration' unit prescribes ConcurrentBuilder.participants(...).build() to run multiple agents simultaneously on the same task and aggregate results via get_outputs(). GroupChatBuilder is for managed conversation among agents; MagenticBuilder is for manager-driven planning; switch-case routing is handoff orchestration.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use concurrent orchestration",
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/4-use-concurrent-orchestration?pivots=text"
+    }
+  },
+  {
+    "id": 42,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "You're hosting an A2A server for an Azure AI Agent. Complete the configuration.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Clients discover your agent's capabilities by retrieving its Agent Card from the standard endpoint [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "/.well-known/agent-card.json"
+          },
+          {
+            "id": "b",
+            "text": "/api/agent/discover"
+          },
+          {
+            "id": "c",
+            "text": "/manifest.json"
+          },
+          {
+            "id": "d",
+            "text": "/.openai/agent.json"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "The Python web framework used to build the A2A server application in the documentation is [BLANK], typically combined with Uvicorn as the ASGI server.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Starlette"
+          },
+          {
+            "id": "b",
+            "text": "Flask"
+          },
+          {
+            "id": "c",
+            "text": "Django"
+          },
+          {
+            "id": "d",
+            "text": "Tornado"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'Host an A2A server' unit specifies the Agent Card is exposed at the standard endpoint /.well-known/agent-card.json so clients and other agents can discover the agent. The Server Application is built using Starlette (Python) and combined with an ASGI server like Uvicorn to listen on the network.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Host an A2A server",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/4-host-a2a-agent-server?pivots=text"
+    }
+  },
+  {
+    "id": 43,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "Your team wants pre-built APIs for sentiment analysis, document field extraction (invoices, receipts), and text-to-speech, without using a generative model. Which group of capabilities in Microsoft Foundry meets this need?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Foundry Tools (Azure Language, Azure Document Intelligence, Azure Speech, etc.)"
+      },
+      {
+        "id": "B",
+        "text": "Foundry IQ knowledge bases"
+      },
+      {
+        "id": "C",
+        "text": "Foundry Agent Service built-in tools"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Agent Framework"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the 'Foundry Tools' unit, Foundry Tools is a set of out-of-the-box prebuilt APIs and models including Azure Language (sentiment, entity extraction), Azure Document Intelligence (forms, receipts, invoices), Azure Speech (text-to-speech and speech-to-text), Azure Translator, and Azure Content Understanding. These were previously called Azure AI Services / Azure Cognitive Services.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Foundry Tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text"
+    }
+  },
+  {
+    "id": 44,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are evaluating a deployed model in Microsoft Foundry and want to detect responses that contain biased or hateful statements. The unit explains that for content harm metrics, results are reported as a single aggregate. What aggregate value is used?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defect rate — the percentage of responses exceeding a severity threshold (typically Medium)"
+      },
+      {
+        "id": "B",
+        "text": "F1 score against a labeled hate-speech dataset"
+      },
+      {
+        "id": "C",
+        "text": "BLEU score against a moderated reference corpus"
+      },
+      {
+        "id": "D",
+        "text": "Cosine similarity to known harmful prompts"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Evaluate model performance' unit states that for content harm metrics (self-harm, hateful and unfair, violent, sexual), results aggregate as defect rate—the percentage of responses exceeding a severity threshold (typically Medium). For protected material and indirect-attack metrics, defect rate = (true instances / total instances) × 100.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Evaluate model performance",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/5-evaluate-performance?pivots=text"
+    }
+  },
+  {
+    "id": 45,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You're building a multi-turn chat application with the OpenAI Responses API in Microsoft Foundry. You want each new turn to be grounded in the prior turn without manually rebuilding the message history. Which parameter on responses.create() does the unit recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "previous_response_id (set to the prior response's id)"
+      },
+      {
+        "id": "B",
+        "text": "thread_id (must be created via threads.create())"
+      },
+      {
+        "id": "C",
+        "text": "session_token (passed in headers)"
+      },
+      {
+        "id": "D",
+        "text": "context_window_id (auto-generated by the SDK)"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per 'Generate responses with the Responses API', you maintain stateful multi-turn context by passing previous_response_id=response1.id on the next responses.create() call. The Responses API is stateful and ties calls together via this parameter; the alternative is manually building conversation_history yourself.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the Responses API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/04-responses-api?pivots=text"
+    }
+  },
+  {
+    "id": 46,
+    "topic": "agentic",
+    "type": "sequence",
+    "question": "Place the steps for creating your first agent in the Microsoft Foundry portal in the correct order, per the 'Build your first agent' unit.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Navigate to https://ai.azure.com and select your Foundry project"
+      },
+      {
+        "id": "S2",
+        "text": "Select Build > Agents in the left navigation, then Create"
+      },
+      {
+        "id": "S3",
+        "text": "Enter agent details: Name, Description, and Model (selected from a deployed model in your project)"
+      },
+      {
+        "id": "S4",
+        "text": "Test the agent in the integrated Playground tab and refine instructions"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The 'Build your first agent in Microsoft Foundry' unit prescribes navigating to ai.azure.com, opening the project, selecting Build > Agents > Create, filling in Name/Description/Model (the dropdown only shows already-deployed models), then testing in the Playground.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Build your first agent in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/4-build-agent-azure-portal?pivots=text"
+    }
+  },
+  {
+    "id": 47,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "You are preparing to release a Microsoft Foundry generative AI solution. Per the 'Manage a responsible generative AI solution' unit, place the release-readiness activities in the order Microsoft prescribes.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Complete prerelease reviews with legal, privacy, security, and accessibility teams"
+      },
+      {
+        "id": "S2",
+        "text": "Devise a phased delivery plan that releases the solution to a restricted group of users first"
+      },
+      {
+        "id": "S3",
+        "text": "Create an incident response plan with estimates for responding to unanticipated incidents"
+      },
+      {
+        "id": "S4",
+        "text": "Create a rollback plan defining the steps to revert the solution to a previous state"
+      },
+      {
+        "id": "S5",
+        "text": "Track telemetry and enable users to report inaccurate, harmful, or otherwise problematic content"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "explanation": "The 'Manage a responsible generative AI solution' unit lists prerelease compliance reviews (legal, privacy, security, accessibility) first, followed by release-and-operate planning: phased delivery plan, incident response plan, rollback plan, and finally telemetry plus user feedback channels for reporting harmful or inaccurate content.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Manage a responsible generative AI solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text"
+    }
+  },
+  {
+    "id": 48,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "You are integrating a custom Python function recent_snowfall(location: str) into a Foundry Agent. According to the 'How to integrate custom tools' unit, after defining the function and its FunctionTool wrapper with parameters/description/strict, how is the tool typically invoked at runtime?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The agent decides on its own when to call the function based on prompts; you do not write code that explicitly calls it."
+      },
+      {
+        "id": "B",
+        "text": "The application code must read each user prompt, classify intent, and call recent_snowfall manually before sending the result to the model."
+      },
+      {
+        "id": "C",
+        "text": "Python custom functions can only be invoked through Azure Functions queue triggers."
+      },
+      {
+        "id": "D",
+        "text": "The function executes only when wrapped in an OpenAPI 3.0 spec."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The unit's note emphasizes the declarative nature of agents: developers don't write code that explicitly calls custom tool functions—the agent decides when to call them based on the prompt, function name, description, and parameters. Function calling, Azure Functions, and OpenAPI tools are different integration options, not pre-requisites for each other.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate custom tools into your agent",
+      "unit": "How to integrate custom tools",
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/4-how-use-custom-tools?pivots=text"
+    }
+  },
+  {
+    "id": 49,
+    "topic": "agentic",
+    "type": "mc_single",
+    "question": "When attaching an Azure AI Agent to a remote MCP server using the MCPTool object, you want the agent to pause and request approval before any tool invocation. Which require_approval value should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "always (which is also the default if not specified)"
+      },
+      {
+        "id": "B",
+        "text": "manual"
+      },
+      {
+        "id": "C",
+        "text": "tool"
+      },
+      {
+        "id": "D",
+        "text": "never"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Per the 'Use Azure AI agents with MCP servers' unit, MCPTool's require_approval supports 'always' (developer must approve every call—this is the default if no value is set) and 'never' (no approval required). When approval is required, the agent returns an mcp_approval_request and you respond with mcp_approval_response containing approval_request_id and an approve boolean.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Use Azure AI agents with MCP servers",
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/4-use-azure-ai-agents-with-mcp?pivots=text"
+    }
+  },
+  {
+    "id": 50,
+    "topic": "genai-foundry",
+    "type": "sequence",
+    "question": "Per the 'Compare and combine optimization strategies' unit, place the four steps of Microsoft's recommended decision framework for choosing optimization strategies in the documented order.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Start with prompt engineering: test system messages, few-shot examples, and parameter tuning"
+      },
+      {
+        "id": "S2",
+        "text": "Add RAG if accuracy matters: implement RAG with Azure AI Search when the model needs current or private data"
+      },
+      {
+        "id": "S3",
+        "text": "Add fine-tuning if consistency matters: fine-tune when the model doesn't reliably maintain style/tone/format"
+      },
+      {
+        "id": "S4",
+        "text": "Combine as needed: layer strategies based on the application's specific requirements"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The unit's decision framework recommends starting simple and adding complexity only when needed: (1) prompt engineering first, (2) add RAG if you need access to specific or current data, (3) add fine-tuning if you need consistent style/tone/format, (4) combine strategies as required. This incremental approach avoids unnecessary cost and complexity.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 51,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You are introducing your team to Microsoft's six core principles of Responsible AI before they design a new Foundry application. Match each scenario to the correct principle from the 'Responsible AI' unit.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A loan-approval ML model must avoid bias based on gender or ethnicity so it doesn't unfairly advantage or disadvantage specific groups of applicants. This concern is the principle of [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Fairness"
+          },
+          {
+            "id": "b",
+            "text": "Reliability and safety"
+          },
+          {
+            "id": "c",
+            "text": "Inclusiveness"
+          },
+          {
+            "id": "d",
+            "text": "Accountability"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Users should be made fully aware of an AI system's purpose, how it works, and its limitations (such as confidence scores and the data used to train it). This is the principle of [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Transparency"
+          },
+          {
+            "id": "b",
+            "text": "Privacy and security"
+          },
+          {
+            "id": "c",
+            "text": "Fairness"
+          },
+          {
+            "id": "d",
+            "text": "Reliability and safety"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Microsoft's six Responsible AI principles are Fairness, Reliability and safety, Privacy and security, Inclusiveness, Transparency, and Accountability. Avoiding gender/ethnicity bias in loan approval falls under Fairness; making purpose, mechanics, limitations, and confidence visible to users is the Transparency principle.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Responsible AI",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text"
+    }
+  },
+  {
+    "id": 52,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You're scoping the AI capabilities you'll integrate into a Microsoft Foundry application. Per the 'What is AI?' unit, match each use case to the correct AI capability category.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "An automated checkout in a grocery store identifies the products in a customer's basket from camera streams without scanning barcodes. This is an application of [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Computer vision"
+          },
+          {
+            "id": "b",
+            "text": "Natural language processing"
+          },
+          {
+            "id": "c",
+            "text": "Computer speech"
+          },
+          {
+            "id": "d",
+            "text": "Information extraction"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "An expense-claims app extracts purchase dates, line item details, and total costs from scanned receipts by combining language reasoning with document understanding. This is the capability category of [BLANK].",
+        "options": [
+          {
+            "id": "a",
+            "text": "Information extraction"
+          },
+          {
+            "id": "b",
+            "text": "Generative AI and agents"
+          },
+          {
+            "id": "c",
+            "text": "Computer speech"
+          },
+          {
+            "id": "d",
+            "text": "Natural language processing"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The 'What is AI?' unit lists Generative AI and agents, Natural language processing, Computer speech, Computer vision, and Information extraction. Identifying products from camera streams is Computer vision; extracting structured fields from scanned receipts by combining language reasoning, document understanding, and vision is the Information extraction category.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "What is AI?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text"
+    }
+  },
+  {
+    "id": 53,
+    "topic": "genai-foundry",
+    "type": "mc_multi",
+    "question": "You are choosing tools for a Microsoft Foundry generative AI application that uses the OpenAI Responses API. Per the 'What are tools?' unit, which TWO of the following Responses API tools enable the model to GROUND its responses in external information rather than only its training data? (Choose 2.)",
+    "options": [
+      {
+        "id": "A",
+        "text": "web_search"
+      },
+      {
+        "id": "B",
+        "text": "file_search"
+      },
+      {
+        "id": "C",
+        "text": "code_interpreter"
+      },
+      {
+        "id": "D",
+        "text": "function"
+      },
+      {
+        "id": "E",
+        "text": "image_generation"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "The 'What are tools?' unit describes web_search as enabling the model to find general information on the Internet so it can base responses on more current data than it was trained on, and file_search as enabling the model to search files uploaded to a dedicated vector search index to ground responses in specific knowledge. code_interpreter runs Python; function calls custom application code; image_generation is not listed in this unit's tool inventory.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "What are tools?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/02-what-are-tools?pivots=text"
+    }
+  },
+  {
+    "id": 54,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "Per the 'Compare and combine optimization strategies' unit, you have already invested in prompt engineering and added Retrieval Augmented Generation (RAG) but the model still inconsistently follows your brand voice and structured response format. Which strategy should you add next, and why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fine-tuning, because it produces the most consistent model behavior by embedding the desired patterns directly in the model's weights."
+      },
+      {
+        "id": "B",
+        "text": "Switch to a smaller base model, because smaller models are easier to keep on-tone."
+      },
+      {
+        "id": "C",
+        "text": "Replace RAG with a longer system message that includes the entire knowledge base, because grounding is no longer needed once you have your brand voice."
+      },
+      {
+        "id": "D",
+        "text": "Drop prompt engineering entirely, because RAG and fine-tuning together always replace it."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The unit's decision framework states fine-tuning is the right next step when 'consistency matters'-when the model doesn't reliably maintain the desired style, tone, or format despite detailed prompts. Fine-tuning embeds the patterns in the model's weights for the most consistent behavior. The unit is explicit that the strategies are complementary; you do not drop prompt engineering or RAG when you add fine-tuning.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text"
+    }
+  },
+  {
+    "id": 55,
+    "topic": "agentic",
+    "type": "hotspot",
+    "question": "You're connecting a client to a remote A2A agent. Complete the configuration according to the 'Connect to your A2A agent' unit.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The first thing the client must do is fetch the [BLANK] from the agent server's well-known endpoint to learn the agent's metadata and capabilities.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Agent Card"
+          },
+          {
+            "id": "b",
+            "text": "OpenAPI spec"
+          },
+          {
+            "id": "c",
+            "text": "Service principal token"
+          },
+          {
+            "id": "d",
+            "text": "Tool manifest"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "For long-running tasks where the user benefits from receiving partial output as it's produced, the client should use a [BLANK] request.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Streaming"
+          },
+          {
+            "id": "b",
+            "text": "Non-streaming"
+          },
+          {
+            "id": "c",
+            "text": "Batch"
+          },
+          {
+            "id": "d",
+            "text": "Idempotent"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Per 'Connect to your A2A agent', the client first retrieves the Agent Card from a well-known endpoint to establish a connection. Streaming requests return responses incrementally as the agent processes the request—useful for long-running tasks or real-time UX—while non-streaming requests wait for a complete response.",
+    "source": {
+      "path": "Develop AI Agents on Azure",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Connect to your A2A agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/5-connect-to-a2a-agent?pivots=text"
+    }
+  },
+  {
+    "id": 56,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You are creating a new Microsoft Foundry resource that hosts multiple projects. According to the 'Microsoft Foundry' unit, which statement about Foundry resources and projects is TRUE?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A Foundry resource can support one or more child projects, with one designated as the default project."
+      },
+      {
+        "id": "B",
+        "text": "A Foundry resource can host exactly one project; multi-project setups require separate resources."
+      },
+      {
+        "id": "C",
+        "text": "Projects must always live in a Foundry hub (classic) resource for production support."
+      },
+      {
+        "id": "D",
+        "text": "Each project gets its own Azure subscription automatically."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Microsoft Foundry' unit explicitly states a Foundry resource can support one or more child projects, with one of them designated the default. Each project belongs to a single Foundry resource, but a single resource hosts multiple projects.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Microsoft Foundry",
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text"
+    }
+  },
+  {
+    "id": 57,
+    "topic": "genai-foundry",
+    "type": "mc_multi",
+    "question": "Looking at the Foundry Models catalog you need to choose the right specialized model for two requirements: (1) generating embeddings for semantic search and (2) converting audio recordings to text. Which TWO model types from the catalog are appropriate? (Choose 2.)",
+    "options": [
+      {
+        "id": "A",
+        "text": "An embedding model (e.g., Ada or Cohere)"
+      },
+      {
+        "id": "B",
+        "text": "A speech-to-text model (e.g., GPT-4o-transcribe)"
+      },
+      {
+        "id": "C",
+        "text": "An image generation model (e.g., GPT-image-1)"
+      },
+      {
+        "id": "D",
+        "text": "A text-to-speech model (e.g., GPT-4o-tts)"
+      },
+      {
+        "id": "E",
+        "text": "A reasoning chat model (e.g., Claude Opus 4.6)"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Per the 'Explore the model catalog' unit: embedding models like Ada and Cohere convert text into numerical representations for semantic search and RAG; speech-to-text models like GPT-4o-transcribe convert audio to text. Image generation produces images from text, text-to-speech does the opposite of transcription, and reasoning models excel at math/code/logic.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Explore the model catalog",
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/2-explore-model-catalog?pivots=text"
+    }
+  },
+  {
+    "id": 58,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "Your team has legacy code using the OpenAI ChatCompletions API and wants to keep using it for cross-platform compatibility. Per the 'Generate responses with the ChatCompletions API' unit, how does the ChatCompletions API differ from the Responses API in terms of conversational state?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ChatCompletions is stateless: you must manually track conversation history by appending each user/assistant message to the messages array on every call."
+      },
+      {
+        "id": "B",
+        "text": "ChatCompletions is stateful: it remembers prior messages by session ID server-side."
+      },
+      {
+        "id": "C",
+        "text": "Both APIs store conversation in the same project endpoint automatically."
+      },
+      {
+        "id": "D",
+        "text": "ChatCompletions requires you to provide a previous_completion_id parameter."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The unit explicitly states ChatCompletions does NOT provide stateful response tracking; you must manually maintain conversation_messages by appending each user message and assistant response, then submitting the entire conversation in each turn. The Responses API, by contrast, is stateful via previous_response_id.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the ChatCompletions API",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/05-openai-api?pivots=text"
+    }
+  },
+  {
+    "id": 59,
+    "topic": "genai-foundry",
+    "type": "mc_single",
+    "question": "You're using the Responses API and want the model to fetch fresh information from the internet (e.g., recent product announcements) and incorporate the results into its answer. Which entry in the tools array enables this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "{ \"type\": \"web_search\" }"
+      },
+      {
+        "id": "B",
+        "text": "{ \"type\": \"bing_grounding\" }"
+      },
+      {
+        "id": "C",
+        "text": "{ \"type\": \"file_search\", \"vector_store_ids\": [...] }"
+      },
+      {
+        "id": "D",
+        "text": "{ \"type\": \"function\", \"name\": \"web_search\" }"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The 'Use the web_search tool' unit specifies adding tools=[{\"type\": \"web_search\"}] to the responses.create() call. The model then decides when fresh data is needed, issues queries, reviews results, and incorporates them into its grounded answer. file_search uses vector stores; function defines a developer function; bing_grounding is the Foundry agent built-in tool, not the Responses API tool name.",
+    "source": {
+      "path": "Develop generative AI apps on Microsoft Foundry",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the web_search tool",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/04-web-search?pivots=text"
+    }
+  },
+  {
+    "id": 60,
+    "topic": "genai-foundry",
+    "type": "hotspot",
+    "question": "You are mitigating potential harms in a generative AI solution per the four-layer model in the 'Mitigate potential harms' unit. Match the mitigation to the correct layer.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Configuring Microsoft Foundry guardrails (content filters with safe/low/medium/high severity across hate-and-fairness, sexual, violence, self-harm, task-adherence categories, plus prompt shields) is a mitigation at the [BLANK] layer.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Safety system"
+          },
+          {
+            "id": "b",
+            "text": "Model"
+          },
+          {
+            "id": "c",
+            "text": "System message and grounding"
+          },
+          {
+            "id": "d",
+            "text": "User experience"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Choosing a smaller, fit-for-purpose foundation model or fine-tuning it with your own data so its responses are better scoped to your scenario is a mitigation at the [BLANK] layer.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Model"
+          },
+          {
+            "id": "b",
+            "text": "Safety system"
+          },
+          {
+            "id": "c",
+            "text": "User experience"
+          },
+          {
+            "id": "d",
+            "text": "Application"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The four mitigation layers are Model, Safety system, System message and grounding, and User experience. Foundry guardrails (content filters with severity levels and prompt shields) sit at the Safety system layer. Choosing/fine-tuning the foundation model sits at the Model layer.",
+    "source": {
+      "path": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Mitigate potential harms",
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text"
+    }
+  }
+]
