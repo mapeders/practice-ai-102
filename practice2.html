@@ -2425,7 +2425,7 @@
         const errs = [];
         if (typeof q.id !== 'number') errs.push('missing id');
         else if (seenIds.has(q.id)) errs.push('duplicate id ' + q.id);
-        if (!['agentic','genai-foundry'].includes(q.topic)) errs.push('bad topic');
+        if (!['agentic','genai-foundry','computer-vision','plan-and-manage'].includes(q.topic)) errs.push('bad topic');
         if (!['mc_single','mc_multi','sequence','hotspot'].includes(q.type)) errs.push('bad type');
         if (typeof q.question !== 'string' || !q.question) errs.push('missing question');
         if (typeof q.explanation !== 'string') errs.push('missing explanation');
