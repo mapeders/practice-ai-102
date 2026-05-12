@@ -1,0 +1,964 @@
+[
+  {
+    "id": 226,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Azure Document Intelligence uses which underlying technology to capture document structure by creating bounding boxes around detected objects in an image?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Natural Language Processing (NLP)"
+      },
+      {
+        "id": "B",
+        "text": "Optical Character Recognition (OCR)"
+      },
+      {
+        "id": "C",
+        "text": "Computer Vision object detection"
+      },
+      {
+        "id": "D",
+        "text": "Named Entity Recognition (NER)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Azure Document Intelligence uses Optical Character Recognition (OCR) capabilities combined with deep learning models to extract text, key-value pairs, selection marks, and tables from documents. OCR captures document structure by creating bounding boxes around detected objects in an image, and their locations are recorded as coordinates in relation to the rest of the page.",
+    "source": {
+      "path": "Extract data from forms with Azure Document Intelligence",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "What is Azure Document Intelligence?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/2-what-form-recognizer?pivots=text"
+    }
+  },
+  {
+    "id": 227,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which of the following document input formats is NOT supported by Azure Document Intelligence for analysis?",
+    "options": [
+      {
+        "id": "A",
+        "text": "PDF"
+      },
+      {
+        "id": "B",
+        "text": "TIFF"
+      },
+      {
+        "id": "C",
+        "text": "PNG"
+      },
+      {
+        "id": "D",
+        "text": "MP4"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Azure Document Intelligence supports JPEG, PNG, BMP, PDF (text or scanned), and TIFF file formats as input. MP4 (video) is not a supported input format. The file size must be less than 500 MB for the paid (S0) tier and 4 MB for the free (F0) tier.",
+    "source": {
+      "path": "Extract data from forms with Azure Document Intelligence",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Get started with Azure Document Intelligence",
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/3-get-started?pivots=text"
+    }
+  },
+  {
+    "id": 228,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "When training a custom Document Intelligence model using the REST API, which three files must be stored in the Azure Blob container alongside the sample forms?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ocr.json, fields.json, and labels.json"
+      },
+      {
+        "id": "B",
+        "text": "training.json, schema.json, and annotations.json"
+      },
+      {
+        "id": "C",
+        "text": "model.json, dataset.json, and config.json"
+      },
+      {
+        "id": "D",
+        "text": "layout.json, extraction.json, and output.json"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "To train a custom model via the REST API, you must store sample forms in an Azure Blob container along with JSON files. You generate an ocr.json file for each sample form using the Analyze document function; you need a single fields.json file describing the fields to extract; and a labels.json file for each sample form mapping the fields to their location in that form.",
+    "source": {
+      "path": "Extract data from forms with Azure Document Intelligence",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Train custom models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/6-train-custom-models?pivots=text"
+    }
+  },
+  {
+    "id": 229,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In Azure Document Intelligence, what does the analyzeResult JSON response contain in the 'pages' array?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the raw extracted text without formatting"
+      },
+      {
+        "id": "B",
+        "text": "Information about the document content including words, lines, and page dimensions"
+      },
+      {
+        "id": "C",
+        "text": "The trained model ID and version metadata"
+      },
+      {
+        "id": "D",
+        "text": "Key-value pairs and selection marks from the document"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A successful analyzeResult JSON response contains 'analyzeResult' with extracted content and an array of pages containing information about the document content. Each page includes details such as page number, angle, width, height, unit, words, and lines. Key-value pairs and document-specific values are found in the documentResults node.",
+    "source": {
+      "path": "Extract data from forms with Azure Document Intelligence",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Use Azure Document Intelligence models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/7-use-models?pivots=text"
+    }
+  },
+  {
+    "id": 230,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which prebuilt Document Intelligence model is the ONLY one that supports entity extraction (people, organizations, dates)?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Layout model"
+      },
+      {
+        "id": "B",
+        "text": "Read model"
+      },
+      {
+        "id": "C",
+        "text": "General document model"
+      },
+      {
+        "id": "D",
+        "text": "Invoice model"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The General document model extends the Read model by adding detection of key-value pairs, entities, selection marks, and tables. It is the only prebuilt model to support entity extraction, recognizing entities such as people, organizations, and dates. The Layout model extracts text and structure but not named entities.",
+    "source": {
+      "path": "Use prebuilt Document Intelligence models",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Use the General Document, Read, and Layout models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/3-use-general-document-read-layout-models?pivots=text"
+    }
+  },
+  {
+    "id": 231,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "What advantage does the Layout model provide over the Read model for digitized documents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "It can detect the language of text lines"
+      },
+      {
+        "id": "B",
+        "text": "It extracts text, selection marks, and tables including complex structures with merged cells"
+      },
+      {
+        "id": "C",
+        "text": "It identifies named entities such as people and organizations"
+      },
+      {
+        "id": "D",
+        "text": "It extracts key-value pairs from unstructured documents"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Layout model extracts text AND returns selection marks and tables from the input image or PDF file. It can handle tables with complicated structures including those with or without headers, cells that span columns or rows, and incomplete columns or rows. Each table cell is extracted with its content, bounding box, header indicators, and row/column position indexes.",
+    "source": {
+      "path": "Use prebuilt Document Intelligence models",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Use the General Document, Read, and Layout models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/3-use-general-document-read-layout-models?pivots=text"
+    }
+  },
+  {
+    "id": 232,
+    "topic": "knowledge-mining",
+    "type": "mc_multi",
+    "question": "Which TWO of the following prebuilt model types are specifically trained on structured form types (rather than general document analysis) in Azure Document Intelligence? (Select all that apply.)",
+    "options": [
+      {
+        "id": "A",
+        "text": "Invoice model"
+      },
+      {
+        "id": "B",
+        "text": "Read model"
+      },
+      {
+        "id": "C",
+        "text": "Business card model"
+      },
+      {
+        "id": "D",
+        "text": "General document model"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "explanation": "The Invoice model and Business card model are trained on specific form types and extract fixed sets of fields (e.g., CustomerName and InvoiceTotal for invoices; first/last names, postal addresses, email for business cards). The Read and General document models are designed for documents with less specific or unpredictable structures.",
+    "source": {
+      "path": "Use prebuilt Document Intelligence models",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Understand prebuilt models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/2-understand-prebuilt-models?pivots=text"
+    }
+  },
+  {
+    "id": 233,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "The prebuilt invoice model in Azure Document Intelligence (v3.0 and later) can also process which types of documents beyond standard invoices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Medical prescriptions and hospital bills"
+      },
+      {
+        "id": "B",
+        "text": "Utility bills, sales orders, and purchase orders"
+      },
+      {
+        "id": "C",
+        "text": "Bank statements and mortgage documents"
+      },
+      {
+        "id": "D",
+        "text": "Driver licenses and passports"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Document Intelligence invoice model supports invoices, utility bills, sales orders, and purchase orders. The model uses OCR capabilities to analyze and extract key fields such as customer name, billing address, due date, and amount due, returning structured JSON data.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Invoice data extraction",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice"
+    }
+  },
+  {
+    "id": 234,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "What is the model ID string that must be used when calling the Document Intelligence invoice prebuilt model via the REST API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "document-intelligence-invoice"
+      },
+      {
+        "id": "B",
+        "text": "prebuilt-invoice"
+      },
+      {
+        "id": "C",
+        "text": "form-recognizer-invoice"
+      },
+      {
+        "id": "D",
+        "text": "ai-invoice-extraction"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The model ID for the Document Intelligence invoice prebuilt model is 'prebuilt-invoice'. This model ID is passed when calling the Analyze operation via the REST API or SDKs (C#, Python, Java, JavaScript) to extract invoice data.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Invoice data extraction",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice"
+    }
+  },
+  {
+    "id": 235,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In Document Intelligence v3.0 and later, the receipt model includes special support for which additional document type beyond standard retail receipts?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Restaurant receipts with tip fields"
+      },
+      {
+        "id": "B",
+        "text": "Single-page hotel receipts with arrival and departure dates"
+      },
+      {
+        "id": "C",
+        "text": "Airline boarding passes with flight details"
+      },
+      {
+        "id": "D",
+        "text": "Pharmacy receipts with prescription details"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "In Azure Document Intelligence v3.0 and later, the receipt model supports single-page hotel receipt processing. If a receipt is classified as a hotel receipt, the model extracts extra relevant fields such as arrival and departure dates in addition to standard receipt fields.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Receipt data extraction",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/receipt"
+    }
+  },
+  {
+    "id": 236,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "The ID document prebuilt model in Document Intelligence v4.0 supports which of the following identity document categories?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only US driver licenses and international passports"
+      },
+      {
+        "id": "B",
+        "text": "Passport books, passport cards, and driver licenses from worldwide regions including US, India, Australia, and others"
+      },
+      {
+        "id": "C",
+        "text": "Only government-issued IDs from European Union countries"
+      },
+      {
+        "id": "D",
+        "text": "US Social Security cards and Medicare cards only"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Document Intelligence v4.0 ID document model supports identification documents from all regions worldwide. It covers passport books and passport cards worldwide, plus driver licenses, ID cards, residency permits, Social Security cards, and military IDs for the US; driver licenses, PAN cards, and Aadhaar cards for India; driver licenses and photo cards for Australia; and driver licenses and ID cards for other regions.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Identity document (ID) processing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/id-document"
+    }
+  },
+  {
+    "id": 237,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which field extracted by the Document Intelligence ID document model contains two lines of 44 characters each from an international passport?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DocumentNumber"
+      },
+      {
+        "id": "B",
+        "text": "MachineReadableZone"
+      },
+      {
+        "id": "C",
+        "text": "Nationality"
+      },
+      {
+        "id": "D",
+        "text": "Region"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The MachineReadableZone (MRZ) field is extracted from passports and contains two lines of 44 characters each. For example: 'P<USABROOKS<<JENNIFER<<<...'. The Region field is only extracted from driver's licenses, not passports.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Identity document (ID) processing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/id-document"
+    }
+  },
+  {
+    "id": 238,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which custom model type in Azure Document Intelligence is best suited for structured or templated forms with a consistent visual layout?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Custom neural model"
+      },
+      {
+        "id": "B",
+        "text": "Custom classification model"
+      },
+      {
+        "id": "C",
+        "text": "Custom template model"
+      },
+      {
+        "id": "D",
+        "text": "Prebuilt general document model"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Custom template models (formerly custom form) use layout cues to extract values and are suitable for highly structured documents with defined visual templates. They accurately extract labeled key-value pairs, selection marks, tables, regions, and signatures. Custom neural models, in contrast, are better suited for semi-structured or unstructured documents.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom template document model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-template"
+    }
+  },
+  {
+    "id": 239,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "For each custom model training scenario, select the correct buildMode value to use in the REST API build request.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Training a custom model for highly structured forms with consistent visual templates",
+        "options": [
+          {
+            "id": "a",
+            "text": "buildMode: \"template\""
+          },
+          {
+            "id": "b",
+            "text": "buildMode: \"neural\""
+          },
+          {
+            "id": "c",
+            "text": "buildMode: \"classifier\""
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Training a custom model for semi-structured documents where layout varies across instances",
+        "options": [
+          {
+            "id": "a",
+            "text": "buildMode: \"template\""
+          },
+          {
+            "id": "b",
+            "text": "buildMode: \"neural\""
+          },
+          {
+            "id": "c",
+            "text": "buildMode: \"classifier\""
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "Training a model to identify and separate multiple document types in a single input file",
+        "options": [
+          {
+            "id": "a",
+            "text": "documentClassifiers:build with docTypes"
+          },
+          {
+            "id": "b",
+            "text": "documentModels:build with buildMode: \"template\""
+          },
+          {
+            "id": "c",
+            "text": "documentModels:build with buildMode: \"neural\""
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "The Document Intelligence REST API build operation uses a buildMode property: 'template' for custom template models suited to structured forms, and 'neural' for custom neural models suited to semi-structured or unstructured documents. For document classification, you use the documentClassifiers:build endpoint with docTypes, not the documentModels:build endpoint.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom template document model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-template"
+    }
+  },
+  {
+    "id": 240,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "What is the maximum number of training data pages for a custom neural model in Document Intelligence?",
+    "options": [
+      {
+        "id": "A",
+        "text": "500 pages"
+      },
+      {
+        "id": "B",
+        "text": "5,000 pages"
+      },
+      {
+        "id": "C",
+        "text": "50,000 pages"
+      },
+      {
+        "id": "D",
+        "text": "10,000 pages"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The maximum number of training data pages for a custom neural model is 50,000 pages (with a total training data size of 1 GB). In contrast, custom template models are limited to 500 pages of training data (with a total size of 50 MB).",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom neural document model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-neural"
+    }
+  },
+  {
+    "id": 241,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In Document Intelligence v4.0, custom neural models added support for which capability that was not available in v3.x?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Key-value pair extraction"
+      },
+      {
+        "id": "B",
+        "text": "Selection mark detection"
+      },
+      {
+        "id": "C",
+        "text": "Signature detection and overlapping fields"
+      },
+      {
+        "id": "D",
+        "text": "Cross-page table extraction"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Custom neural v4.0 (2024-11-30 GA) model added support for signature detection and overlapping fields. Previous versions (v3.x) had a maximum of 30 minutes training duration per model and 20 free training instances per month. The v4.0 also provides table, row, and cell confidence values for tabular fields.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom neural document model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-neural"
+    }
+  },
+  {
+    "id": 242,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "What is the minimum number of distinct document classes and minimum samples per class required to train a custom classification model in Document Intelligence?",
+    "options": [
+      {
+        "id": "A",
+        "text": "At least 5 classes with at least 10 samples each"
+      },
+      {
+        "id": "B",
+        "text": "At least 2 distinct classes with at least 5 document samples per class"
+      },
+      {
+        "id": "C",
+        "text": "At least 3 distinct classes with at least 3 document samples per class"
+      },
+      {
+        "id": "D",
+        "text": "At least 1 class with at least 50 document samples"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Training a custom classification model requires at least two distinct classes and a minimum of five document samples per class. The maximum allowed number of classes is 1,000 and the maximum allowed number of document samples per class is 100.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom classification model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-classifier"
+    }
+  },
+  {
+    "id": 243,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Arrange the following steps in the correct order for training a custom Document Intelligence model using the REST API (not Document Intelligence Studio).",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Store sample forms and JSON label files in an Azure Blob container"
+      },
+      {
+        "id": "S2",
+        "text": "Generate a Shared Access Signature (SAS) URL for the container"
+      },
+      {
+        "id": "S3",
+        "text": "Call the Build model REST API function"
+      },
+      {
+        "id": "S4",
+        "text": "Call the Get model REST API function to retrieve the trained model ID"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The correct sequence for training a custom Document Intelligence model via REST API is: (1) Store sample forms along with ocr.json, fields.json, and labels.json in an Azure Blob container; (2) Generate a SAS URL for that container; (3) Use the Build model REST API function; and (4) Use the Get model REST API function to retrieve the trained model ID for use in analysis calls.",
+    "source": {
+      "path": "Extract data from forms with Azure Document Intelligence",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Train custom models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/6-train-custom-models?pivots=text"
+    }
+  },
+  {
+    "id": 244,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In the Document Intelligence custom classifier v4.0, what is the default value of the splitMode property when analyzing a multi-document input file?",
+    "options": [
+      {
+        "id": "A",
+        "text": "auto"
+      },
+      {
+        "id": "B",
+        "text": "perPage"
+      },
+      {
+        "id": "C",
+        "text": "none"
+      },
+      {
+        "id": "D",
+        "text": "document"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "In the v4.0 (2024-11-30 GA) API, the custom classification model does NOT split documents by default. The splitMode property defaults to 'none', which treats the entire input file as a single document. To preserve the splitting behavior from previous releases, you must explicitly set splitMode to 'auto'. To classify each page as an individual document, set splitMode to 'perPage'.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom classification model",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-classifier"
+    }
+  },
+  {
+    "id": 245,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Place the following steps in the correct order for using a prebuilt Document Intelligence model in a Python application.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create a DocumentAnalysisClient using the endpoint and AzureKeyCredential"
+      },
+      {
+        "id": "S2",
+        "text": "Call begin_analyze_document with the model ID and document URL"
+      },
+      {
+        "id": "S3",
+        "text": "Call .result() on the poller to get the AnalyzeResult"
+      },
+      {
+        "id": "S4",
+        "text": "Iterate over result.documents or result.pages to access extracted fields"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "To use a Document Intelligence model in Python: first create a DocumentAnalysisClient with the endpoint URL and AzureKeyCredential; then call begin_analyze_document passing the model ID (e.g., 'prebuilt-layout') and the document URL; then call .result() on the returned poller to wait for and retrieve the AnalyzeResult; finally iterate over the result's pages or documents to access extracted data.",
+    "source": {
+      "path": "Use prebuilt Document Intelligence models",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Understand prebuilt models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/2-understand-prebuilt-models?pivots=text"
+    }
+  },
+  {
+    "id": 246,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which prebuilt Document Intelligence model serves as the underlying OCR engine for models like Layout, Invoice, Receipt, and ID document?",
+    "options": [
+      {
+        "id": "A",
+        "text": "General document model"
+      },
+      {
+        "id": "B",
+        "text": "Read model"
+      },
+      {
+        "id": "C",
+        "text": "Layout model"
+      },
+      {
+        "id": "D",
+        "text": "Custom neural model"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The Read model is the underlying OCR engine for other Document Intelligence prebuilt models including Layout, General Document, Invoice, Receipt, Identity (ID) document, Health insurance card, and W2, as well as custom models. The Read model runs at higher resolution than Azure Vision Read and extracts print and handwritten text from PDFs, scanned images, and Microsoft Office documents.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Read model OCR data extraction",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read"
+    }
+  },
+  {
+    "id": 247,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "The Read model's searchable PDF capability converts scanned-image PDFs to PDFs with embedded text. Which model ID must be specified to use this feature?",
+    "options": [
+      {
+        "id": "A",
+        "text": "prebuilt-layout"
+      },
+      {
+        "id": "B",
+        "text": "prebuilt-document"
+      },
+      {
+        "id": "C",
+        "text": "prebuilt-read"
+      },
+      {
+        "id": "D",
+        "text": "prebuilt-invoice"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Only the Read OCR model 'prebuilt-read' supports the searchable PDF capability. When using this feature, the modelId must be specified as 'prebuilt-read'; other model types return an error. The searchable PDF output is included at no added cost with the 2024-11-30 GA prebuilt-read model.",
+    "source": {
+      "path": "Azure AI Document Intelligence documentation",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Read model OCR data extraction",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read"
+    }
+  },
+  {
+    "id": 248,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "For each scenario, select the most appropriate Azure Document Intelligence prebuilt model to use.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "You need to extract text from documents with no fixed structure and detect which lines are handwritten versus printed.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Read model (prebuilt-read)"
+          },
+          {
+            "id": "b",
+            "text": "Layout model (prebuilt-layout)"
+          },
+          {
+            "id": "c",
+            "text": "General document model (prebuilt-document)"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "You need to extract tables, selection marks, and text from complex documents, including tables with merged cells.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Read model (prebuilt-read)"
+          },
+          {
+            "id": "b",
+            "text": "Layout model (prebuilt-layout)"
+          },
+          {
+            "id": "c",
+            "text": "General document model (prebuilt-document)"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "You need to extract key-value pairs AND named entities (such as people, organizations, and locations) from semi-structured documents.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Read model (prebuilt-read)"
+          },
+          {
+            "id": "b",
+            "text": "Layout model (prebuilt-layout)"
+          },
+          {
+            "id": "c",
+            "text": "General document model (prebuilt-document)"
+          }
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "The Read model is best for extracting words and lines from documents with no fixed structure and can detect handwritten vs. printed text. The Layout model excels at structural extraction including complex tables with merged cells. The General document model uniquely supports entity extraction (people, organizations, dates) in addition to key-value pairs and selection marks.",
+    "source": {
+      "path": "Use prebuilt Document Intelligence models",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Use the General Document, Read, and Layout models",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/3-use-general-document-read-layout-models?pivots=text"
+    }
+  },
+  {
+    "id": 249,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Place the following steps in the correct order for building and deploying an Azure Content Understanding analyzer.",
+    "items": [
+      {
+        "id": "S1",
+        "text": "Create a Microsoft Foundry resource in your Azure subscription"
+      },
+      {
+        "id": "S2",
+        "text": "Define a Content Understanding schema based on a content sample and an analyzer template"
+      },
+      {
+        "id": "S3",
+        "text": "Build the analyzer based on the completed schema"
+      },
+      {
+        "id": "S4",
+        "text": "Use the analyzer endpoint to extract or generate fields from new content in client applications"
+      }
+    ],
+    "correct_order": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "explanation": "The high-level process for creating a Content Understanding solution is: (1) Create a Foundry resource; (2) Define a Content Understanding schema for the information to be extracted, based on a content sample and an analyzer template; (3) Build the analyzer based on the completed schema; and (4) Use the analyzer to extract or generate fields from new content via the Foundry resource endpoint.",
+    "source": {
+      "path": "Create a multimodal analysis solution with Azure Content Understanding",
+      "module": "Create a multimodal analysis solution with Azure Content Understanding",
+      "unit": "Create a Content Understanding analyzer",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-content-ai/03-create-analyzer?pivots=text"
+    }
+  },
+  {
+    "id": 250,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "For each capability description, select whether it belongs to Azure Content Understanding or Azure Document Intelligence (as separate services).",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "A service that can analyze documents, images, audio, AND video content in a single unified multimodal platform using generative AI",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Content Understanding"
+          },
+          {
+            "id": "b",
+            "text": "Azure Document Intelligence"
+          }
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "A service that uses OCR with deep learning to extract text, key-value pairs, selection marks, and tables from document images and PDFs using prebuilt and custom extraction models",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Content Understanding"
+          },
+          {
+            "id": "b",
+            "text": "Azure Document Intelligence"
+          }
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "A service available through Microsoft Foundry portal where you create a schema-based analyzer project that can process audio to summarize conference calls",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Content Understanding"
+          },
+          {
+            "id": "b",
+            "text": "Azure Document Intelligence"
+          }
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Azure Content Understanding is a generative AI service available through Microsoft Foundry that can analyze documents, images, audio, and video in a unified multimodal platform. Azure Document Intelligence is an OCR and intelligent document processing service focused on extracting structured data from documents and forms using prebuilt and custom models. Content Understanding uses schemas and analyzers; Document Intelligence uses model IDs and analyze operations.",
+    "source": {
+      "path": "Create a multimodal analysis solution with Azure Content Understanding",
+      "module": "Create a multimodal analysis solution with Azure Content Understanding",
+      "unit": "What is Azure Content Understanding?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-content-ai/02-content-understanding?pivots=text"
+    }
+  }
+]

@@ -1,0 +1,560 @@
+[
+  {
+    "id": 201,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which Azure AI Search index field attribute controls whether a field can be used to narrow results using user-interface facet panels?",
+    "options": [
+      {"id": "A", "text": "filterable"},
+      {"id": "B", "text": "sortable"},
+      {"id": "C", "text": "facetable"},
+      {"id": "D", "text": "searchable"}
+    ],
+    "correct": ["C"],
+    "explanation": "The 'facetable' attribute marks fields that can be used to determine values for facets — user-interface elements used to filter results based on a list of known field values. 'filterable' allows fields in OData filter expressions but does not build facet lists by itself.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand search components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/3-search-components?pivots=text"
+    }
+  },
+  {
+    "id": 202,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "By default, which field attribute is applied to ALL fields in an Azure AI Search index unless explicitly removed?",
+    "options": [
+      {"id": "A", "text": "searchable"},
+      {"id": "B", "text": "filterable"},
+      {"id": "C", "text": "facetable"},
+      {"id": "D", "text": "retrievable"}
+    ],
+    "correct": ["D"],
+    "explanation": "According to the unit, all fields are retrievable by default — they will be included in search results — unless the retrievable attribute is explicitly removed. The other attributes (searchable, filterable, facetable) must be explicitly set.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand search components",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/3-search-components?pivots=text"
+    }
+  },
+  {
+    "id": 203,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Arrange the four stages of query processing in Azure AI Search in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Query parsing"},
+      {"id": "S2", "text": "Lexical analysis"},
+      {"id": "S3", "text": "Document retrieval"},
+      {"id": "S4", "text": "Scoring"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "Query processing follows four sequential stages: (1) Query parsing — the search expression is reconstructed as a tree of subqueries; (2) Lexical analysis — terms are normalised (lowercased, stopwords removed, stemming applied); (3) Document retrieval — matched documents are identified; (4) Scoring — a TF/IDF relevance score is assigned to each result.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Search an index",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/5-search-index?pivots=text"
+    }
+  },
+  {
+    "id": 204,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "A developer wants search results that contain BOTH words 'comfortable' and 'hotel'. Which searchMode parameter value should be used?",
+    "options": [
+      {"id": "A", "text": "Any"},
+      {"id": "B", "text": "All"},
+      {"id": "C", "text": "And"},
+      {"id": "D", "text": "Full"}
+    ],
+    "correct": ["B"],
+    "explanation": "The searchMode parameter controls multi-term matching. 'Any' returns documents that contain at least one of the terms; 'All' requires every term to be present. Setting searchMode=All ensures documents contain both 'comfortable' and 'hotel'.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Search an index",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/5-search-index?pivots=text"
+    }
+  },
+  {
+    "id": 205,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "During the Azure AI Search indexing process, which step is responsible for extracting images from PDF files and placing them in the normalized_images collection?",
+    "options": [
+      {"id": "A", "text": "Skillset execution"},
+      {"id": "B", "text": "Output field mapping"},
+      {"id": "C", "text": "Document cracking"},
+      {"id": "D", "text": "Lexical analysis"}
+    ],
+    "correct": ["C"],
+    "explanation": "Document cracking is the first stage of indexing. When the indexer is configured with imageAction, it opens files (such as PDFs) and extracts both text and image data. Images are placed in the normalized_images collection at this stage, before skillset execution.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand the indexing process",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/4-indexing-process?pivots=text"
+    }
+  },
+  {
+    "id": 206,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In an Azure AI Search enrichment pipeline, how are the output fields produced by skills mapped into the final search index?",
+    "options": [
+      {"id": "A", "text": "Implicit field mappings automatically match skill output names to index fields with the same name"},
+      {"id": "B", "text": "Output field mappings must be explicitly defined to map hierarchical skill outputs to target index fields"},
+      {"id": "C", "text": "Skills write directly into index fields without any mapping configuration"},
+      {"id": "D", "text": "A Shaper skill is required to flatten all skill outputs before they can be indexed"}
+    ],
+    "correct": ["B"],
+    "explanation": "Output fields from skills in the skillset are explicitly mapped from their hierarchical location in the enriched document tree to the target field in the index. Unlike direct source fields which can use implicit mappings, skill outputs always require explicit output field mappings.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand the indexing process",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/4-indexing-process?pivots=text"
+    }
+  },
+  {
+    "id": 207,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "A developer is defining a knowledge store in a skillset JSON. For each blank, select the correct value.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The top-level JSON property added to a skillset definition to configure a knowledge store is:",
+        "options": [
+          {"id": "a", "text": "knowledgeStore"},
+          {"id": "b", "text": "projectionStore"},
+          {"id": "c", "text": "enrichmentStore"},
+          {"id": "d", "text": "outputStore"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Object and file projections store their data in Azure Storage as:",
+        "options": [
+          {"id": "a", "text": "Azure SQL tables"},
+          {"id": "b", "text": "Blob containers"},
+          {"id": "c", "text": "Cosmos DB documents"},
+          {"id": "d", "text": "Azure Queue messages"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B3",
+        "prompt": "When defining multiple projection types (object, table, file), each type must be defined in a:",
+        "options": [
+          {"id": "a", "text": "Separate projection entry in the projections array"},
+          {"id": "b", "text": "Single combined projection entry"},
+          {"id": "c", "text": "Separate skillset definition"},
+          {"id": "d", "text": "Separate knowledge store definition"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "A knowledge store is defined by adding a 'knowledgeStore' object to the skillset, containing a storageConnectionString and a projections array. Object and file projections store data in Azure Blob containers; table projections use Azure Table Storage. Projection types are mutually exclusive per projection entry — if you create all three kinds, you must include a separate projection for each type.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create a knowledge store with Azure AI Search",
+      "unit": "Define a knowledge store",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-knowledge-store-azure-cognitive-search/3-define-knowledge-store?pivots=text"
+    }
+  },
+  {
+    "id": 208,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "A developer wants to use the Shaper skill in an Azure AI Search knowledge store pipeline. What is the PRIMARY purpose of the Shaper skill?",
+    "options": [
+      {"id": "A", "text": "To detect the language of each document"},
+      {"id": "B", "text": "To create a new, simplified field structure from complex enriched document fields for easier projection mapping"},
+      {"id": "C", "text": "To extract key phrases from merged content fields"},
+      {"id": "D", "text": "To split large documents into smaller chunks for vector embedding"}
+    ],
+    "correct": ["B"],
+    "explanation": "The Shaper skill (#Microsoft.Skills.Util.ShaperSkill) is used to create a new field with a simpler, well-formed JSON structure from the complex, iteratively-built enrichment document. This simplifies mapping enriched fields to knowledge store projections that would otherwise be difficult to express from the raw enrichment hierarchy.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create a knowledge store with Azure AI Search",
+      "unit": "Define projections",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-knowledge-store-azure-cognitive-search/2-define-projection-json?pivots=text"
+    }
+  },
+  {
+    "id": 209,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "What is the correct @odata.type value for adding a custom skill to an Azure AI Search skillset?",
+    "options": [
+      {"id": "A", "text": "#Microsoft.Skills.Custom.RestApiSkill"},
+      {"id": "B", "text": "#Microsoft.Skills.Custom.WebApiSkill"},
+      {"id": "C", "text": "#Microsoft.Skills.External.FunctionSkill"},
+      {"id": "D", "text": "#Microsoft.Skills.Util.CustomSkill"}
+    ],
+    "correct": ["B"],
+    "explanation": "To integrate a custom skill into a skillset, you use the '@odata.type' value '#Microsoft.Skills.Custom.WebApiSkill'. This skill type specifies a URI to the custom web API endpoint, along with context, inputs, and outputs.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create a custom skill for Azure AI Search",
+      "unit": "Add a custom skill",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-ai-custom-skill/3-add-custom-skill?pivots=text"
+    }
+  },
+  {
+    "id": 210,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In the custom skill input/output schema for Azure AI Search, what property uniquely identifies each document record in both the request and the response?",
+    "options": [
+      {"id": "A", "text": "documentId"},
+      {"id": "B", "text": "recordId"},
+      {"id": "C", "text": "sourceId"},
+      {"id": "D", "text": "itemKey"}
+    ],
+    "correct": ["B"],
+    "explanation": "Each document in the custom skill's values array has a 'recordId' property — a unique identifier that must be preserved in the response. The custom skill response should include a record for each input record, matching on 'recordId', along with the output data, errors, and warnings.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Create a custom skill for Azure AI Search",
+      "unit": "Define the custom skill schema",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-ai-custom-skill/2-define-custom-skill-schema?pivots=text"
+    }
+  },
+  {
+    "id": 211,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Place the following steps to configure integrated vectorization with indexer-based indexing in Azure AI Search in the correct order.",
+    "items": [
+      {"id": "S1", "text": "Create a data source connection to a supported Azure data source"},
+      {"id": "S2", "text": "Create a skillset with Text Split and an embedding skill (e.g., AzureOpenAIEmbedding)"},
+      {"id": "S3", "text": "Create a search index with a vectorizer assigned to vector fields"},
+      {"id": "S4", "text": "Create and run (or schedule) an indexer to drive the entire pipeline"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The integrated vectorization workflow for indexer-based indexing requires: (1) a data source connection, (2) a skillset with a chunking skill and an embedding skill, (3) a search index schema with a vectorizer configured for query time on vector fields, and (4) an indexer to orchestrate data retrieval, skillset execution, and indexing.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Integrated vectorization in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-integrated-vectorization"
+    }
+  },
+  {
+    "id": 212,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In Azure AI Search integrated vectorization, which component is configured in the index schema and is responsible for automatically converting text query strings to vectors at query time?",
+    "options": [
+      {"id": "A", "text": "AzureOpenAIEmbeddingSkill"},
+      {"id": "B", "text": "Text Split skill"},
+      {"id": "C", "text": "Vectorizer"},
+      {"id": "D", "text": "Semantic configuration"}
+    ],
+    "correct": ["C"],
+    "explanation": "A vectorizer is defined in the index schema and assigned to a vector field. It automatically converts a text query string into a vector at query time using the same embedding model that was used during indexing. The AzureOpenAIEmbeddingSkill is used during indexing in the skillset, not at query time.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Integrated vectorization in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-integrated-vectorization"
+    }
+  },
+  {
+    "id": 213,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Semantic ranking in Azure AI Search processes the top results from BM25. What is the maximum number of BM25 results that semantic ranking considers?",
+    "options": [
+      {"id": "A", "text": "10"},
+      {"id": "B", "text": "25"},
+      {"id": "C", "text": "50"},
+      {"id": "D", "text": "100"}
+    ],
+    "correct": ["C"],
+    "explanation": "Semantic ranking takes the top 50 results from the BM25 ranking results. The fields are converted into text strings trimmed to 256 unique tokens each and passed to machine reading comprehension models. If more than 50 results exist, only the top 50 are semantically re-ranked.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Perform search reranking with semantic ranking in Azure AI Search",
+      "unit": "What is semantic ranking?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-semantic-search/2-what-is-semantic-search?pivots=text"
+    }
+  },
+  {
+    "id": 214,
+    "topic": "knowledge-mining",
+    "type": "mc_multi",
+    "question": "Which TWO outputs can the Azure AI Search semantic ranker add to query results beyond simple re-ranked document scores? (Choose 2)",
+    "options": [
+      {"id": "A", "text": "Semantic captions — highlighted summary sentences extracted verbatim from documents"},
+      {"id": "B", "text": "Semantic answers — text that appears to answer a question-style query"},
+      {"id": "C", "text": "Semantic embeddings — vector representation of each result"},
+      {"id": "D", "text": "Semantic facets — facet counts computed using language models"}
+    ],
+    "correct": ["A", "B"],
+    "explanation": "In addition to re-ranking, semantic ranking can return semantic captions (verbatim summary sentences with highlighted relevant text) and semantic answers (when the query appears to be a question and a relevant answer is found in the results). Vector embeddings and language-model-based facets are not outputs of semantic ranking.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Perform search reranking with semantic ranking in Azure AI Search",
+      "unit": "What is semantic ranking?",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-semantic-search/2-what-is-semantic-search?pivots=text"
+    }
+  },
+  {
+    "id": 215,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "A developer is configuring a semantic configuration in the Azure portal. For each blank, select the correct field category.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "The field that describes what the document is about (e.g., a title or heading field) should be placed in:",
+        "options": [
+          {"id": "a", "text": "Title field"},
+          {"id": "b", "text": "Content fields"},
+          {"id": "c", "text": "Keyword fields"},
+          {"id": "d", "text": "Filter fields"}
+        ],
+        "correct": "a"
+      },
+      {
+        "id": "B2",
+        "prompt": "Fields containing key phrases extracted during indexing should be placed in:",
+        "options": [
+          {"id": "a", "text": "Title field"},
+          {"id": "b", "text": "Content fields"},
+          {"id": "c", "text": "Keyword fields"},
+          {"id": "d", "text": "Filter fields"}
+        ],
+        "correct": "c"
+      }
+    ],
+    "explanation": "A semantic configuration has three field categories: Title field (describes the document), Content fields (main body content used for captions and answers), and Keyword fields (fields with key phrases). Correct classification helps the semantic ranker prioritise the most relevant text during machine reading comprehension.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Perform search reranking with semantic ranking in Azure AI Search",
+      "unit": "Set up semantic ranking",
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-semantic-search/3-set-up-semantic-search?pivots=text"
+    }
+  },
+  {
+    "id": 216,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "An Azure AI Search developer uses the Lucene full query syntax to write: `Description:luxury OR Category:luxury^3`. What does the `^3` accomplish?",
+    "options": [
+      {"id": "A", "text": "Limits results to only three documents"},
+      {"id": "B", "text": "Applies a boost multiplier of 3 to documents where 'luxury' appears in the Category field, increasing their relevance score"},
+      {"id": "C", "text": "Requires the term 'luxury' to appear exactly 3 times in the Category field"},
+      {"id": "D", "text": "Sets the scoring profile weight for the Category field to 3"}
+    ],
+    "correct": ["B"],
+    "explanation": "In Lucene full query syntax, the caret (^) followed by a number is the term boosting operator. `Category:luxury^3` multiplies the relevance score contribution of matching the Category field with 'luxury' by 3, promoting Category matches higher in results compared to Description matches.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Implement advanced search features in Azure AI Search",
+      "unit": "Improve the ranking of a document with term boosting",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-advanced-search-features-azure-cognitive-search/02-improve-ranking-of-document-term-boosting?pivots=text"
+    }
+  },
+  {
+    "id": 217,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Which scoring profile function should be used in Azure AI Search to automatically boost newer documents over older ones based on a date field?",
+    "options": [
+      {"id": "A", "text": "Magnitude"},
+      {"id": "B", "text": "Distance"},
+      {"id": "C", "text": "Freshness"},
+      {"id": "D", "text": "Tag"}
+    ],
+    "correct": ["C"],
+    "explanation": "The Freshness function alters document scores based on how recent the document is, using a DateTimeOffset field. Magnitude uses a numeric range, Distance uses a GeographyPoint field, and Tag uses common tag values between the document and the query.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Implement advanced search features in Azure AI Search",
+      "unit": "Improve the relevance of results by adding scoring profiles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-advanced-search-features-azure-cognitive-search/03-improve-relevance-of-results-add-score-profiles?pivots=text"
+    }
+  },
+  {
+    "id": 218,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "How do you apply a specific scoring profile to a single query at query time in Azure AI Search, rather than relying on the default profile?",
+    "options": [
+      {"id": "A", "text": "Add &queryType=full to the query string"},
+      {"id": "B", "text": "Add &scoringProfile=PROFILE_NAME to the query string"},
+      {"id": "C", "text": "Add a weight parameter to the search expression"},
+      {"id": "D", "text": "Set the default profile flag on the desired profile in the index definition"}
+    ],
+    "correct": ["B"],
+    "explanation": "To apply a specific scoring profile to a query, append the '&scoringProfile=PROFILE_NAME' parameter to the query string. If no profile is specified, the default profile (if one is set) is applied. You can have up to 100 scoring profiles on a search index.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Implement advanced search features in Azure AI Search",
+      "unit": "Improve the relevance of results by adding scoring profiles",
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-advanced-search-features-azure-cognitive-search/03-improve-relevance-of-results-add-score-profiles?pivots=text"
+    }
+  },
+  {
+    "id": 219,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Arrange the four stages of an Azure AI Search indexer pipeline in the correct execution order.",
+    "items": [
+      {"id": "S1", "text": "Document cracking — extract text and images from source files"},
+      {"id": "S2", "text": "Field mappings — map source fields to index or knowledge store destination fields"},
+      {"id": "S3", "text": "Skillset execution — apply AI enrichment skills"},
+      {"id": "S4", "text": "Output field mappings — map enriched document tree paths to index fields"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The indexer pipeline proceeds: (1) Document cracking opens files and extracts content; (2) Field mappings send source field values to destination fields as-is; (3) Skillset execution applies AI transformations (OCR, NLP, embeddings, custom skills); (4) Output field mappings route enriched skill outputs from the enriched document tree into index fields.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Indexers in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-indexer-overview"
+    }
+  },
+  {
+    "id": 220,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "An Azure AI Search indexer is configured to index Azure Blob Storage. Which statement about change detection for subsequent indexer runs is correct?",
+    "options": [
+      {"id": "A", "text": "Change detection is not supported for any data source; the indexer always does a full reindex"},
+      {"id": "B", "text": "For blob data, change detection is automatic; for Azure SQL and Cosmos DB, it must be enabled explicitly"},
+      {"id": "C", "text": "Change detection works automatically for Azure SQL and Cosmos DB but must be enabled for blob storage"},
+      {"id": "D", "text": "Change detection requires a custom skill to compare document hashes"}
+    ],
+    "correct": ["B"],
+    "explanation": "For blob data, change detection is automatic — the indexer detects new and modified blobs without configuration. For other data sources such as Azure SQL or Azure Cosmos DB, change detection must be explicitly enabled via change detection policies.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Indexers in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-indexer-overview"
+    }
+  },
+  {
+    "id": 221,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "In Azure AI Search, what is an embedding and why must the same embedding model be used for both indexing and querying?",
+    "options": [
+      {"id": "A", "text": "An embedding is a compressed binary representation of a document; models differ only in compression ratio"},
+      {"id": "B", "text": "An embedding is an array of numbers representing the semantic meaning of text; similar items are close together in the embedding space, which only holds when the same model is used"},
+      {"id": "C", "text": "An embedding is a hash of document tokens; the model just determines the hash function"},
+      {"id": "D", "text": "An embedding is a sparse vector produced by BM25 scoring; any model can query it"}
+    ],
+    "correct": ["B"],
+    "explanation": "An embedding is a numerical array (vector) that represents the semantic meaning of text. In embedding space, semantically similar items are located close together. For similarity search to work correctly, query vectors must live in the same embedding space as the indexed document vectors, which requires using the same model for both indexing and querying.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Perform vector search and retrieval in Azure AI Search",
+      "unit": "Understand embedding",
+      "url": "https://learn.microsoft.com/en-us/training/modules/improve-search-results-vector-search/4-understand-embedding?pivots=text"
+    }
+  },
+  {
+    "id": 222,
+    "topic": "knowledge-mining",
+    "type": "mc_single",
+    "question": "Hybrid search in Azure AI Search runs full-text and vector searches in parallel. Which algorithm is used to merge their separate result sets into a single ranked response?",
+    "options": [
+      {"id": "A", "text": "BM25 (Best Match 25)"},
+      {"id": "B", "text": "HNSW (Hierarchical Navigable Small World)"},
+      {"id": "C", "text": "RRF (Reciprocal Rank Fusion)"},
+      {"id": "D", "text": "TF-IDF (Term Frequency–Inverse Document Frequency)"}
+    ],
+    "correct": ["C"],
+    "explanation": "Hybrid search uses Reciprocal Rank Fusion (RRF) to merge the ranked result sets from full-text search (which uses BM25) and vector search (which uses HNSW or exhaustive KNN). RRF produces a single unified result set with a combined relevance score.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Hybrid search in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview"
+    }
+  },
+  {
+    "id": 223,
+    "topic": "knowledge-mining",
+    "type": "hotspot",
+    "question": "A team is building a hybrid search solution. For each scenario, select whether keyword (full-text) search or vector search is the better primary choice.",
+    "blanks": [
+      {
+        "id": "B1",
+        "prompt": "Finding documents conceptually similar to a user query even when no exact keyword match exists in the index:",
+        "options": [
+          {"id": "a", "text": "Keyword (full-text) search"},
+          {"id": "b", "text": "Vector search"}
+        ],
+        "correct": "b"
+      },
+      {
+        "id": "B2",
+        "prompt": "Searching for an exact product code like 'SKU-2024-XZ99':",
+        "options": [
+          {"id": "a", "text": "Keyword (full-text) search"},
+          {"id": "b", "text": "Vector search"}
+        ],
+        "correct": "a"
+      }
+    ],
+    "explanation": "Vector search finds conceptually or semantically similar content even without keyword matches, making it suited for natural-language queries. Keyword search excels at exact matches for product codes, highly specialised jargon, dates, and proper names, where precision matters over semantic similarity.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "Hybrid search in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview"
+    }
+  },
+  {
+    "id": 224,
+    "topic": "knowledge-mining",
+    "type": "mc_multi",
+    "question": "An organisation wants to secure its Azure AI Search solution. Which TWO mechanisms allow restricting document-level access so that different users see different search results? (Choose 2)",
+    "options": [
+      {"id": "A", "text": "Add a filterable security field to each document containing allowed user or group IDs, then apply a search.in filter on every query"},
+      {"id": "B", "text": "Create a separate search index per user group and route queries accordingly"},
+      {"id": "C", "text": "Use Azure AD (Microsoft Entra ID) group memberships together with the security field filter to dynamically trim results"},
+      {"id": "D", "text": "Set the 'retrievable' attribute to false on sensitive fields to prevent them from appearing in results"}
+    ],
+    "correct": ["A", "C"],
+    "explanation": "Document-level security in Azure AI Search is implemented by adding a filterable security field to each document with the allowed user/group IDs, then appending a search.in filter to every query. If the application uses Microsoft Entra ID, group memberships can be used as filter values dynamically, eliminating the need to hard-code them. Setting 'retrievable=false' prevents a field from being returned but does not restrict which documents are matched.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Maintain an Azure AI Search solution",
+      "unit": "Manage security of an Azure AI Search solution",
+      "url": "https://learn.microsoft.com/en-us/training/modules/maintain-azure-cognitive-search-solution/02-manage-security-of-azure-cognitive-search-solution?pivots=text"
+    }
+  },
+  {
+    "id": 225,
+    "topic": "knowledge-mining",
+    "type": "sequence",
+    "question": "Arrange the following AI enrichment pipeline steps in the correct order as described in the Azure AI Search AI enrichment documentation.",
+    "items": [
+      {"id": "S1", "text": "Indexer connects to a data source and pulls content (Import)"},
+      {"id": "S2", "text": "Indexer cracks documents to extract text and images"},
+      {"id": "S3", "text": "Skillset execution enriches the extracted content"},
+      {"id": "S4", "text": "Enriched content is indexed into a search index (and optionally a knowledge store)"}
+    ],
+    "correct_order": ["S1", "S2", "S3", "S4"],
+    "explanation": "The AI enrichment pipeline follows an Import → Enrich → Index progression: (1) The indexer connects to a data source and pulls documents; (2) Document cracking extracts text and images; (3) Skills in the skillset execute in sequence, building an enriched document tree; (4) Enriched content is ingested into the search index, and optionally into a knowledge store via projections.",
+    "source": {
+      "path": "Implement knowledge mining with Azure AI Search",
+      "module": "Azure AI Search documentation",
+      "unit": "AI enrichment in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/cognitive-search-concept-intro"
+    }
+  }
+]
