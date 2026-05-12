@@ -18,7 +18,7 @@ const allowedUrls = new Set((allUrls[topic] || []).map(u => u.url));
 const arr = JSON.parse(fs.readFileSync(chunkPath, 'utf8'));
 if (!Array.isArray(arr)) { console.error('not a JSON array'); process.exit(1); }
 
-const ALLOWED_TOPICS = ['agentic','genai-foundry','computer-vision','plan-and-manage','knowledge-mining'];
+const ALLOWED_TOPICS = ['agentic','genai-foundry','computer-vision','plan-and-manage','knowledge-mining','natural-language'];
 const ALLOWED_TYPES  = ['mc_single','mc_multi','sequence','hotspot'];
 const errs = [];
 const seenIds = new Set();
