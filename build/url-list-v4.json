@@ -1,0 +1,231 @@
+{
+  "knowledge-mining-search": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/1-introduction?pivots=text",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/3-search-components?pivots=text",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand search components"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/4-indexing-process?pivots=text",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Understand the indexing process"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/5-search-index?pivots=text",
+      "module": "Create an Azure AI Search solution",
+      "unit": "Search an index"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-knowledge-store-azure-cognitive-search/2-define-projection-json?pivots=text",
+      "module": "Create a knowledge store with Azure AI Search",
+      "unit": "Define projections"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-knowledge-store-azure-cognitive-search/3-define-knowledge-store?pivots=text",
+      "module": "Create a knowledge store with Azure AI Search",
+      "unit": "Define a knowledge store"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-ai-custom-skill/2-define-custom-skill-schema?pivots=text",
+      "module": "Create a custom skill for Azure AI Search",
+      "unit": "Define the custom skill schema"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-ai-custom-skill/3-add-custom-skill?pivots=text",
+      "module": "Create a custom skill for Azure AI Search",
+      "unit": "Add a custom skill"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-advanced-search-features-azure-cognitive-search/02-improve-ranking-of-document-term-boosting?pivots=text",
+      "module": "Implement advanced search features in Azure AI Search",
+      "unit": "Improve the ranking of a document with term boosting"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/implement-advanced-search-features-azure-cognitive-search/03-improve-relevance-of-results-add-score-profiles?pivots=text",
+      "module": "Implement advanced search features in Azure AI Search",
+      "unit": "Improve the relevance of results by adding scoring profiles"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-semantic-search/2-what-is-semantic-search?pivots=text",
+      "module": "Perform search reranking with semantic ranking in Azure AI Search",
+      "unit": "What is semantic ranking?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-semantic-search/3-set-up-semantic-search?pivots=text",
+      "module": "Perform search reranking with semantic ranking in Azure AI Search",
+      "unit": "Set up semantic ranking"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/improve-search-results-vector-search/2-vector-search?pivots=text",
+      "module": "Perform vector search and retrieval in Azure AI Search",
+      "unit": "What is vector search?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/improve-search-results-vector-search/4-understand-embedding?pivots=text",
+      "module": "Perform vector search and retrieval in Azure AI Search",
+      "unit": "Understand embedding"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/maintain-azure-cognitive-search-solution/02-manage-security-of-azure-cognitive-search-solution?pivots=text",
+      "module": "Maintain an Azure AI Search solution",
+      "unit": "Manage security of an Azure AI Search solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/maintain-azure-cognitive-search-solution/03-optimize-performance-of-azure-cognitive-search-solution?pivots=text",
+      "module": "Maintain an Azure AI Search solution",
+      "unit": "Optimize performance of an Azure AI Search solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
+      "module": "Azure AI Search documentation",
+      "unit": "Introduction to Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-indexer-overview",
+      "module": "Azure AI Search documentation",
+      "unit": "Indexers in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/cognitive-search-concept-intro",
+      "module": "Azure AI Search documentation",
+      "unit": "AI enrichment in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/knowledge-store-concept-intro",
+      "module": "Azure AI Search documentation",
+      "unit": "Knowledge store in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-overview",
+      "module": "Azure AI Search documentation",
+      "unit": "Vector search in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-integrated-vectorization",
+      "module": "Azure AI Search documentation",
+      "unit": "Integrated vectorization in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+      "module": "Azure AI Search documentation",
+      "unit": "Hybrid search in Azure AI Search"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/semantic-search-overview",
+      "module": "Azure AI Search documentation",
+      "unit": "Semantic ranking in Azure AI Search"
+    }
+  ],
+  "knowledge-mining-di": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/2-what-form-recognizer?pivots=text",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "What is Azure Document Intelligence?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/3-get-started?pivots=text",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Get started with Azure Document Intelligence"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/6-train-custom-models?pivots=text",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Train custom models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/work-form-recognizer/7-use-models?pivots=text",
+      "module": "Extract data from forms with Azure Document Intelligence",
+      "unit": "Use Azure Document Intelligence models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/2-understand-prebuilt-models?pivots=text",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Understand prebuilt models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/3-use-general-document-read-layout-models?pivots=text",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Use the General Document, Read, and Layout models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-prebuilt-form-recognizer-models/4-use-financial-id-tax-models?pivots=text",
+      "module": "Use prebuilt Document Intelligence models",
+      "unit": "Use financial, ID, and tax models"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-content-ai/02-content-understanding?pivots=text",
+      "module": "Create a multimodal analysis solution with Azure Content Understanding",
+      "unit": "What is Azure Content Understanding?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-content-ai/03-create-analyzer?pivots=text",
+      "module": "Create a multimodal analysis solution with Azure Content Understanding",
+      "unit": "Create a Content Understanding analyzer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/2-azure-ai-search?pivots=text",
+      "module": "Create a knowledge mining solution with Azure AI Search",
+      "unit": "What is Azure AI Search?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/3-index?pivots=text",
+      "module": "Create a knowledge mining solution with Azure AI Search",
+      "unit": "Extract data with an indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/4-ai-skills?pivots=text",
+      "module": "Create a knowledge mining solution with Azure AI Search",
+      "unit": "Enrich extracted data with AI skills"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "What is Azure Document Intelligence?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Invoice data extraction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/receipt",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Receipt data extraction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/id-document",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Identity document (ID) processing"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/layout",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Document layout analysis"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Read model OCR data extraction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-template",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom template document model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-neural",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom neural document model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/train/custom-classifier",
+      "module": "Azure AI Document Intelligence documentation",
+      "unit": "Custom classification model"
+    }
+  ]
+}
