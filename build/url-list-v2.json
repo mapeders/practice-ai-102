@@ -1,0 +1,700 @@
+{
+  "agentic": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/1-introduction?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/2-understand-ai-agents-foundry?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Understand AI agents and Microsoft Foundry Agent Service"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/3-explore-development-approaches?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Explore development approaches"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/4-build-agent-azure-portal?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Build your first agent in Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/5-set-up-vs-code?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Set up Visual Studio Code for agent development"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/6-configure-manage-agents?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Configure and manage agents in Visual Studio Code"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/7-extend-agent-capabilities?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Extend agent capabilities with tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agents-azure-vs-code/8-test-deploy-integrate?pivots=text",
+      "module": "Develop AI agents with Microsoft Foundry and Visual Studio Code",
+      "unit": "Test, deploy, and integrate agents"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/1-introduction?pivots=text",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/2-why-use-custom-tools?pivots=text",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Why use custom tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/3-custom-tool-options?pivots=text",
+      "module": "Integrate custom tools into your agent",
+      "unit": "Options for implementing custom tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-with-custom-tools/4-how-use-custom-tools?pivots=text",
+      "module": "Integrate custom tools into your agent",
+      "unit": "How to integrate custom tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/1-introduction?pivots=text",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/2-understand-mcp-tool-discovery?pivots=text",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Understand MCP tool discovery"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/3-mcp-client-server-setup?pivots=text",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Integrate agent tools using an MCP server and client"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/connect-agent-to-mcp-tools/4-use-azure-ai-agents-with-mcp?pivots=text",
+      "module": "Integrate MCP Tools with Azure AI Agents",
+      "unit": "Use Azure AI agents with MCP servers"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/1-introduction?pivots=text",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/2-understand-rag?pivots=text",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Understanding RAG for agents"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/3-foundry-iq?pivots=text",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Explore Foundry IQ"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/4-data-requirements?pivots=text",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Configure data sources for knowledge bases"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-foundry-iq/5-configure-retrieval?pivots=text",
+      "module": "Build knowledge-enhanced AI agents with Foundry IQ",
+      "unit": "Configure retrieval with Foundry IQ"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/1-introduction?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/2-understand-publishing-options?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Understand Foundry agent publishing options"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/3-publish-agent-foundry-portal?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Publish an agent from Foundry portal to Teams"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/4-agents-toolkit-advanced?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Advanced - Use Microsoft 365 Agents Toolkit"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/5-access-m365-data-workiq?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Access Microsoft 365 data with Work IQ"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/integrate-foundry-agent-with-m365/6-test-iterate-agent?pivots=text",
+      "module": "Integrate your agent with Microsoft 365",
+      "unit": "Test and iterate your integrated agent"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/1-introduction?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/2-understand-workflows?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Understand Workflows"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/3-identify-workflow-patterns?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Identify Workflow Patterns"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/4-create-workflows-microsoft-foundry?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Create workflows in Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/5-add-agents-to-workflow?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Add Agents to a Workflow"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/6-apply-power-fx?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Apply Power Fx in Workflows"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/7-maintain-workflows?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Maintain Workflows in Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/build-agent-workflows-microsoft-foundry/8-use-workflows-in-code?pivots=text",
+      "module": "Build agent-driven workflows using Microsoft Foundry",
+      "unit": "Use workflows in code"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/1-introduction?pivots=text",
+      "module": "Develop an AI agent with Microsoft Agent Framework",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/2-understand-semantic-kernel-agents?pivots=text",
+      "module": "Develop an AI agent with Microsoft Agent Framework",
+      "unit": "Understand Microsoft Agent Framework AI agents"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/3-create-azure-ai-agent?pivots=text",
+      "module": "Develop an AI agent with Microsoft Agent Framework",
+      "unit": "Create an Azure AI agent with Microsoft Agent Framework"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-ai-agent-with-semantic-kernel/4-add-plugins-to-agent?pivots=text",
+      "module": "Develop an AI agent with Microsoft Agent Framework",
+      "unit": "Add tools to Azure AI agent"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/1-introduction?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/2-understand-agent-framework?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Understand the Microsoft Agent Framework"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/3-understand-agent-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Understand agent orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/4-use-concurrent-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use concurrent orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/5-use-sequential-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use sequential orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/6-use-group-chat-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use group chat orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/7-use-handoff-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use handoff orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/orchestrate-semantic-kernel-multi-agent-solution/8-use-magentic-orchestration?pivots=text",
+      "module": "Orchestrate a multi-agent solution using the Microsoft Agent Framework",
+      "unit": "Use Magentic orchestration"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/1-introduction?pivots=text",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/2-define-a2a-agent?pivots=text",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Define an A2A agent"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/3-implement-agent-executor?pivots=text",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Implement an agent executor"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/4-host-a2a-agent-server?pivots=text",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Host an A2A server"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/discover-agents-with-a2a/5-connect-to-a2a-agent?pivots=text",
+      "module": "Discover Azure AI Agents with A2A",
+      "unit": "Connect to your A2A agent"
+    }
+  ],
+  "genai-foundry": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/1-introduction?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "What is AI?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Developer tools and SDKs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Responsible AI"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/1-introduction?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/2-explore-model-catalog?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Explore the model catalog"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Select models using benchmarks"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Deploy models to endpoints"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/5-evaluate-performance?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Evaluate model performance"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/01-introduction?pivots=text",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/02-chat-playground?pivots=text",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Explore with the model playground"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/03-microsoft-foundry-sdk?pivots=text",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Choose an endpoint and SDK"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/04-responses-api?pivots=text",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the Responses API"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundry-sdk/05-openai-api?pivots=text",
+      "module": "Develop a generative AI chat app with Microsoft Foundry",
+      "unit": "Generate responses with the ChatCompletions API"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/01-introduction?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/02-what-are-tools?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "What are tools?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/03-code-interpreter?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the code_interpreter tool"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/04-web-search?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the web_search tool"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/05-file-search?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the file_search tool"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/use-generative-ai-tools/06-function?pivots=text",
+      "module": "Develop generative AI apps that use tools",
+      "unit": "Use the function tool"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/1-introduction?pivots=text",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/2-prompt-engineering?pivots=text",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Optimize model output with prompt engineering"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/3-retrieval-augmented-generation?pivots=text",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Ground your model with Retrieval Augmented Generation"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/4-fine-tune-model?pivots=text",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Fine-tune a model for consistent behavior"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text",
+      "module": "Optimize generative AI model performance with Microsoft Foundry",
+      "unit": "Compare and combine optimization strategies"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/1-introduction?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Plan a responsible generative AI solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Map potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Measure potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Mitigate potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Manage a responsible generative AI solution"
+    }
+  ],
+  "computer-vision": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/1-introduction?pivots=text",
+      "module": "Analyze images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/2-provision-computer-vision-resource?pivots=text",
+      "module": "Analyze images",
+      "unit": "Provision an Azure Vision resource"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-images/3-analyze-image?pivots=text",
+      "module": "Analyze images",
+      "unit": "Analyze an image"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/1-introduction?pivots=text",
+      "module": "Read text in images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text?pivots=text",
+      "module": "Read text in images",
+      "unit": "Explore Azure AI options for reading text"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api?pivots=text",
+      "module": "Read text in images",
+      "unit": "Read text with Azure Vision Image Analysis"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/1-introduction?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Plan a face detection, analysis, or recognition solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/3-detect-analyze-faces?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Detect and analyze faces"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Verify and identify faces"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-analyze-recognize-faces/5-understand-considerations-for-face-analysis?pivots=text",
+      "module": "Detect, analyze, and recognize faces",
+      "unit": "Responsible AI considerations for face-based solutions"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/1-introduction?pivots=text",
+      "module": "Classify images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/2-provision-azure-resources-for-custom-vision?pivots=text",
+      "module": "Classify images",
+      "unit": "Azure AI Custom Vision"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/3-understand-image-classification?pivots=text",
+      "module": "Classify images",
+      "unit": "Train an image classification model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/classify-images/4-use-trained-image-classifier?pivots=text",
+      "module": "Classify images",
+      "unit": "Create an image classification client application"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/1-introduction?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/2-understand-object-detection?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Use Azure AI Custom Vision for object detection"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/3-train-object-detector?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Train an object detector"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/detect-objects-images/4-use-trained-detector?pivots=text",
+      "module": "Detect objects in images",
+      "unit": "Develop an object detection client application"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/1-introduction?pivots=text",
+      "module": "Analyze video",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/2-understand-video-indexer-capabilities?pivots=text",
+      "module": "Analyze video",
+      "unit": "Understand Azure Video Indexer capabilities"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/3-extract-custom-insights?pivots=text",
+      "module": "Analyze video",
+      "unit": "Extract custom insights"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/analyze-video/4-use-video-indexer-widgets-apis?pivots=text",
+      "module": "Analyze video",
+      "unit": "Use Video Analyzer widgets and APIs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/1-introduction?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/2-deploy-multimodal-model?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Use a vision-capable model in the Microsoft Foundry portal"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app?pivots=text",
+      "module": "Develop a vision-enabled generative AI application",
+      "unit": "Develop a vision-based chat app"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/1-introduction?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/2-what-is-dall-e?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "What are image-generation models?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/3-dall-e-in-openai-studio?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Explore image-generation models in Microsoft Foundry portal"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/generate-images-azure-openai/4-dall-e-rest-api?pivots=text",
+      "module": "Generate images with AI",
+      "unit": "Create a client application that uses an image generation model"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "What is Azure AI Video Indexer?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/upload-index-media",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Upload and index media with Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/customize-language-model-how-to",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Customize a Language model in Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-search",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Search for exact moments in videos with Azure AI Video Indexer"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-video-indexer/accounts-overview",
+      "module": "Azure AI Video Indexer documentation",
+      "unit": "Azure AI Video Indexer accounts"
+    }
+  ],
+  "plan-and-manage": [
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/1-introduction?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "What is AI?"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Developer tools and SDKs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text",
+      "module": "Plan and prepare to develop AI solutions on Azure",
+      "unit": "Responsible AI"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/1-introduction?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Introduction"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Plan a responsible generative AI solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Map potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Measure potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Mitigate potential harms"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text",
+      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
+      "unit": "Manage a responsible generative AI solution"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/authentication",
+      "module": "Azure AI services documentation",
+      "unit": "Authentication in Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/security-features",
+      "module": "Azure AI services documentation",
+      "unit": "Security for Foundry Tools"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link",
+      "module": "Azure AI services documentation",
+      "unit": "How to configure network isolation for Microsoft Foundry"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Select models using benchmarks"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Deploy models to endpoints"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/5-evaluate-performance?pivots=text",
+      "module": "Select, deploy, and evaluate Microsoft Foundry models",
+      "unit": "Evaluate model performance"
+    }
+  ]
+}
