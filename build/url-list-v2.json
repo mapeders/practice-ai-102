@@ -263,36 +263,6 @@
   ],
   "genai-foundry": [
     {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/1-introduction?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "Introduction"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/2-what-is-ai?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "What is AI?"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/3-azure-ai-services?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "Foundry Tools"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/4-azure-ai-foundry?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "Microsoft Foundry"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/5-tools-and-sdks?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "Developer tools and SDKs"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/prepare-azure-ai-development/6-responsible-ai?pivots=text",
-      "module": "Plan and prepare to develop AI solutions on Azure",
-      "unit": "Responsible AI"
-    },
-    {
       "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/1-introduction?pivots=text",
       "module": "Select, deploy, and evaluate Microsoft Foundry models",
       "unit": "Introduction"
@@ -396,36 +366,6 @@
       "url": "https://learn.microsoft.com/en-us/training/modules/optimize-generative-ai-model-performance/5-compare-combine-strategies?pivots=text",
       "module": "Optimize generative AI model performance with Microsoft Foundry",
       "unit": "Compare and combine optimization strategies"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/1-introduction?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Introduction"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/2-plan-responsible-ai?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Plan a responsible generative AI solution"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/3-identify-harms?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Map potential harms"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/4-measure-harms?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Measure potential harms"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/5-mitigate-harms?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Mitigate potential harms"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/6-operate-responsibly?pivots=text",
-      "module": "Implement a responsible generative AI solution in Microsoft Foundry",
-      "unit": "Manage a responsible generative AI solution"
     }
   ],
   "computer-vision": [
@@ -680,21 +620,6 @@
       "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link",
       "module": "Azure AI services documentation",
       "unit": "How to configure network isolation for Microsoft Foundry"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/3-select-models-benchmarks?pivots=text",
-      "module": "Select, deploy, and evaluate Microsoft Foundry models",
-      "unit": "Select models using benchmarks"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/4-deploy-models?pivots=text",
-      "module": "Select, deploy, and evaluate Microsoft Foundry models",
-      "unit": "Deploy models to endpoints"
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/model-catalog-evaluate/5-evaluate-performance?pivots=text",
-      "module": "Select, deploy, and evaluate Microsoft Foundry models",
-      "unit": "Evaluate model performance"
     }
   ]
 }
