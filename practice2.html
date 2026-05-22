@@ -3016,7 +3016,21 @@
           ${t3.answered === 0 ? '' : `<div class="mt-2 h-1.5 bg-rose-200 dark:bg-rose-800 rounded overflow-hidden"><div class="h-full bg-rose-600" style="width:${Math.round((t3.answered/t3.total)*100)}%"></div></div>`}
         </button>` : '';
 
-      root.innerHTML = cards + test1Card + test2Card + test3Card + mixedCard + queueCard;
+      const tpr = categoryStats('python-rest', state);
+      const pythonRestCard = tpr.total > 0 ? `
+        <button class="w-full text-left bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-300 dark:border-emerald-700 rounded-lg p-4 mb-3 hover:border-emerald-500" data-mode="python-rest">
+          <div class="flex justify-between items-start gap-2">
+            <div class="font-semibold text-emerald-800 dark:text-emerald-200">Python & REST — Focus</div>
+            <div class="text-sm text-emerald-700 dark:text-emerald-300 whitespace-nowrap">${tpr.total} Q</div>
+          </div>
+          <div class="mt-1 text-xs text-emerald-700 dark:text-emerald-300">Endpoints, headers, request bodies, SDK clients across Language, Speech, Vision, Document Intelligence, AI Search, Foundry/AOAI, Content Safety</div>
+          <div class="mt-2 text-sm text-emerald-800 dark:text-emerald-200">
+            ${tpr.answered === 0 ? 'not started' : `${tpr.answered} / ${tpr.total} answered · ${tpr.pct}% correct`}
+          </div>
+          ${tpr.answered === 0 ? '' : `<div class="mt-2 h-1.5 bg-emerald-200 dark:bg-emerald-800 rounded overflow-hidden"><div class="h-full bg-emerald-600" style="width:${Math.round((tpr.answered/tpr.total)*100)}%"></div></div>`}
+        </button>` : '';
+
+      root.innerHTML = cards + test1Card + test2Card + test3Card + pythonRestCard + mixedCard + queueCard;
 
       root.querySelectorAll('.topic-card').forEach(el => {
         el.addEventListener('click', () => startTopic(el.dataset.topic));
@@ -3025,6 +3039,7 @@
       root.querySelector('[data-mode="test1"]')?.addEventListener('click', startTest1);
       root.querySelector('[data-mode="test2"]')?.addEventListener('click', startTest2);
       root.querySelector('[data-mode="test3"]')?.addEventListener('click', startTest3);
+      root.querySelector('[data-mode="python-rest"]')?.addEventListener('click', startPythonRest);
       root.querySelector('[data-mode="wrong-queue"]')?.addEventListener('click', startWrongQueue);
     }
 
@@ -3084,6 +3099,13 @@
       const qs = questionsForCategory('test3');
       if (qs.length === 0) return;
       session = { mode: 'test3', topicId: null, queue: shuffle(qs.map(q => q.id)), cursor: 0, score: { right: 0, wrong: 0 } };
+      showView('practice'); renderPractice();
+    }
+
+    function startPythonRest() {
+      const qs = questionsForCategory('python-rest');
+      if (qs.length === 0) return;
+      session = { mode: 'python-rest', topicId: null, queue: shuffle(qs.map(q => q.id)), cursor: 0, score: { right: 0, wrong: 0 } };
       showView('practice'); renderPractice();
     }
 
@@ -3359,6 +3381,7 @@
         : session.mode === 'test1' ? 'Test 1 — Retake focus complete'
         : session.mode === 'test2' ? 'Test 2 — Retake focus complete'
         : session.mode === 'test3' ? 'Test 3 — Retake focus complete'
+        : session.mode === 'python-rest' ? 'Python & REST — Focus complete'
         : 'Wrong-queue session complete';
       root.innerHTML = `
         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 text-center">
