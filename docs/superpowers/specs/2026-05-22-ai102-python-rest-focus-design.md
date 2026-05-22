@@ -69,7 +69,7 @@ Anchor URLs (one per service) — each is the unit that contains the canonical P
 | Azure AI Vision | `https://learn.microsoft.com/en-us/training/modules/analyze-images/` |
 | Azure Document Intelligence | `https://learn.microsoft.com/en-us/training/modules/analyze-receipts-form-recognizer/` |
 | Azure AI Search | `https://learn.microsoft.com/en-us/training/modules/create-azure-ai-custom-skill/` |
-| Foundry / Azure OpenAI | `https://learn.microsoft.com/en-us/training/modules/get-started-openai/` |
+| Foundry / Azure OpenAI | `https://learn.microsoft.com/en-us/training/modules/ai-foundry-sdk/` |
 | Content Safety | `https://learn.microsoft.com/en-us/training/modules/responsible-generative-ai/` |
 
 (The implementation plan will fetch each URL and any sibling units that contain code samples; the spec just records the entry points.)
